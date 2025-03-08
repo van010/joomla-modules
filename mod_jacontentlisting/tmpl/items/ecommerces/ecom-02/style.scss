@@ -1,0 +1,106 @@
+// ------------------------
+// Item style 2
+// ------------------------
+$start-direction : left!default;
+$end-direction : right!default;
+
+.eitem-style-2 {
+  &.jacl-item {
+    height: 100%;
+
+    &.radius-small {
+      .jacl-item__inner {
+        border-radius: 3px;
+      }
+    }
+  
+    &.radius-normal {
+      .jacl-item__inner {
+        border-radius: 5px;
+      }
+    }
+  
+    &.radius-large {
+      .jacl-item__inner {
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .jacl-item__inner {
+    background-color: var(--light-reverse);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+  }
+
+ 
+  // Item media
+  .jacl-item__media {
+    margin-bottom: 0;
+
+    &.radius-small {
+      border-radius: 3px 3px 0 0;
+    }
+
+    &.radius-normal {
+      border-radius: 5px 5px 0 0;
+    }
+
+    &.radius-large {
+      border-radius: 8px 8px 0 0;
+    }
+  }
+  
+  // Item content wrap
+  .jacl-item__body {
+    padding: calc(var(--global-spacing) * 2) calc(var(--global-spacing) * 4) calc(var(--global-spacing) * 4);
+  }
+  
+  
+  // Item category
+  .jacl-item__cat {
+    &.style-outline,
+    &.style-rounded,
+    &.style-bgcolor {
+      padding-#{$start-direction}: calc(var(--global-spacing) * 4);
+    }
+  }
+
+  &.text-right {
+    .jacl-item__cat {
+      &.style-outline,
+      &.style-rounded,
+      &.style-bgcolor {
+        padding-#{$end-direction}: calc(var(--global-spacing) * 4);
+      }
+    }
+  }
+
+  &.jacl-item.text-center {
+    .jacl-item__cat.style-outline,
+    .jacl-item__cat.style-rounded {
+      padding-#{$start-direction}: 0;
+    }
+  }
+  
+  
+  // Item heading
+  .jacl-item__title {
+  }
+  
+  
+  // Item meta
+  .jacl-item__meta {
+  }
+  
+  
+  // Item Introduction
+  .jacl-item__introtext {
+  }
+  
+  
+  // Read more
+  .jacl-item__readmore {
+  }
+}

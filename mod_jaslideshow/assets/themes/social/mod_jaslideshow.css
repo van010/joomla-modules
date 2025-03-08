@@ -1,0 +1,328 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Slideshow Module for J25 & J31
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+ 
+.ja-mass-top .wrap { min-width: 100%; }
+
+.ja-slidewrap_social {
+   background: url(images/bg-slideshow.gif) repeat-x bottom center #fff;
+	border: none !important;
+	padding: 10px 10px 0px 10px;
+	position: relative;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	box-shadow: 0 3px 3px #C9D7DE;
+	-moz-box-shadow: 0 3px 3px #C9D7DE;
+	-webkit-box-shadow: 0 3px 3px #C9D7DE;
+}
+
+.ja-slidewrap_social .ja-slide-thumbs-mask-left,
+.ja-slidewrap_social .ja-slide-thumbs-mask-right { background: none; }
+
+.ja-slidewrap_social .ja-slide-thumbs-wrap {
+	width: 100px !important;
+	bottom: 20px;
+	right: 20px;
+	z-index: 650;
+	overflow: visible;
+	position: absolute;
+}
+
+.ja-slidewrap_social .ja-slide-thumbs,
+.ja-slidewrap_social .ja-slide-thumbs-handles {
+	position: absolute;
+	width: 100px !important;
+	right: 0px !important;
+}
+
+.ja-slidewrap_social .ja-slide-thumb-inner {
+	background: none;
+	border-top: none;
+	color: #2595bd;
+	text-align: center;
+	margin: 0px;
+	position: relative;
+	top: 0px;
+	padding: 0px 10px;
+}
+
+.ja-slidewrap_social .ja-slide-thumb-inner h3 {
+	font-weight: normal;
+	font-size: 92%;
+	padding: 32px 0px 0px 0px !important;
+	text-shadow: 0 2px 2px #fff;
+}
+
+.ja-slidewrap_social .ja-slide-thumbs-wrap .active .ja-slide-thumb-inner h3 { color: #747474 !important; }
+
+.ja-slidewrap_social .ja-slide-thumbs-wrap .ja-slide-thumb {
+	background: url(images/number.png) no-repeat center center;
+	height: 10px;
+	width: 10px;
+}
+
+.ja-slidewrap_social .ja-slide-thumbs-wrap .ja-slide-thumb.active { background: url(images/number-hover.png) no-repeat center center; }
+
+.ja-slidewrap_social .ja-slide-thumbs-wrap .active .ja-slide-thumb-inner {
+	background: url(images/active-slideshow.png) no-repeat top center ;
+	color: #737373; 
+	top: -11px;
+}
+
+.ja-slidewrap_social .ja-slide-buttons {
+	position: absolute;
+	bottom: 130px;
+	z-index: 900;
+}
+
+.ja-slidewrap_social .ja-slide-buttons span {
+	font-size: 0px;
+	line-height: 0px;
+	display: block;
+	text-indent: -1000px;
+	padding: 0px;
+}
+
+.ja-slidewrap_social .ja-slide-buttons span.ja-slide-prev {
+	background: url(images/prev-slideshow.png) no-repeat left bottom;
+	height: 27px;
+	width: 18px;
+	float: left;
+}
+
+.ja-slidewrap_social .ja-slide-buttons span.ja-slide-prev:hover {
+	background: url(images/prev-slideshow.png) no-repeat left top;
+}
+
+.ja-slidewrap_social .ja-slide-buttons span.ja-slide-next {
+	background: url(images/next-slideshow.png) no-repeat right bottom;
+	height: 27px;
+	width: 18px;
+	position: absolute;
+	right: -700px;
+}
+
+.ja-slidewrap_social .ja-slide-buttons span.ja-slide-next:hover {
+	background: url(images/next-slideshow.png) no-repeat right top;
+}
+
+.ja-slidewrap_social .ja-slide-playback, .ja-slidewrap_social .ja-slide-stop,.ja-slidewrap_social .ja-slide-play { display: none !important; }
+
+.ja-slidewrap_social .maskDesc { z-index: 400; right: 0px; top: 0px; }
+
+
+.ja-slidewrap_social .ja-slidewrap_social .maskDesc a.readon,
+.ja-slidewrap_social .ja-slide-desc a.readmore {
+	background: url(images/more.png) no-repeat center center;
+	padding: 0px;
+	line-height: 34px;
+	color: #fff;
+	display: block;
+	text-align: center;
+	width: 140px;
+	height: 34px;
+	bottom: 4px;
+	font-size: 17px;
+} 
+
+.ja-slidewrap_social .ja-slide-desc a.readon:hover,
+.ja-slidewrap_social .ja-slide-desc a.readmore:hover { text-decoration: none !important; } 
+
+.ja-slidewrap_social .maskDesc .inner {
+	position: absolute;
+	top: 190px; left: 220px;
+}
+.ja-slidewrap_social .ja-slide-main-wrap { background: none; }
+
+.ja-slidewrap_social .ja-slide-desc a span { display: block; }
+
+.ja-slidewrap_social .ja-slide-thumb,
+.ja-slidewrap_social .ja-slide-thumbs-handles span { margin: 0px 3px; }
+
+.ja-slidewrap_social .ja-slide-thumbs,
+.ja-slidewrap_social .ja-slide-thumbs-mask,
+.ja-slidewrap_social .ja-slide-thumbs-handles {
+	width: 100px !important;
+	height: 10px;
+}
+
+.ja-slidewrap_social .ja-slide-thumb span {
+	line-height: 0px;
+	font-size: 0px;
+	text-indent: -1000px;
+	margin: 0px 3px;
+}
+
+.ja-slidewrap_social .ja-slide-item { background: none; }
+
+.ja-slidewrap_social .ja-slide-desc p,
+.ja-slidewrap_social .ja-slide-desc blockquote {
+	color: #616161;
+	font-weight: normal;
+	font-size: 105%;
+	font-style: italic;
+	line-height: 1.5;
+}
+
+.ja-slidewrap_social .ja-slide-item img { background: none; }
+
+.ja-slidewrap_social .ja-slide-desc ul li {
+	 display: block;
+	 padding: 5px 0px 5px 25px;
+	 margin: 5px 0px;
+	 color: #616161;
+	 font-weight: normal;
+}
+
+.ja-slidewrap_social .ja-slide-desc ul.check-list li { background: url(images/check-list.png) no-repeat left 5px; }
+
+.ja-slidewrap_social .ja-slide-desc ul.around-list li {
+	 background: url(images/bullet-grey.png) no-repeat left 9px;
+	 cursor: pointer;
+	 padding-left: 12px;
+}
+
+.ja-slidewrap_social .ja-slide-desc ul.around-list li:hover {
+	 background: url(images/bullet-blue.png) no-repeat left 9px;
+	 padding-left: 12px;
+}
+
+.ja-slidewrap_social .ja-slide-desc span.blue {
+	color: #208ab1;
+	font-size: 135%;
+	background: none;
+	cursor: none;
+	border: none;
+	font-weight: bold;
+}
+
+.ja-slidewrap_social .ja-slide-desc span.black {
+	color: #333;
+	font-size: 125%;
+	background: none;
+	cursor: none;
+	border: none;
+	font-weight: bold;
+}
+
+/* Slideshow K2 Component ---*/
+.ja-slidewrap_social.style2 {
+	background: url("images/bg-slideshow1.gif") repeat-x scroll center bottom #FFFFFF;
+	border: none;
+}
+
+.ja-slidewrap_social {
+}
+
+.ja-slidewrap_social.style2 .ja-slidewrap_social {
+	border-radius: 0px;
+	-webit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	padding: 0px;
+	background: none;
+	margin-bottom: -11px;
+}
+
+.ja-slidewrap_social.style2  {
+	padding: 10px 10px 0px 10px;
+	border: none;
+}
+
+.ja-slidewrap_social.style2  .ja-slide-mask { display: none; }
+
+.ja-slidewrap_social.style2  .ja-slide-desc p { display: none; }
+
+.ja-slidewrap_social.style2  .ja-slide-thumbs-wrap {
+	width: 662px !important;
+	z-index: 150;
+	overflow: visible;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	position: relative;
+	margin-left: 27px;
+	height: 80px !important;
+	background: url(images/line-slideshow.gif) no-repeat right 11px !important;
+}
+
+.ja-slidewrap_social.style2  .ja-slide-buttons {
+	position: absolute;
+	top: 290px;
+	z-index: 150;
+	height: 28px;
+	bottom: auto;
+}
+
+.ja-slidewrap_social.style2  .ja-slide-desc a span {
+	background: #2595bd;
+	color: #fff;
+	text-decoration: none;
+	padding: 0px 5px;
+	margin: 0px;
+	line-height: 1.2;
+	display: inline;
+}
+
+.ja-slidewrap_social.style2  .ja-slide-thumbs, 
+.ja-slidewrap_social.style2  .ja-slide-thumbs-mask, 
+.ja-slidewrap_social.style2  .ja-slide-thumbs-handles {
+	position: absolute;
+	width: auto !important;
+	height: 80px !important;
+	right: auto;
+	margin: 0px;
+}
+
+.ja-slidewrap_social.style2  .ja-slide-thumbs-wrap .ja-slide-thumb.active {
+	background: url(images/line-slideshow.gif) no-repeat left 11px #fff !important;
+	color: #747474;
+	margin: 11px 0px 0px 0px !important;
+}
+
+.ja-slidewrap_social.style2  .ja-slide-thumbs-wrap .active .ja-slide-thumb-inner {
+	background: url(images/active-slideshow.png) no-repeat top center ;
+	color: #737373; 
+	top: -11px;
+}
+
+.ja-slidewrap_social.style2  .ja-slide-thumbs .ja-slide-thumb { 
+	background: url(images/line-slideshow.gif) no-repeat left 11px; 
+}
+
+.ja-slidewrap_social.style2  .ja-slide-thumb-inner img {
+	display: none;
+}
+
+.ja-slidewrap_social.style2  .ja-slide-thumbs-handles span,
+.ja-slidewrap_social.style2  .ja-slide-thumb {
+	margin: 0px ;
+}
+
+.ja-slidewrap_social.style2  .ja-slide-thumb-inner {
+	margin: 0px 5px;
+	padding: 0px;
+}
+
+.ja-slidewrap_social.style2  .ja-horizontal { overflow: hidden; margin-top: -11px;}
+
+.ja-slidewrap_social.style2  .ja-slide-thumbs-handles span { height: 70px !important; }
+
+.ja-slidewrap_social.style2 .ja-slide-desc {
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 250%;
+  font-weight: normal;
+  left: 22px;
+  position: absolute;
+  top: 130px;
+}

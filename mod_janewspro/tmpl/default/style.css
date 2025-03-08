@@ -1,0 +1,80 @@
+/**
+ * $JA#COPYRIGHT$
+ */
+
+.ja-zinwrap.default {}
+
+.default .ja-zin {}
+
+.default .ja-zin .items-row { margin: 0; padding: 0; background: none; float: left; }
+
+.default .ja-zin .ja-box .ja-box-inner { margin: 0; padding: 8px 12px 5px; }
+
+.default .ja-zin .ja-box-first .ja-box-inner {}
+
+.default .ja-zin .col-last .ja-box-inner { border-right: 0; }
+
+/* HEADING
+--------------------------------------------- */
+/* Section --- */
+.default .ja-zinsec { padding: 12px 0 0; position: relative; }
+
+.default .items-row:hover .ja-zinsec {}
+
+.default .items-row:hover .ja-zinsec a {}
+
+.default .ja-zinsec h2 {
+	margin: 0 !important;
+	padding: 0 12px !important;
+	font-size: 150%;
+}
+
+.default .ja-zinsec h2 a {}
+
+/* Category --- */
+.default .ja-zincat h3 {
+	margin: 0 0 5px !important;
+	padding: 0 !important;
+	font-size: 85%;
+}
+
+.default .ja-zincat h3 a { }
+
+/* News Title --- */
+.default .ja-zin h4.ja-zintitle {
+	margin: 0 0 5px !important;
+	padding: 0 !important;
+	font-weight: bold;
+	font-size: 110%;
+}
+
+/* CONTENT
+--------------------------------------------- */
+.default .ja-zincontent p { margin: 5px 0 !important; }
+
+/* Image ---*/
+.default .ja-zincontent img { margin: 5px 0; }
+
+/* Meta ---*/
+.default .ja-zinmeta { line-height: normal; }
+
+/* More Links ---*/
+.default .ja-zinlinks { padding-top: 5px; font-size: 92%; }
+
+.default .ja-zinlinks strong {}
+
+.default .ja-zinlinks ul { padding: 0 !important; margin: 0 !important; }
+
+.default .ja-zinlinks ul li {
+	padding: 0 0 0 10px;
+	background: url(images/arrow.png) no-repeat 1px 3px;
+	margin: 3px 0 5px;
+	line-height: normal;
+}
+
+/* MISC.
+------------------------------------------------*/
+/* 1st & last row/column style ---*/
+.default .row-last { border-bottom: 0 !important; }
+
+.default .ja-mod-inner { position: relative; }

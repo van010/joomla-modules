@@ -1,0 +1,57 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Slideshow Module for J25 & J31
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+
+#ja-sl-gallery .main { background: url(images/sl-gallery-bg.gif) repeat-x left bottom #201F1D; }
+
+.ja-slidewrap { padding: 40px 40px 20px; }
+
+.ja-slide-main-wrap { margin: 0 5px 5px 0; }
+
+.ja-slide-thumbs-wrap { margin-top: 25px; }
+
+.ja-slide-buttons { position: absolute; left: 0; bottom: 60px; width: 100%; }
+
+.ja-slide-buttons .ja-slide-prev,
+.ja-slide-buttons .ja-slide-next {
+	background: url(images/arrow-green.png) no-repeat right top;
+	height: 17px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: 10px;
+	bottom: 0;
+	top: auto;
+	width: 11px;
+	text-indent: -999em;
+}
+
+.ja-slide-buttons .ja-slide-prev {
+	background: url(images/arrow-green.png) no-repeat left top;
+	left: 10px;
+}
+
+.ja-slide-thumbs .ja-slide-thumb span {
+	background: #151414;
+	padding-top: 11px;
+	display: block;
+	margin: 0;
+}
+
+.ja-slide-thumbs .ja-slide-thumb img { margin: 3px; }
+
+.ja-slide-thumbs .active span {
+	background: url(images/arrow-active.png) no-repeat center top #579613;
+	padding-top: 11px;
+}
+
+ /* Disable thumbs mask */
+.ja-slide-thumbs-mask-left, .ja-slide-thumbs-mask-right { opactity: 0; }
+#ja-sl-gallery .ja-slidewrap .maskDesc {z-index: 10;}

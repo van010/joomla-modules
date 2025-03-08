@@ -1,0 +1,256 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Image Hotspot Module for Joomla 2.5 & 3.4
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+ 
+#attrib-config {
+  position: relative;
+}
+
+#attrib-config .control-group {
+  width: 300px;
+}
+
+#attrib-config .control-group .controls {
+  display: block;
+  margin-left: 0 !important;
+}
+
+#attrib-config .control-group .control-label {
+  float: none;
+}
+
+#attrib-config textarea#jform_params_modules_des {
+  border-radius: 0;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+}
+
+#attrib-config .japreview {
+  width: auto;
+}
+
+.japreview .media-preview {
+  margin-top: 20px;
+}
+
+.sub-group-inner{
+  display: flex !important;
+}
+
+.group-legends + .top-group > .sub-group > .sub-group-inner{
+  display: inline !important;
+}
+
+.control-group {
+  flex-wrap: inherit !important;
+}
+
+.japreview {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  /*margin-left: 30px;*/
+  padding: 15px;
+  /*position: absolute;*/
+  left: 40px;
+}
+
+.japreview .controls {
+  margin-left: 0 !important;
+}
+
+.marker-wrap {
+  box-sizing: border-box;
+}
+
+.marker-wrap .controls {
+  margin-left: 0 !important;
+}
+
+#jform_params_imgpath_preview_img {
+  position: relative;
+  overflow: hidden;
+  font-size: 30px;
+}
+
+#jform_params_imgpath_preview_img img {
+  /*width: auto !important;*/
+}
+
+/* ++ MARKER ++ */
+#jform_params_imgpath_preview_img .point {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+}
+
+#jform_params_imgpath_preview_img .point .bg{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: 'fontAwesome';
+  font-size: .8em;
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+#jform_params_imgpath_preview_img .point:hover {
+  cursor: pointer;
+}
+
+#jform_params_imgpath_preview_img .point.ui-draggable:hover {
+    cursor: move;
+}
+
+#jform_params_imgpath_preview_img .point span.hide {
+    display: none;
+}
+
+#jform_params_imgpath_preview_img .point.active .bg {
+  outline: dashed 1px rgba(0, 0, 0, 0.51);
+}
+
+#jform_params_imgpath_preview_img .point.active .anchorx,
+#jform_params_imgpath_preview_img .point.active .anchory {
+  display: block;
+}
+
+#jform_params_imgpath_preview_img .point .anchorx {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-left: dashed 1px red;
+  width: 1px;
+  height: 100px;
+  transform: translate(0, -50%);
+  box-sizing: border-box;
+}
+
+#jform_params_imgpath_preview_img .point .anchorx .handlerx {
+  position: absolute;
+  width: 11px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateX(-50%);
+}
+
+#jform_params_imgpath_preview_img .point .anchory {
+  display: none;
+  position: absolute;
+  top: 0;
+  border-top: dashed 1px red;
+  height: 1px;
+  width: 100px;
+  transform: translate(-50%, 0);
+  box-sizing: border-box;
+}
+
+#jform_params_imgpath_preview_img .point .anchory .handlery {
+  position: absolute;
+  width: 100%;
+  height: 11px;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+#jform_params_imgpath_preview_img .ja-marker-default {
+  background: url("../../../assets/images/icon-marker-default.png");
+}
+
+#jform_params_imgpath_preview_img .ja-marker-cloud {
+  background: url("../../../assets/images/icon-marker-cloud.png");
+}
+
+#jform_params_imgpath_preview_img .ja-marker-study {
+  background: url("../../../assets/images/icon-marker-study.png");
+}
+
+#jform_params_imgpath_preview_img .ja-marker-star {
+  background: url("../../../assets/images/icon-marker-star.png");
+}
+
+#jform_params_imgpath_preview_img .ja-marker-truck {
+  background: url("../../../assets/images/icon-marker-truck.png");
+}
+
+#jform_params_imgpath_preview_img .ja-marker-default_orange {
+  background: url("../../../assets/images/colors/orange/icon-marker-default.png");
+}
+
+#jform_params_imgpath_preview_img .ja-marker-cloud_orange {
+  background: url("../../../assets/images/colors/orange/icon-marker-cloud.png");
+}
+
+#jform_params_imgpath_preview_img .ja-marker-study_orange {
+  background: url("../../../assets/images/colors/orange/icon-marker-study.png");
+}
+
+#jform_params_imgpath_preview_img .ja-marker-star_orange {
+  background: url("../../../assets/images/colors/orange/icon-marker-star.png");
+}
+
+#jform_params_imgpath_preview_img .ja-marker-truck_orange {
+  background: url("../../../assets/images/colors/orange/icon-marker-truck.png");
+}
+
+#jform_params_imgpath_preview_img .ja-marker-default_red {
+  background: url("../../../assets/images/colors/red/icon-marker-default.png");
+}
+
+#jform_params_imgpath_preview_img .ja-marker-cloud_red {
+  background: url("../../../assets/images/colors/red/icon-marker-cloud.png");
+}
+
+#jform_params_imgpath_preview_img .ja-marker-study_red {
+  background: url("../../../assets/images/colors/red/icon-marker-study.png");
+}
+
+#jform_params_imgpath_preview_img .ja-marker-star_red {
+  background: url("../../../assets/images/colors/red/icon-marker-star.png");
+}
+
+#jform_params_imgpath_preview_img .ja-marker-truck_red {
+  background: url("../../../assets/images/colors/red/icon-marker-truck.png");
+}
+
+
+/* -- MARKER -- */
+#jform_params_imgpath_preview_img img {
+  margin: 0;
+  padding: 0;
+}
+
+#extrafieldimg #extrafield-action {
+  margin-bottom: 20px;
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+#extrafieldimg .deactive {
+	display: none;
+}
+
+#extrafieldimg .active {
+	display: block;
+}
+
+#extrafieldimg ul, #extrafieldimg ul, #extrafieldimg li {
+    list-style: none;
+    margin: 5px 0;
+}

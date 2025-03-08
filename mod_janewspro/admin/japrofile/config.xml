@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+	<fields 
+		name="params" 
+		addfieldpath="/modules/mod_janewspro/assets/elements">
+		<fieldset 
+			name="basic">
+			
+			<field 
+				name="themes" 
+				type="themes" 
+				default="" 
+				label="THEME_SELECTION" 
+				description="THEME_SELECTION_DESC"/>
+	
+			<field 
+				name="subcols" 
+				type="text" 
+				default="2" 
+				class="validate-numeric"
+				label="SUB_COLUMNS"
+				description="SUB_COLUMNS_DESC" />
+
+			<field
+				name="showhits"
+				type="radio"
+				class="btn-group"
+				default="1" 
+				label="SHOW_HITS_COLUMN" 
+				description="SHOW_HITS_COLUMN_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+			</field>
+
+			<field 
+				name="duration" 
+				type="text" 
+				default="1000" 
+				class="validate-numeric"
+				label="Duration" 
+				description="DURATION_DESC"/>
+			
+			
+			<field name="DISPLAY_SETTINGS" type="spacer" hr="false" label="DISPLAY_SETTINGS" />
+			<field 
+				name="showusersetting" 
+				type="radio" 
+				class="btn-group"
+				default="1"
+				label="SHOW_USER_SETTING_TOOL" 
+				description="SHOW_USER_SETTING_TOOL_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+			</field>
+
+			<field 
+				name="cols" 
+				type="text" 
+				default="2" 
+				class="validate-numeric"
+				label="COLUMNS" 
+				description="COLUMNS_DESC" />
+
+			<field 
+				name="introitems" 
+				type="text" 
+				default="1" 
+				class="validate-numeric"
+				label="INTRO_ITEMS" 
+				description="INTRO_ITEMS_DESC" />
+				
+			<field 
+				name="linkitems" 
+				type="text" 
+				default="3" 
+				class="validate-numeric"
+				label="LINK_ITEMS" 
+				description="LINK_ITEMS_DESC" />
+				
+			<field 
+				name="maxchars" 
+				type="text" 
+				default="0" 
+				class="validate-numeric"
+				label="MAX_CHARS" 
+				description="MAX_CHARS_DESC" />
+				
+			<field 
+				name="showcattitle" 
+				type="radio"
+				class="btn-group"	
+				default="1" 
+				label="SHOW_CATEGORY_TITLE" 
+				description="SHOW_CATEGORY_TITLE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+			</field>	
+			
+			<field 
+				name="showsubcattitle" 
+				type="radio" 
+				class="btn-group"
+				default="1" 
+				label="SHOW_SUB_CATEGORY_TITLE" 
+				description="SHOW_SUB_CATEGORY_TITLE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+			</field>
+			
+			<field 
+				name="showcreator" 
+				type="radio"
+				class="btn-group"		
+				default="0" 
+				label="SHOW_CREATE_BY" 
+				description="SHOW_CREATE_BY_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+			</field>
+			
+			<field 
+				name="showdate" 
+				type="radio" 
+				class="btn-group"
+				default="0" 
+				label="SHOW_CREATE_DATE" 
+				description="SHOW_CREATE_DATE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+			</field>
+			<field 
+				name="timestamp" 
+				type="radio" 
+				class="btn-group"
+				default="0" 
+				label="ENABLE_TIMESTAMP" 
+				description="ENABLE_TIMESTAMP_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+			</field>	
+			<field 
+				name="showreadmore" 
+				type="radio" 
+				class="btn-group"
+				default="0" 
+				label="SHOW_READMORE" 
+				description="SHOW_READMORE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+			</field>
+			<field 
+				name="showtooltip" 
+				type="radio" 
+				class="btn-group"
+				default="0" 
+				label="ENABLE_TOOLTIP" 
+				description="ENABLE_TOOLTIP_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+			</field>		
+			
+			
+			<field name="IMAGE_SETTINGS" type="spacer" hr="false" label="IMAGE_SETTINGS" />
+			
+				
+			<field 
+				name="showimage" 
+				type="radio" 
+				class="btn-group"
+				default="1" 
+				label="SHOW_IMAGE" 
+				description="SHOW_IMAGE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+			</field>
+			
+		
+			<field 
+				name="thumbnail_mode" 
+				type="list" 
+				default="crop" 
+				label="THUMBNAIL_MODE" 
+				description="THUMBNAIL_MODE_DESC">
+					<option value="none">USING_IMAGE_SOURCE</option>
+					<option value="resize">USING_RESIZE</option>
+					<option value="crop">USING_CROP</option>
+			</field>
+				
+			<field 
+				name="use_ratio" 
+				type="radio" 
+				class="btn-group"
+				default="1" 
+				label="RESIZE_WITH_THE_RATIO" 
+				description="RESIZE_WITH_THE_RATIO_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+			</field>
+			
+			<field 
+				name="width" 
+				type="text" 
+				default="100" 
+				class="validate-numeric"
+				label="IMAGE_WIDTH" 
+				description="IMAGE_WIDTH_DESC" />
+				
+			<field 
+				name="height" 
+				type="text" 
+				default="100" 
+				class="validate-numeric"
+				label="IMAGE_HEIGHT" 
+				description="IMAGE_HEIGHT_DESC" />
+				
+			<field 
+				name="align" 
+				type="list" 
+				default="left" 
+				label="IMAGE_ALIGN" 
+				description="IMAGE_ALIGN_DESC">
+					<option value="left">Left</option>
+					<option value="right">Right</option>
+					<option value="0">None</option>
+			</field>
+			
+			<field 
+				name="group3"
+				hidden="true" 
+				type="japanel"
+				function="depend">
+					<option for="showimage" value="1" hideRow="true">thumbnail_mode,width,height,align</option>	
+					<option for="thumbnail_mode" value="crop" hideRow="true">use_ratio</option>
+					<option for="showdate" value="1" hideRow="true">timestamp</option>
+					<option for="themes" value="default" hideRow="true">subcols</option>
+					<option for="themes" value="mobile" hideRow="true">subcols</option>
+					<option for="themes" value="telineiii" hideRow="true">subcols</option>
+					<option for="themes" value="linear" hideRow="true">duration</option>
+					<option for="themes" value="pulse" hideRow="true">showhits</option>
+			</field>
+		</fieldset>
+	</fields>
+</form>

@@ -1,0 +1,149 @@
+/*
+ * ------------------------------------------------------------------------
+ * JA Slideshow Module for J25 & J31
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+*/
+
+/* COMMON STYLE
+--------------------------------------------------------- */
+#ja-slideshow {
+	background: url("slideshow-bg.png") repeat-x scroll left bottom #70031b;
+}
+
+#ja-slideshow .wrap-inner1{
+	background: url("shadow-bg.png") no-repeat center top;
+}
+
+#ja-slideshow .ja-slide-thumbs-wrap.ja-horizontal, .ja-horizontal {
+	background: url("tab-slideshow.png") repeat left top !important;
+	width: 960px !important; 
+	height: 40px !important;
+	position: absolute;
+	z-index: 200;
+	bottom: 0px;
+	border-bottom: solid 1px #c4c2c3;
+}
+
+.ja-slide-thumbs {
+	margin-left: 80px;
+	background: url("line-bg.png") repeat-y right top;
+	float: left;
+}
+.ja-slide-thumbs .ja-slide-thumb {
+	float: left;
+	cursor: pointer;
+	background: url("line-bg.png") repeat-y left top;
+	height:40px !important;
+}
+
+.ja-slide-thumbs .ja-slide-thumb span { display:block; }
+
+.ja-slide-thumbs .ja-slide-thumb h3, .ja-slide-thumbs .ja-slide-thumb span {
+	font-family: Arial,Helvetica,sans-serif;
+	color: #fff;
+	font-size: 115%;
+	font-weight: normal;
+	text-align: center;
+	line-height: 40px;
+	text-shadow: 0px 1px 1px rgba(0,0,0, 0.8);
+	margin: 0px !important;
+	padding: 0px !important;
+}
+.maskDesc {
+	background: url("bg-desc.png") repeat left bottom !important;
+	z-index: 100;
+}
+
+.maskDesc .ja-slide-desc {
+	margin-left: 240px;
+	position: relative;
+}
+
+.ja-slide-thumbs-mask { display:none }
+ 
+.maskDesc .ja-slide-desc a, .maskDesc .ja-slide-desc h3 {
+	color: #fff3d8;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 200%;
+	margin-top: 10px;
+	display: block;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.8);
+}
+
+.maskDesc .ja-slide-desc h3 { font-weight:normal }
+
+.maskDesc .ja-slide-desc p {
+	color: #fff;
+}
+
+.maskDesc .ja-slide-desc a.readon, .maskDesc .inner a.readon {
+	background: url("button.png") no-repeat left center;
+	width: 246px;
+	height: 36px;
+	font-size: 115% !important;
+	display: inline-block;
+	text-transform: none;
+	text-indent: 35px;
+	line-height: 36px;
+	text-decoration: none;
+	position: absolute;
+	right: 10px;
+	bottom: 5px;
+	color: #2b1509;
+	text-shadow: 1px 0px 1px rgba(255, 255, 255, 0.5);
+}
+
+.maskDesc .inner a.readon { bottom:21px; }
+
+.maskDesc .ja-slide-desc a.readon:hover,
+.maskDesc .ja-slide-desc a.readon:focus, 
+.maskDesc .ja-slide-desc a.readon:active {
+}
+.ja-slide-thumbs-handles {
+	background: none; 
+	opacity: 1;
+	height: 40px;
+	position: absolute; 
+	bottom: 0px;
+	z-index: 150;
+	width: auto !important;
+	left: 80px !important;
+}
+
+.ja-slide-thumb-inner {
+	margin-left: 0px;
+	background: none;
+	border:none;
+}
+
+.ja-slide-thumbs-handles span {
+	display: block;
+	cursor: pointer;
+	float: left;
+	height: 40px !important;
+
+}
+.ja-slide-thumbs .ja-slide-thumb.active .ja-slide-thumb-inner, .ja-slide-thumbs .ja-slide-thumb.active span  {
+	background: url("active-bg.png") repeat-x left top #bd022c;
+}
+
+.ja-slide-thumb-inner img {
+	display: none;
+}
+
+.ja-slide-main .ja-slide-item .ja-slide-desc {
+	display: none !important; 
+}
+
+#ja-slideshow .ja-slide-thumbs-wrap {
+	right: 0px; 
+	bottom: 0px;
+	left: 0px;
+}
+
+#ja-slideshow .ja-slide-thumb img { margin:0; background:none; border:none }

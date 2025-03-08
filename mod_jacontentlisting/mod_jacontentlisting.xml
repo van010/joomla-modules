@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+    <name>mod_jacontentlisting</name>
+    <author>JoomlArt.com</author>
+    <creationDate>Jan 3rd, 2025</creationDate>
+    <copyright>J.O.O.M Solutions Co., Ltd.</copyright>
+    <license>GNU/GPL V3</license>
+    <authorEmail>webmaster@joomlart.com</authorEmail>
+    <authorUrl>www.joomlart.com</authorUrl>
+    <version>1.2.9</version>
+    <description>
+
+    	<![CDATA[
+		<div align="left">		
+			<div>
+				<div style='font-weight: normal'>
+                    <h2>JA Content Listing module</h2>
+					<p>Build your content blocks by loading content from one or multiple categories. Comes with a variety of settings for layout and filtering content your ways. This module is all you need to organize your content.</p>
+				</div>
+			</div>
+			<br />
+			<p>Highlighted features:</p>
+			<div style='font-weight: normal'>
+				<ul> 
+                    <li style="padding:10px 0px 10px 20px;"><strong>14 pre-made layouts (more to come)</strong> to show your articles in the smart and flexible layouts</li>                   
+                    <li style="padding:10px 0px 10px 20px;"><strong>Filter content your ways</strong>: loads content from one or multiple category, options to load featured articles, sub-category and more </li>
+					<li style="padding:10px 0px 10px 20px;"><strong>4 Item (article) styles</strong> to select for your articles shown in the block.</li>
+					<li style="padding:10px 0px 10px 20px;"><strong>Featured item style</strong> to highlight one artilce in the content block.</li>
+
+				</ul>
+			</div>
+			<br />
+			
+		</div>
+		]]>
+
+    </description>
+    <languages>
+        <language tag="en-GB">language/en-GB.mod_jacontentlisting.ini</language>
+        <language tag="en-GB">language/en-GB.mod_jacontentlisting.sys.ini</language>
+    </languages>
+    <files>
+        <filename module="mod_jacontentlisting">mod_jacontentlisting.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+        <folder>assets</folder>
+        <folder>admin</folder>
+        <folder>helpers</folder>
+    </files>
+    <script>jacontentlisting.script.php</script>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/modules/mod_jacontentlisting/admin/fields">
+                <field type="japanel" path="/modules/mod_jacontentlisting/admin/fields/"/>
+                <field name="jasource" type="jasources" value="" default="{}" subfolder="helpers/adapter" label="FROM_SOURCE" description="FROM_SOURCE_DESC" />
+            </fieldset>
+            <fieldset name="layout_settings" label="LAYOUT_SETTINGS">
+                <field name="jalayout" type="jalayout" field="layouts"  subfolder="tmpl/layouts" default="" label="Layout" description="Choose an layout"/>
+                <field name="count" type="number" default="5" class="item_count" before="layout" label="CONTENT_NUMBER_SHOW" description="CONTENT_NUMBER_SHOW_DESC" />
+            </fieldset>
+            <fieldset name="item_settings" label="ITEMS_SETTINGS">
+                <field name="GLOBAL_ITEM_SETTINGS" type="spacer" hr="false" label="GLOBAL_ITEM_SETTINGS"/>
+                <field name="jaitem" type="jalayout" field="items" subfolder="tmpl/items" default="" label="Items" description="Choose an item"/>
+                <field name="FEATURE_ITEM_SETTINGS" type="spacer" hr="false" label="FEATURE_ITEM_SETTINGS"/>
+                <field name="jaitem_featured_enabled" type="radio" default="1" filter="integer" class="btn-group btn-group-yesno" label="Featured Items" description="Choose an Featured item layout">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="jaitem_featured" type="jalayout" field="items" subfolder="tmpl/items" default="" label="Items" description="Choose an item"/>
+            </fieldset>
+            <fieldset name="jaitem_filtering" label="MOD_JACL_FILTER_SETTING">
+                <field
+					name="filter_tag"
+					type="tag"
+					label="JTAG"
+					mode="nested"
+					multiple="true"
+					filter="intarray"
+					class="multipleTags"
+				/>
+                <field
+					name="filteringspacer2"
+					type="spacer"
+					hr="true"
+				/>
+                <field
+					name="author_filtering_type"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_JACL_FIELD_AUTHORFILTERING_LABEL"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">MOD_JACL_OPTION_EXCLUSIVE_VALUE</option>
+					<option value="1">MOD_JACL_OPTION_INCLUSIVE_VALUE</option>
+				</field>
+                <field
+					name="created_by"
+					type="author"
+					label="MOD_JACL_FIELD_AUTHOR_LABEL"
+					multiple="true"
+					layout="joomla.form.field.list-fancy-select"
+					filter="intarray"
+					class="multipleAuthors"
+				/>
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="moduleclass_sfx" type="text" default="" label="MODULE_CLASS_SUFFIX" description="MODULE_CLASS_SUFFIX_DESC"/>
+               
+                <field name="jacache" type="list" default="0" label="CACHING" description="CACHING_DESC">
+                    <option value="1">Enable Cache</option>
+                    <option value="0">No caching</option>
+                </field>
+                <field name="jacache_time" type="text" default="900" filter="integer" class="validate-numeric" label="CACHE_TIME" description="CACHE_TIME_DESC"/>
+            </fieldset>
+        </fields>
+    </config>
+
+    <updateservers>
+        <server type="extension">http://update.joomlart.com/service/tracking/j16/mod_jacontentlisting.xml</server>
+    </updateservers>
+</extension>

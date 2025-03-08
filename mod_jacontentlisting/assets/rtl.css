@@ -1,0 +1,17 @@
+.text-left {
+  text-align: right; }
+
+.text-right {
+  text-align: left; }
+
+.owl-carousel .owl-stage-outer {
+  direction: ltr; }
+  .owl-carousel .owl-stage-outer .owl-stage {
+    direction: rtl; }
+
+.jacl-item__meta ul li {
+  padding-right: 0;
+  padding-left: calc(var(--global-spacing) * 2); }
+  .jacl-item__meta ul li:after {
+    right: auto;
+    left: 4px; }

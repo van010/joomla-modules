@@ -1,0 +1,73 @@
+.ja-countdown.layout2 {
+	width:498px;
+	height:498px;
+	background-image:url(../img/clock_bg.png);
+	background-position:center;
+	margin:0 auto;
+	background-repeat:no-repeat;
+    position: relative;
+	background-color:#000;
+	text-align: center;
+}
+.ja-countdown.layout2 .clock-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+.ja-countdown.layout2 h1 {
+	position: relative; 
+	z-index: 2;
+	top: 35%;
+	text-align: center;
+}
+
+.ja-countdown.layout2 .clock {
+    position: absolute;
+    top:-10px;
+    left:-10px;
+}
+
+
+.ja-countdown.layout2 .text {
+	width:430px;
+	float:left;
+	margin-top:150px;
+	margin-left:40px;
+	text-align:center;
+}
+
+.ja-countdown.layout2 .text p {
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#FFF;
+	font-size:24px;
+	line-height:30px;
+}
+
+.ja-countdown.layout2 .text span {
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#999;
+	font-style:italic;
+	line-height:30px;
+	font-size:20px;
+}
+
+.ja-countdown.layout2 .timer {
+	width: 100%;
+	position: absolute;
+	z-index: 3;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.ja-countdown.layout2 .timer p {
+	color:#616161;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:17px;
+	text-align:center;
+	font-style:italic;
+}
+.ja-countdown.layout2 .timer span {
+	color:#FFF;
+}

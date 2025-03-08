@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+    <fields name="jasource-settings" addfieldpath="/modules/mod_jacontentlisting/admin/fields">
+        <fieldset name="basic">
+            <field type="japanel" path="/modules/mod_jacontentlisting/admin/fields/"/>
+            <field name="catsid" type="category" default="" extension="com_content" class="mselect" multiple="true" size="5" label="CATEGORIES_SELECTION" description="CATEGORIES_SELECTION_DESC">
+                <option value="">JOPTION_ALL_CATEGORIES</option>
+            </field>
+
+            <field
+                name="mode"
+                type="list"
+                label="MOD_JACL_CATEGORY_FIELD_MODE_LABEL"
+                description="MOD_JACL_CATEGORY_FIELD_MODE_DESC"
+                default="normal"
+                validate="options"
+                >
+                <option value="normal">MOD_JACL_CATEGORY_OPTION_NORMAL_VALUE</option>
+                <option value="dynamic">MOD_JACL_CATEGORY_OPTION_DYNAMIC_VALUE</option>
+            </field>
+            <!-- <field
+                name="show_on_article_page"
+                type="radio"
+                layout="joomla.form.field.radio.switcher"
+                label="MOD_JACL_CATEGORY_FIELD_SHOWONARTICLEPAGE_LABEL"
+                description="MOD_JACL_CATEGORY_FIELD_SHOWONARTICLEPAGE_DESC"
+                default="1"
+                filter="integer"
+                showon="mod:dynamic"
+                >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field> -->
+
+            <field name="show_child_category_articles" type="radio"
+                   class="btn-group btn-group-yesno"
+                   default="0"
+                   label="GROUP_BY_SUB_CATEGORY" description="GROUP_BY_SUB_CATEGORY_DESC">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+
+            <field name="maxSubCats" type="number"
+                   default="-1" label="MAXIMUM_SUBCATEGORIES"
+                   description="MAXIMUM_SUBCATEGORIES_DESC"
+                   showon="show_child_category_articles:1"/>
+            <field name="limitstart" type="hidden" default="0" label="CONTENT_LIMIT_START_GET_ITEM" description="CONTENT_LIMIT_START_GET_ITEM_DESC"/>
+
+            <field name="featured" type="list" default="hide" label="DISPLAY_FEATURED_ARTICLES" description="DISPLAY_FEATURED_ARTICLES_DESC">
+                <option value="show">SHOW</option>
+                <option value="only">SHOW_ONLY_FEATURED</option>
+                <option value="hide">HIDE</option>
+            </field>
+
+            <field name="ordering" type="list" default="a.ordering" label="ARTICLES_SORTED_BY" description="ARTICLES_SORTED_BY_DESC">
+                <option value="a.ordering">MOD_JACONTENT_LISTING_OPTION_ORDERING_VALUE</option>
+                <option value="fp.ordering">MOD_JACONTENT_LISTING_OPTION_ORDERINGFEATURED_VALUE</option>
+                <option value="a.hits">MOD_JACONTENT_LISTING_OPTION_HITS_VALUE</option>
+                <option value="a.title">JGLOBAL_TITLE</option>
+                <option value="a.id">MOD_JACONTENT_LISTING_OPTION_ID_VALUE</option>
+                <option value="a.alias">JFIELD_ALIAS_LABEL</option>
+                <option value="a.created">MOD_JACONTENTLISTING_CATEGORY_OPTION_CREATED_VALUE</option>
+                <option value="modified">MOD_JACONTENTLISTING_CATEGORY_OPTION_MODIFIED_VALUE</option>
+                <option value="publish_up">MOD_JACONTENTLISTING_CATEGORY_OPTION_STARTPUBLISHING_VALUE</option>
+                <option value="a.publish_down">MOD_JACONTENT_LISTING_OPTION_FINISHPUBLISHING_VALUE</option>
+                <option value="random">MOD_JACONTENT_LISTING_OPTION_RANDOM_VALUE</option>
+            </field>
+
+            <field name="sort_order" type="list" default="DESC" label="ASCENDING_OR_DESCENDING" description="ASCENDING_OR_DESCENDING_DESC">
+                <option value="ASC">ASC</option>
+                <option value="DESC">DESC</option>
+            </field>
+            <field name="resize_img" type="radio"
+                   class="btn-group btn-group-yesno"
+                   default="0"
+                   label="MOD_JA_CONTENT_LISTING_RESIZE_IMAGES" description="">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field name="sort_by_hits" type="radio" class="btn-group btn-group-yesno"
+                   default="0"
+                   label="MOD_JA_CONTENT_LISTING_SORT_BY_HITS">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field name="sort_hits_order" type="list"
+                   default="desc"
+                   showon="show_child_category_articles:1"
+                   label="MOD_JA_CONTENT_LISTING_SORT_HITS_ORDER">
+                <option value="desc">Desc</option>
+                <option value="asc">Asc</option>
+            </field>
+
+            <field name="group1" hidden="true" type="japanel" function="depend">
+                <option for="show_child_category_articles" value="1" hideRow="true">maxSubCats</option>
+            </field>
+        </fieldset>
+    </fields>
+</form>

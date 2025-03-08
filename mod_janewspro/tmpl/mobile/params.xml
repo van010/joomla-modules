@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+	<fields 
+		name="params" 
+		addfieldpath="/modules/mod_janewspro/elements">
+		<fieldset 
+			name="basic">				
+				<field 
+				name="subcols" 
+				type="text" 
+				default="2" 
+				class="validate-numeric"
+				label="SUB_COLUMNS"
+				description="SUB_COLUMNS_DESC" />
+		</fieldset>
+	</fields>
+</form>

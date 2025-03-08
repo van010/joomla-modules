@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>JA Megafilter Module</name>
+	<author>JoomlArt.com</author>
+	<creationDate>Jan 12th, 2024</creationDate>
+	<copyright>J.O.O.M Solutions Co., Ltd.</copyright>
+	<license>GNU/GPL V2 for PHP files. Read Terms of Service for details.</license>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>2.1.0</version>
+	<description>JA Megafilter module is to help you display Search and Filter bar on position you want in the JA Megafilter page.</description>
+	<files>
+		<filename module="mod_jamegafilter">mod_jamegafilter.php</filename>
+		<filename>helper.php</filename>
+		<folder>assets</folder>
+		<folder>fields</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_jamegafilter.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					addfieldpath="/modules/mod_jamegafilter/fields"
+					name="filter"
+					type="filter"
+					published="1"
+					label="MOD_JAMEGAFILTER_FILTER_MENU"
+					description="MOD_JAMEGAFILTER_FILTER_MENU_DESC">
+					<option value="">MOD_JAMEGAFILTER_CHOOSE_A_MENU</option>
+				</field>	
+				<field name="direction" type="list" default="vertical" label="COM_JAMEGAFILTER_DIRECTION" description="COM_JAMEGAFILTER_DIRECTION_DESC">
+					<option value="vertical">VERTICAL</option>
+					<option value="sb-horizontal">HORIZONTAL</option>
+				</field>
+				<field
+					addfieldpath="/modules/mod_jamegafilter/fields"
+					name="filter_config"
+					type="config"
+					published="1"
+					label="MOD_JAMEGAFILTER_FILTER_LOAD_FIELD_CONFIG"
+					description="MOD_JAMEGAFILTER_FILTER_LOAD_FIELD_CONFIG_DESC">
+					<option value="">MOD_JAMEGAFILTER_CHOOSE_A_CONFIG</option>
+				</field>
+			</fieldset>
+            <fieldset name="advanced">
+                <field
+                    name="cache"
+                    type="list"
+                    default="1"
+                    label="COM_MODULES_FIELD_CACHING_LABEL">
+                    <option
+                        value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option
+                        value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field
+                    name="cache_time"
+                    type="text"
+                    default="900"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL"/>
+
+                <field
+                    name="cachemode"
+                    type="hidden"
+                    default="itemid"
+                >
+                    <option value="itemid" />
+                </field>
+            </fieldset>
+		</fields>
+	</config>
+</extension>

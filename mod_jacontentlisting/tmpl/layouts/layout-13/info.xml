@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+	<layout>
+		<name>layout 11</name>
+		<description>demo description</description>
+		<items>8</items>
+	</layout>
+	<form>
+		<fields name="jalayout-settings" addfieldpath="/modules/mod_jacontentlisting/admin/fields">
+			<fieldset name="layout">
+				<field name="order_highlight" type="list" default="3" label="MOD_CONTENT_LISTING_ORDER_HIGHLIGHT" description="MOD_CONTENT_LISTING_ORDER_HIGHLIGHT_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+				</field>
+
+				<field name="COM_CONTENT_LISTING_LAYOUT_OTHER_EXTEND" type="spacer" hr="false" label="COM_CONTENT_LISTING_LAYOUT_OTHER_EXTEND" />
+			</fieldset>
+		</fields>
+</form>
+</form>

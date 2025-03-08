@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+    type="module"
+    version="2.5"
+    client="site"
+    method="upgrade">
+
+    <name>JA Content Slider</name>
+    <author>JoomlArt.com</author>
+    <creationDate>March 17th, 2023</creationDate>
+    <copyright>Copyright (C), J.O.O.M Solutions Co., Ltd. All Rights Reserved.</copyright>
+    <license>license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <authorEmail>webmaster@joomlart.com</authorEmail>
+    <authorUrl>www.joomlart.com</authorUrl>
+    <version>2.7.7</version>
+    <description>
+        <![CDATA[
+	 	<h2>JA Content Slider Module for Joomla 3.x and Joomla 4</h2>
+		<div style='font-weight:normal'>
+	 	<p>Slide your articles from Joomla categories with cool effects, rich backend configs covering layout, animation control, auto thumbnail creation, images size, number of articles, sorting and much more</p>
+		<p><strong>Main features:</strong></p>
+	 	<ul>
+			  <li>Slide your content with width and height properties.</li>
+			  <li>You can set the number of content to display in a tab.</li>
+			  <li>You can set categories contents to display.</li>
+			  <li>You can set display title, link title, introtext, readmore text links or not.</li>
+			  <li>You can set the slide to auto run or not. Default is YES.</li>
+			  <li>Set direction of slide. Default is left.</li>
+			  <li>Set time for rolling delay time and animation time.</li>
+		</ul>
+
+		<p><strong>Upgrade Method:</strong></p>
+
+		<ol>
+            <li>You can install new version directly over this version. Uninstallation is not required. Backup any customized files before upgrading. OR</li><li>Use <strong><a href="https://www.joomlart.com/documentation/joomla-component/ja-extension-manager" target="_blank">JA Extensions Manager</a></strong> Component for easy upgrades and rollbacks. </li>
+        </ol>
+
+		<p><strong>Links:</strong></p>
+		<ul>
+            <li><a target="_blank" href="https://www.joomlart.com/documentation/joomla-module/ja-content-slider">Documentation</a></li>
+            <li><a target="_blank" href="https://www.joomlart.com/forums/t/ja-content-slider">Support forum</a></li>
+        </ul>
+		<p>Copyright 2004 - 2022 <a href="http://www.joomlart.com/" title="Visit Joomlart.com!">JoomlArt.com</a>.</p>
+		</div>
+	 ]]>
+    </description>
+
+    <languages>
+        <language tag="en-GB">en-GB.mod_jacontentslider.ini</language>
+    </languages>
+    <files>
+        <folder>tmpl</folder>
+        <folder>assets</folder>
+        <filename>helper.php</filename>
+        <filename>jaimage.php</filename>
+        <filename>index.html</filename>
+        <filename module="mod_jacontentslider">mod_jacontentslider.php</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset
+                name="basic"
+                addfieldpath="/modules/mod_jacontentslider/assets/elements">
+
+                <field type="spacer" hr="false" label="Content Settings" />
+                <field
+                    name="source"
+                    type="list"
+                    default="content"
+                    label="SOURCE"
+                    description="SOURCE_DESC">
+                    <option value="content">CONTENT</option>
+                    <option value="k2">K2</option>
+                    <option value="folder">FOLDER</option>
+                </field>
+
+                <field
+                    name="folder_images"
+                    type="text"
+                    default=""
+                    showon="source:folder"
+                    label="PATH_TO_FOLDER"
+                    description="PATH_TO_FOLDER_DESC" />
+
+                <field
+                    name="catid"
+                    type="category"
+                    extension="com_content"
+                    showon="source:content"
+                    class="mselect"
+                    size="5"
+                    multiple="true"
+                    default=""
+                    label="CATEGORIES_CONTENT"
+                    description="CATEGORIES_SELECTION_DESC" >
+                    <option value="">JOPTION_ALL_CATEGORIES</option>
+                </field>
+                <field
+                    name="k2catsid"
+                    type="k2category"
+                    published="1"
+                    class="mselect"
+                    default=""
+                    showon="source:k2"
+                    multiple="multiple"
+                    level="3"
+                    label="CATEGORIES_K2"
+                    description="CATEGORIES_K2_SELECTION_DESC" />
+
+                <field
+                    name="show_extra_fields"
+                    type="radio"
+                    default="0"
+                    class="btn-group"
+                    showon="source:k2"
+                    label="SHOW_EXTRA_FIELDS"
+                    description="SHOW_EXTRA_FIELDS_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    name="extra_fields_selection"
+                    type="k2extrafields"
+                    class="mselect"
+                    showon="source:k2"
+                    multiple="true"
+                    size="10"
+                    label="EXTRA_FIELDS_SELECTION"
+                    description="EXTRA_FIELDS_SELECTION_DESC">
+                </field>
+
+                <field
+                    type="text"
+                    name="text_heading"
+                    default=""
+                    label="TEXT_HEADING"
+                    description="TEXT_HEADING_DESC" />
+
+                <field
+                    name="showTab"
+                    type="radio"
+                    default="1"
+                    class="btn-group btn-group-yesno"
+                    label="SHOW_TABS"
+                    showon="source!:folder"
+                    description="SHOW_TABS_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    name="sort_order_field"
+                    type="list"
+                    default="created"
+                    showon="source!:folder"
+                    label="SORT_ORDER_BY"
+                    description="SORT_ORDER_BY_DESC">
+                    <option value="modified">MODIFIED</option>
+                    <option value="created">DATE</option>
+                    <option value="ordering">ORDER</option>
+                    <option value="hits">HITS</option>
+                </field>
+
+                <field
+                    name="sort_order"
+                    type="list"
+                    default="DESC"
+                    showon="source!:folder"
+                    label="ASC_OR_DESC"
+                    description="ASC_OR_DESC_DESC">
+                    <option value="ASC">ASC</option>
+                    <option value="DESC">DESC</option>
+                </field>
+
+                <field
+                    name="numElem"
+                    type="text"
+                    default="3"
+                    size="5"
+                    filter="integer"
+                    class="validate-numeric"
+                    label="NUMBER_ARTICLES_DISPLAY"
+                    description="NUMBER_ARTICLES_DISPLAY_DESC" />
+
+                <field
+                    name="maxitems"
+                    type="text"
+                    default="10"
+                    showon="source!:folder"
+                    size="5"
+                    filter="integer"
+                    class="validate-numeric"
+                    label="MAX_ARTCILES_FOR_EACH_CATEGORY"
+                    description="MAX_ARTCILES_DESC" />
+
+                <field
+                    name="showtitle"
+                    type="radio"
+                    default="1"
+                    showon="source!:folder"
+                    class="btn-group btn-group-yesno"
+                    label="TITLE"
+                    description="TITLE_DESC">
+                    <option value="0">JACHIDE</option>
+                    <option value="1">JACSHOW</option>
+                </field>
+
+                <field
+                    name="link_titles"
+                    type="radio"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                    showon="source!:folder"
+                    label="LINKED_TITLES"
+                    description="LINKED_TITLES_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    name="showimages"
+                    type="radio"
+                    default="1"
+                    class="btn-group btn-group-yesno"
+                    label="SHOW_IMAGE"
+                    description="SHOW_IMAGE_DESC" >
+                    <option value="0">JACHIDE</option>
+                    <option value="1">JACSHOW</option>
+                </field>
+
+                <field
+                    name="iwidth"
+                    type="text"
+                    default="130"
+                    size="5"
+                    filter="integer"
+                    class="validate-numeric"
+                    label="WIDTH_OF_IMAGE"
+                    description="WIDTH_OF_IMAGE_DESC" />
+
+                <field
+                    name="iheight"
+                    type="text"
+                    default="90"
+                    size="5"
+                    filter="integer"
+                    class="validate-numeric"
+                    label="HEIGHT_OF_IMAGE"
+                    description="HEIGHT_OF_IMAGE_DESC" />
+
+                <field
+                    name="iposition"
+                    type="list"
+                    default="0"
+                    label="POSITION_OF_IMAGE"
+                    description="POSITION_OF_IMAGE_DESC">
+                    <option value="0">Under Title</option>
+                    <option value="1">Above Title</option>
+                </field>
+
+                <field
+                    name="showreadmore"
+                    type="radio"
+                    default="0"
+                    showon="source!:folder"
+                    class="btn-group btn-group-yesno"
+                    label="READ_MORE"
+                    description="READ_MORE_DESC">
+                    <option value="0">JACHIDE</option>
+                    <option value="1">JACSHOW</option>
+                </field>
+
+                <field
+                    name="showintrotext"
+                    type="radio"
+                    default="1"
+                    showon="source!:folder"
+                    class="btn-group btn-group-yesno"
+                    label="INTRO_TEXT"
+                    description="INTRO_TEXT_DESC" >
+                    <option value="0">JACHIDE</option>
+                    <option value="1">JACSHOW</option>
+                </field>
+
+                <field
+                    name="numchar"
+                    type="text"
+                    default="50"
+                    showon="source!:folder"
+                    size="5"
+                    filter="integer"
+                    class="validate-numeric"
+                    label="NUMBER_CHARACTERS"
+                    description="NUMBER_CHARACTERS_DESC" />
+
+                <field type="spacer" hr="false" label="DISPLAY_SETTINGS" />
+
+                <field
+                    name="xwidth"
+                    type="text"
+                    default="140"
+                    size="5"
+                    filter="integer"
+                    class="validate-numeric"
+                    label="WIDTH_OF_DIV"
+                    description="WIDTH_OF_DIV_DESC" />
+
+                <field
+                    name="xheight"
+                    type="text"
+                    default="170"
+                    size="5"
+                    filter="integer"
+                    class="validate-numeric"
+                    label="HEIGHT_OF_DIV"
+                    description="HEIGHT_OF_DIV_DESC" />
+
+                <field
+                    name="auto"
+                    type="radio"
+                    default="0"
+                    class="btn-group btn-group-yesno"
+                    label="AUTO_RUN_SLIDE"
+                    description="AUTO_RUN_SLIDE_DESC" >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    name="mode"
+                    type="list"
+                    default="horizontal"
+                    label="MODE"
+                    description="MODE_DESC" >
+                    <option value="horizontal">HORIZONTAL</option>
+                    <option value="vertical">VERTICAL</option>
+                </field>
+
+                <field
+                    name="direction"
+                    type="list"
+                    default="left"
+                    label="DIRECTION"
+                    description="DIRECTION_DESC" >
+                    <option value="left">LEFT</option>
+                    <option value="right">RIGHT</option>
+                    <option value="up">UP</option>
+                    <option value="down">DOWN</option>
+                </field>
+
+                <field
+                    name="delaytime"
+                    type="text"
+                    default="5000"
+                    size="5"
+                    filter="integer"
+                    class="validate-numeric"
+                    label="ROLLING_DELAY_TIME"
+                    description="ROLLING_DELAY_TIME_DESC" />
+
+                <field
+                    name="animationtime"
+                    type="text"
+                    default="1000"
+                    size="5"
+                    filter="integer"
+                    class="validate-numeric"
+                    label="ANIMATION_TIME"
+                    description="ANIMATION_TIME_DESC" />
+
+                <field
+                    name="showbutton"
+                    type="radio"
+                    default="1"
+                    class="btn-group btn-group-yesno"
+                    label="SHOW_BUTTON_DRIVEN"
+                    description="SHOW_BUTTON_DRIVEN_DESC">
+                    <option value="0">JACHIDE</option>
+                    <option value="1">JACSHOW</option>
+                </field>
+
+                <field
+                    name="scroll_when"
+                    type="radio"
+                    default="click"
+                    class="btn-group btn-group-yesno"
+                    label="SCROLL_WHEN"
+                    description="SCROLL_WHEN_DESC">
+                    <option value="click">click</option>
+                    <option value="hover">hover</option>
+                </field>
+                <field
+                    name="source-articles-images-thumbnail_mode"
+                    type="list"
+                    default="crop"
+                    label="THUMBNAIL_MODE"
+                    description="THUMBNAIL_MODE_DESC">
+                    <option value="none">USING_IMAGE_SOURCE</option>
+                    <option value="resize">USING_RESIZE</option>
+                    <option value="crop">USING_CROP</option>
+                </field>
+
+                <field
+                    name="source-articles-images-thumbnail_mode-resize-use_ratio"
+                    type="radio"
+                    default="0"
+                    class="btn-group btn-group-yesno"
+                    label="RESIZE_WITH_THE_RATIO"
+                    description="RESIZE_WITH_THE_RATIO_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="advanced">
+                <field
+                    name="layout"
+                    class="form-select"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+                <field
+                    name="moduleclass_sfx"
+                    type="text"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+                <field
+                    name="cache"
+                    type="list"
+                    default="1"
+                    label="COM_MODULES_FIELD_CACHING_LABEL"
+                    description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option
+                        value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option
+                        value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field
+                    name="cache_time"
+                    type="text"
+                    default="900"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                    description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+                <field type="japanel" path="modules/mod_jacontentslider/assets/elements/" />
+                <field
+                    name="modegroup"
+                    type="japanel"
+                    function="depend" hidden="true" level="3">
+                    <option for="source" value="content" hideRow="true">catid,sort_order_field,sort_order,link_titles,showreadmore,showintrotext,showTab,maxitems,showtitle</option>
+                    <option for="source" value="k2" hideRow="true">k2catsid,show_extra_fields,extra_fields_selection,sort_order_field,sort_order,link_titles,showreadmore,showintrotext,showTab,maxitems,showtitle</option>
+                    <option for="source" value="folder" hideRow="true">folder_images</option>
+                    <option for="showimages" value="1" hideRow="true">iwidth, iheight</option>
+                    <option for="showintrotext" value="1" hideRow="true">numchar</option>
+                    <option for="showbutton" value="1" hideRow="true">scroll_when</option>
+                    <option for="showtitle" value="1" hideRow="true">link_titles</option>
+
+                    <option for="source-articles-images-thumbnail_mode" value="resize" hideRow="true">source-articles-images-thumbnail_mode-resize-use_ratio</option>
+                    <option for="source-articles-images-thumbnail_mode" value="crop" hideRow="true">source-articles-images-thumbnail_mode-resize-use_ratio</option>
+                </field>
+
+            </fieldset>
+        </fields>
+    </config>
+
+    <updateservers>
+        <server type="extension">http://update.joomlart.com/service/tracking/j16/mod_jacontentslider.xml</server>
+    </updateservers>
+</extension>

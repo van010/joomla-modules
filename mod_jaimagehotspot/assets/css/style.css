@@ -1,0 +1,604 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Image Hotspot Module for Joomla 2.5 & 3.4
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+ 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.jai-map-container {
+  display: inline-block;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.jai-map-container img {
+  max-width: 100%;
+}
+
+/* ++ MARKER ++ */
+.jai-map-container .point {
+/* background: url(../images/icon-marker-default.png) no-repeat left top; */
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  z-index: 999;
+}
+
+.jai-map-container .point .bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: 'fontAwesome';
+  font-size: .8em;
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.jai-map-container .point.point-ico {
+  background-size: inherit !important;
+}
+
+.always-popup .point {
+    z-index: 1009;
+}
+
+.hover-popup .point {
+    z-index: 999;
+}
+
+.jai-map-container .ja-marker-default {
+  background: url("../images/icon-marker-default.png");
+}
+
+.jai-map-container .ja-marker-cloud {
+  background: url("../images/icon-marker-cloud.png");
+}
+
+.jai-map-container .ja-marker-study {
+  background: url("../images/icon-marker-study.png");
+}
+
+.jai-map-container .ja-marker-star {
+  background: url("../images/icon-marker-star.png");
+}
+
+.jai-map-container .ja-marker-truck {
+  background: url("../images/icon-marker-truck.png");
+}
+
+.jai-map-container .ja-marker-default_orange {
+  background: url("../images/colors/orange/icon-marker-default.png");
+}
+
+.jai-map-container .ja-marker-cloud_orange {
+  background: url("../images/colors/orange/icon-marker-cloud.png");
+}
+
+.jai-map-container .ja-marker-study_orange {
+  background: url("../images/colors/orange/icon-marker-study.png");
+}
+
+.jai-map-container .ja-marker-star_orange {
+  background: url("../images/colors/orange/icon-marker-star.png");
+}
+
+.jai-map-container .ja-marker-truck_orange {
+  background: url("../images/colors/orange/icon-marker-truck.png");
+}
+
+
+.jai-map-container .ja-marker-default_red {
+  background: url("../images/colors/red/icon-marker-default.png");
+}
+
+.jai-map-container .ja-marker-cloud_red {
+  background: url("../images/colors/red/icon-marker-cloud.png");
+}
+
+.jai-map-container .ja-marker-study_red {
+  background: url("../images/colors/red/icon-marker-study.png");
+}
+
+.jai-map-container .ja-marker-star_red {
+  background: url("../images/colors/red/icon-marker-star.png");
+}
+
+.jai-map-container .ja-marker-truck_red {
+  background: url("../images/colors/red/icon-marker-truck.png");
+}
+
+/* -- MARKER -- */
+.jai-map-container .point  span.hide {
+  display: none;
+}
+
+.jai-map-container .point:hover,
+.jai-map-container .point:focus,
+.jai-map-container .point:active {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.cd-active {
+  position: relative;
+  z-index: 1020;
+}
+
+.cd-dropdown,
+.cd-select {
+  display: block;
+  min-width: 180px;
+  position: relative;
+  font-size:13px;
+}
+
+.cd-dropdown > span {
+  background: #fff;
+  color: #01a3d4;
+  cursor: pointer;
+  display: inline-block;
+  min-width: 180px;
+  padding: 5px 0 5px 0;
+  position: relative;
+  text-indent: 10px;
+}
+
+.cd-dropdown > span:after {
+  background: #06b8ed;
+  color: #fff;
+  content: '\25BC';
+  font-size: 12px;
+  margin-left: 10px;
+  padding: 5px 8px 5px 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+}
+
+.cd-dropdown.cd-active > span:after {
+  content: '\25B2';
+}
+
+.cd-dropdown ul {
+  background: #222;
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  min-width: 180px;
+  padding: 0;
+  z-index:1000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.cd-dropdown ul li {
+  display: block;
+}
+
+.cd-dropdown ul li span {
+  color: #666;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: normal;
+  padding: 4px 14px;
+  white-space: nowrap;
+}
+
+.cd-dropdown > span,
+.cd-dropdown ul li span {
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-backface-visibility: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+.cd-dropdown > span span[class^="icon-"],
+.cd-dropdown > span span[class*=" icon-"]{
+  padding: 0 30px 0 45px;
+}
+
+.cd-dropdown ul {
+  position: absolute;
+  top: 10px;
+}
+
+.cd-dropdown ul li {
+  position: absolute;
+  width: 100%;
+}
+
+.cd-active.cd-dropdown > span {
+  color: #01a3d4;
+}
+
+.cd-active.cd-dropdown ul li span {
+  -moz-transition: all 0.2s linear 0s;
+  -ms-transition: all 0.2s linear 0s;
+  -o-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+  -webkit-transition: all 0.2s linear 0s;
+}
+
+.cd-active.cd-dropdown ul li:hover span,
+.cd-active.cd-dropdown ul li span:hover {
+  color: #fff;
+}
+
+/* POSITION OF DROPDOWN
+--------------------------------------- */
+.jai-map-wrap {
+  position: relative;
+}
+
+/* Descriptions */
+.jai-map-description {
+  margin-bottom: 20px;
+}
+
+.jai-map-wrap .top-left,
+.jai-map-wrap .top-right,
+.jai-map-wrap .bottom-left,
+.jai-map-wrap .bottom-right {
+  float: left;
+  width: 100%;
+}
+
+/* Top left */
+.jai-map-wrap .top-left .cd-dropdown {
+  background-color: #f0f0f0;
+  border-bottom: 0;
+  padding: 10px;
+}
+
+/* Top right */
+.jai-map-wrap .top-right .cd-dropdown {
+  float: right;
+}
+
+/* Bottom right */
+.jai-map-wrap .bottom-right .cd-dropdown {
+  float: right;
+}
+
+/* Middle left */
+.jai-map-wrap .middle-left {
+  left: 0;
+  margin-top: -15px;
+  position: absolute;
+  top: 50%;
+}
+
+/* Middle right */
+.jai-map-wrap .middle-right {
+  margin-top: -15px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+/* Popup */
+.jai-map-container .popover {
+  background-color: #fff;
+  background-clip: padding-box;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  border: 0;
+  border-radius: 2px;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1012;
+  max-width: 276px;
+  text-align: left;
+  white-space: normal;
+}
+
+/* .jai-map-container .popover.dark {
+  background-color: #000;
+  color: #fff;
+} */
+
+.webui-popover.dark, .webui-popover.dark .webui-popover-title {
+  background-color: #000;
+  color: #fff;
+}
+
+.jai-map-container .popover.top {
+  margin-top: -10px;
+}
+
+.jai-map-container .popover.right {
+  margin-left: 5px;
+}
+
+.jai-map-container .popover.bottom {
+  margin-top: 5px;
+}
+
+.jai-map-container .popover.left {
+  margin-left: -5px;
+}
+
+.jai-map-container .popover.top .arrow {
+  left: 50%;
+  margin-left: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #fff;
+  bottom: -10px;
+}
+
+.jai-map-container .popover.dark.top .arrow {
+  border-top-color: #000;
+}
+
+.jai-map-container .popover.dark.top .arrow:after {
+  border-top-color: #000;
+}
+
+.jai-map-container .popover.right .arrow {
+    top: 50%;
+    left: 0;
+    margin-top: -5px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #fff;
+}
+
+.jai-map-container .popover.bottom .arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+}
+
+.jai-map-container .popover.left .arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #fff;
+}
+
+.jai-map-container .popover .arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.jai-map-container .popover-inner {
+  background: #000;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  padding: 3px;
+  width: 280px;
+  overflow: hidden;
+  background: #000000;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.jai-map-container .popover-title {
+	background: #f0f0f0;
+  border-bottom: 1px solid #ddd !important;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  padding: 8px 14px;
+  line-height: 18px;
+  border-radius: 5px 5px 0 0;
+}
+
+.jai-map-container .popover.dark .popover-title {
+  background: #0f0f0f;
+  border-bottom: 1px solid #222 !important;
+  color: #999;
+}
+
+.jai-map-container .popover-content {
+  background-clip: padding-box;
+  border-radius: 0 0 3px 3px;
+  padding: 14px;
+}
+
+.jai-map-container .popover-content p,
+.jai-map-container .popover-content ul,
+.jai-map-container .popover-content ol {
+  margin-bottom: 0;
+}
+
+.jai-map-container.hover-popup .popover .x-close {
+  display: none;
+}
+
+.jai-map-container .popover .x-close {
+  background: url("../images/close.png") center center no-repeat;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: none;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  cursor: pointer;
+}
+
+.jai-map-container .popover .x-close span {
+  display: block;
+  text-indent: -999px;
+}
+
+.jai-map-container .japopover .popover-close {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  color: #999;
+  display: block;
+  float: right;
+  height: 20px;
+  line-height: 20px;
+  margin: 10px 15px 10px 0;
+  text-align: center;
+  width: 20px;
+}
+
+.jai-map-container .japopover .popover-close:hover {
+  border-color: #ccc;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Video type */
+.jashowvideo {
+  position: relative;
+}
+
+.jashowvideo:hover {
+  cursor: pointer;
+}
+
+.jashowvideo:before {
+  content: "\f144";
+  color: #000;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  font-family: fontAwesome;
+  font-size: 48px;
+  margin: -20px 0 0 -20px;
+  opacity: 0.4;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  width: 40px;
+}
+
+.jashowvideo:hover:before {
+  color: #fff;
+  opacity: 1;
+}
+
+@media print {
+  /* fix bug: do not display pointer when printing */
+  .jai-map-wrap a {
+    background: transparent !important;
+  }
+
+  .jai-map-wrap a[href]:after {
+    content: none !important;
+  }
+
+  .jai-map-container .point:before,
+  .jai-map-container .ja-marker-default:before {
+    content: url("../images/icon-marker-default.png");
+  }
+
+  .jai-map-container .ja-marker-cloud:before {
+    content: url("../images/icon-marker-cloud.png");
+  }
+
+  .jai-map-container .ja-marker-study:before {
+    content: url("../images/icon-marker-study.png");
+  }
+
+  .jai-map-container .ja-marker-star:before {
+    content: url("../images/icon-marker-star.png");
+  }
+
+  .jai-map-container .ja-marker-truck:before {
+    content: url("../images/icon-marker-truck.png");
+  }
+
+  .jai-map-container .ja-marker-default_orange:before {
+    content: url("../images/colors/orange/icon-marker-default.png");
+  }
+
+  .jai-map-container .ja-marker-cloud_orange:before {
+    content: url("../images/colors/orange/icon-marker-cloud.png");
+  }
+
+  .jai-map-container .ja-marker-study_orange:before {
+    content: url("../images/colors/orange/icon-marker-study.png");
+  }
+
+  .jai-map-container .ja-marker-star_orange:before {
+    content: url("../images/colors/orange/icon-marker-star.png");
+  }
+
+  .jai-map-container .ja-marker-truck_orange:before {
+    content: url("../images/colors/orange/icon-marker-truck.png");
+  }
+
+  .jai-map-container .ja-marker-default_red:before {
+    content: url("../images/colors/red/icon-marker-default.png");
+  }
+
+  .jai-map-container .ja-marker-cloud_red:before {
+    content: url("../images/colors/red/icon-marker-cloud.png");
+  }
+
+  .jai-map-container .ja-marker-study_red:before {
+    content: url("../images/colors/red/icon-marker-study.png");
+  }
+
+  .jai-map-container .ja-marker-star_red:before {
+    content: url("../images/colors/red/icon-marker-star.png");
+  }
+
+  .jai-map-container .ja-marker-truck_red:before {
+    content: url("../images/colors/red/icon-marker-truck.png");
+  }
+}
+
+/* JA */
+.jai-map-container .point {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.japopwarper {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 9999;
+	background: black;
+	opacity: 0.4;
+	top:0;
+	left:0;
+	display:none;
+}
+
+img.social_follow_image {
+	width: 80px;
+	max-width: 80px; 
+	display: inline;
+}
+
+.webui-popover-content {
+    max-height:400px;
+}

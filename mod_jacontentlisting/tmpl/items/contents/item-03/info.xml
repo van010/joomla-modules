@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+  <fields name="jaitem-settings" addfieldpath="/modules/mod_jacontentlisting/admin/fields">
+    <fieldset name="item">
+      <field name="item_horizontal_ratio" type="list" label="MOD_JACONTENTLISTING_ITEM_HORIZONTAL_RATIO_LABEL" description="MOD_JACONTENTLISTING_ITEM_HORIZONTAL_RATIO_DESC" default="horizontal-1" validate="options">
+        <option value="horizontal-1">MOD_JACONTENTLISTING_HORIZONTAL_1</option>
+        <option value="horizontal-2">MOD_JACONTENTLISTING_HORIZONTAL_2</option>
+        <option value="horizontal-3">MOD_JACONTENTLISTING_HORIZONTAL_3</option>
+        <option value="horizontal-4">MOD_JACONTENTLISTING_HORIZONTAL_4</option>
+      </field>
+
+      <field name="item_media_spacer" type="radio" class="btn-group" label="MOD_JACONTENTLISTING_ITEM_MEDIA_SPACER_LABEL" description="MOD_JACONTENTLISTING_ITEM_MEDIA_SPACER_DESC" default="spacer-normal" validate="options">
+        <option value="spacer-small">MOD_JACONTENTLISTING_ITEM_MEDIA_SPACER_SMALL</option>
+        <option value="spacer-normal">MOD_JACONTENTLISTING_ITEM_MEDIA_SPACER_NORMAL</option>
+        <option value="spacer-large">MOD_JACONTENTLISTING_ITEM_MEDIA_SPACER_LARGE</option>
+      </field>
+
+      <field name="item_media_align" type="radio" class="btn-group" label="MOD_JACONTENTLISTING_ITEM_MEDIA_ALIGN_LABEL" description="MOD_JACONTENTLISTING_ITEM_MEDIA_ALIGN_DESC" default="media-align-left" validate="options">
+        <option value="media-align-left">MOD_JACONTENTLISTING_MEDIA_ALIGN_LEFT</option>
+        <option value="media-align-right">MOD_JACONTENTLISTING_MEDIA_ALIGN_RIGHT</option>
+      </field>
+
+      <field name="cat_position" type="radio" class="btn-group" label="MOD_JACONTENTLISTING_CATEGORY_LABEL_POSITION_LABEL" description="MOD_JACONTENTLISTING_CATEGORY_LABEL_POSITION_DESC" default="0" validate="options">
+        <option value="0">MOD_JACONTENTLISTING_ABOVE_TITLE</option>
+        <option value="1">MOD_JACONTENTLISTING_INSIDE_MEDIA</option>
+      </field>
+
+      <field name="show_intro_image" type="radio" class="btn-group btn-group-yesno" label="MOD_JACONTENTLISTING_ITEM_MEDIA_CONFIG_LABEL" description="MOD_JACONTENTLISTING_ITEM_MEDIA_CONFIG_DESC" default="1" validate="options" before="item_media_ratio">
+        <option value="1">JYES</option>
+        <option value="0">JNO</option>
+      </field>
+
+      <field name="item_border" type="radio" label="MOD_JACONTENTLISTING_ITEM_BORDER_LABEL" description="MOD_JACONTENTLISTING_ITEM_BORDER_DESC" default="0" class="btn-group btn-group-yesno" validate="options">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+      </field>
+    </fieldset>
+  </fields>
+</form>

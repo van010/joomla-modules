@@ -1,0 +1,205 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Slideshow Module for J25 & J31
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+ 
+.ja-slidewrap_slideshow {
+	overflow: hidden;
+	border: none;
+}
+
+.ja-slidewrap {
+	border: none;
+}
+
+.ja-slide-buttons {
+	position: absolute;
+	bottom: 0px;
+	width: auto;
+	padding: 7px 0px;
+	margin: 0px 5px 4px 5px;
+	left: -1px; 
+	right: 0px;
+}
+
+.ja-slide-buttons span.ja-slide-prev {
+	background: url(images/icon-prev.png) no-repeat right center;
+	line-height: 0px;
+	text-indent: -5000px;
+	width: 30px;
+	height: 30px !important;
+	padding: 0px;
+	position: absolute;
+	right: 40px;
+	cursor: pointer;
+	bottom: 7px;
+}
+
+.ja-slide-buttons span.ja-slide-next {
+	background: url(images/icon-next.png) no-repeat left center;
+	line-height: 0px;
+	text-indent: -5000px;
+	width: 30px;
+	height: 30px !important;
+	padding: 0px;
+	float: right;
+	cursor: pointer;
+}
+
+.ja-slide-buttons span.ja-slide-playback,
+.ja-slide-buttons span.ja-slide-stop,
+.ja-slide-buttons span.ja-slide-play {
+	display: none !important;
+}
+
+.ja-slide-main {
+	position: relative;
+}
+
+.ja-slide-desc {
+	color: #fff;
+	font-size: 200%;
+	display: block;
+	font-family:Georgia,"Times New Roman",Times,serif;
+	text-shadow: 0 1px 0 #111111;
+	text-align: left;
+	padding: 0 10px;
+	width: 469px;
+	overflow: hidden;
+}
+
+.ja-slide-item img {
+	background: #fff;
+}
+
+.ja-slidewrap_rave_slideshow .ja-slide-item {
+	margin-left: 0px !important;
+}
+
+.maskDesc {
+	z-index: 99;
+	top: 255px;
+	height: auto !important;
+	overflow: hidden;
+	background: #000114;
+}
+
+.moduletable_highlight .maskDesc {
+	top: 15px;
+	width: 470px !important;
+	left: 0px;
+	background: none;
+}
+
+.moduletable_highlight .ja-slide-main-wrap {
+	border-bottom: solid 1px #ddd;
+	margin-bottom: 20px;
+}
+
+.moduletable_highlight .ja-slide-item{
+	top: 15px;	
+}
+
+.moduletable_highlight .ja-slide-item img {
+	float: right !important;
+	border: solid 1px #ddd;
+	padding: 4px;
+	background: #f2f2f2;
+	margin-right: 4px;
+}
+
+.moduletable_highlight .ja-slide-item {
+	top: 15px !important;
+}
+
+.moduletable_highlight .ja-slide-desc {
+	font-size: 13px;
+	text-shadow: none;
+	font-family: Arial,Helvetica,sans-serif;
+	top: 0px;
+	float: left;
+	color: #333;
+	padding: 0;
+	width: auto;
+}
+
+.moduletable_highlight .ja-slide-desc p {
+	color: #333 !important;
+	line-height: 1.5;
+}
+
+.moduletable_highlight .ja-slide-desc a{
+	color: #111;
+	font-size: 150%;
+	font-family: Georgia,"Times New Roman",Times,serif;
+	display: block;
+	width: 100%;
+}
+
+.moduletable_highlight .ja-slide-desc a:hover, .moduletable_highlight .ja-slide-desc a:focus, 
+.moduletable_highlight .ja-slide-desc a:active {
+	color: #9A2016;
+}
+
+.moduletable_highlight .ja-slide-desc a.readon {
+	color: #9A2016;
+	font-size: 85%;
+	font-family: Arial,Helvetica,sans-serif;
+	line-height: 25px;
+	margin-top: 20px;
+}
+
+.moduletable_highlight .ja-slide-buttons {
+	background: none;
+	top: 0px;
+	bottom: auto;
+	margin: 0px; 
+	padding: 5px 0px;
+	border: solid 1px #fff;
+}
+
+.moduletable_highlight .ja-slide-buttons span.ja-slide-prev {
+	background: url(images/white.jpg) no-repeat center center;
+	line-height: 0px;
+	text-indent: -5000px;
+	width: 10px !important;
+	height: 10px !important;
+	padding: 0px;
+	position: absolute;
+	right: 14px;
+	cursor: pointer;
+	margin: 0px;
+	top: 5px;
+}
+
+.moduletable_highlight .ja-slide-buttons span.ja-slide-next {
+	background: url(images/white.jpg) no-repeat center center;
+	line-height: 0px;
+	text-indent: -5000px;
+	width: 10px !important;
+	height: 10px !important;
+	padding: 0px;
+	float: right;
+	cursor: pointer;
+	margin: 0px;	
+}
+
+.moduletable_highlight .ja-slide-buttons span.ja-slide-next:hover, 
+.moduletable_highlight .ja-slide-buttons span.ja-slide-prev:hover {
+	background: url(images/grey.jpg) no-repeat center center;
+}
+
+.moduletable_highlight .more a{
+	font-size: 88%;
+}
+
+.moduletable_highlight .contentheading{
+	color: #111;
+	font-size: 160%;
+}

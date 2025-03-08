@@ -1,0 +1,110 @@
+/**
+ * $JA#COPYRIGHT$
+ */
+
+.ja-zinwrap.linear {}
+
+.linear .ja-zin {}
+
+.linear .ja-zin .items-row { margin: 0; padding: 0; background: none; }
+
+.linear .ja-zin .ja-box .ja-box-inner { margin: 0; padding: 8px 12px 5px; }
+
+.linear .ja-zin .ja-box-first .ja-box-inner {}
+
+.linear .ja-zin .col-last .ja-box-inner { border-right: 0; }
+
+/* HEADING
+--------------------------------------------- */
+/* Section --- */
+.linear .ja-zinsec { padding: 12px 0 0; position: relative; }
+
+.linear .items-row:hover .ja-zinsec {}
+
+.linear .items-row:hover .ja-zinsec a {}
+
+.linear .ja-zinsec h2 {
+	margin: 0 !important;
+	padding: 0 12px !important;
+	font-size: 150%;
+}
+
+.linear .ja-zinsec h2 a {}
+
+/* Category --- */
+.linear .ja-zincat h3 {
+	margin: 0 0 5px !important;
+	padding: 0 !important;
+	font-size: 85%;
+}
+
+.linear .ja-zincat h3 a {}
+
+/* News Title --- */
+.linear .ja-zin h4.ja-zintitle {
+	margin: 0 0 5px !important;
+	padding: 0 !important;
+	font-weight: bold;
+	font-size: 110%;
+}
+
+/* CONTENT
+--------------------------------------------- */
+.linear .ja-zin .ja-zincontent { float: left; width: 69%; }
+
+.linear .ja-zin .ja-zincontent p { margin: 5px 0 !important; }
+
+/* Image ---*/
+.linear .ja-zin .ja-zincontent img { margin: 5px 0; }
+
+/* Meta ---*/
+.linear .ja-zin .ja-zinmeta { line-height: normal; }
+
+/* More Links ---*/
+.linear .ja-zin .ja-zinlinks { float: right; width: 29%; font-size: 92%; }
+
+.linear .ja-zin .ja-zinlinks strong {}
+
+.linear .ja-zin .ja-zinlinks ul { padding: 0 !important; margin: 0 !important; }
+
+.linear .ja-zin .ja-zinlinks ul li {
+	padding: 0 0 0 10px;
+	background: url(images/arrow.png) no-repeat 1px 3px;
+	margin: 3px 0 5px;
+	line-height: normal;
+}
+
+/* SUBCATS SELECTION
+----------------------------------------------*/
+.linear .ja-zin .subcats-selection { position: relative; }
+
+.linear .ja-zin .subcats-selection li { float: left; display: block; }
+
+.linear .ja-zin .subcats-selection li.active a {}
+
+.linear .ja-zin .ja-newspro-control {}
+
+.linear .ja-zin .subcats-selection .subcat-more { display: none; }
+
+.linear .ja-zin .ja-cats-slide-mainwrap {
+	position: relative; 
+	overflow: hidden;
+	clear: both;
+	padding-left: 8px;
+}
+
+.linear .ja-zin .ja-articles-mainwrap { position: relative; }
+
+.linear .ja-zin .ja-articles{ position: absolute; background: #fff; width: 100%; }
+
+
+/* MISC.
+------------------------------------------------*/
+/* 1st & last row/column style ---*/
+.linear .row-last { border-bottom: 0 !important; }
+
+.linear .ja-mod-inner { position: relative; }
+.linear .ja-newspro-loading {
+	display: none;
+	position: absolute;
+}

@@ -1,0 +1,360 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Slideshow Module for J25 & J31
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+
+.ja-slidewrap {
+	border: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.ja-slide-main-wrap {
+	overflow: hidden;
+	position: relative;
+}
+
+.ja-slide-main {
+	position: absolute;
+	z-index: 1;
+}
+
+.ja-slide-item {
+	display: block;
+	float: left;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+}
+.ja-slide-item
+{
+	right:0;
+	left:0;
+}
+.ja-slide-item img {
+	background: #000;
+}
+
+.ja-slide-thumbs-wrap {
+	clear: both;
+	overflow: hidden;
+	position: relative;
+}
+
+.but_prev, .but_next {
+	background: #000;
+	position: absolute;
+	top: 0;
+	z-index: 99;
+}
+
+.but_prev {
+	background: url(arrow-l.gif) no-repeat right center;
+	left: 0;
+}
+
+.but_prev:hover, .but_next:hover {
+	cursor: pointer;
+}
+
+.but_next {
+	background: url(arrow-r.gif) no-repeat left center;
+	right: 0;
+}
+
+.maskdesc {
+	background: #000;
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	z-index: 100;
+}
+
+.maskdesc .ja-slide-desc {
+	color: #fff;
+	font-size: 100%;
+	padding: 10px 20px;
+}
+
+.maskdesc .ja-slide-desc a,
+.maskdesc .ja-slide-desc a:hover,
+.maskdesc .ja-slide-desc a:focus,
+.maskdesc .ja-slide-desc a:active {
+	border: none !important;
+	text-decoration: none !important;
+}
+
+.maskdesc .ja-slide-desc a span {
+	color: #fff;
+	font-size: 150%;
+	font-weight: bolder;
+	text-transform: uppercase;
+}
+
+.maskdesc .ja-slide-desc br {
+	display: none;
+}
+
+.maskdesc .ja-slide-desc h3 {
+	margin: 0;
+	padding: 0;
+}
+
+.maskdesc .ja-slide-desc p a {
+	color: #ccc;
+}
+
+.maskdesc a.readon {
+	background: url(arrow-ri.gif) no-repeat right 7px;
+	bottom: 2px;
+	color: #ccc;
+	display: block;
+	font-size: 100%;
+	font-weight: bold;
+	padding: 0 8px 0 0;
+	position: absolute;
+	right: 20px;
+}
+
+.maskdesc a.readon:hover,
+.maskdesc a.readon:active,
+.maskdesc a.readon:focus {
+	background: url(arrow-ri-hover.gif) no-repeat right 7px;
+	color: #fff;
+}
+
+.ja-slide-buttons {
+	z-index: 900;
+}
+
+.ja-slide-buttons span {
+	background: #000;
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	float: left;
+	margin-right: 5px;
+	padding: 2px 5px;
+}
+
+/*JA Sideshow [ Topspotlight 1]*/
+#ja-slideshow .ja-slidewrap {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+#ja-slideshow .ja-slide-mask {
+	background: #ccc;
+	bottom: 10px;
+	display: none;
+	height: 70px;
+	position: absolute;
+	right: 10px;
+	width: 210px;
+	z-index: 99;
+}
+
+#ja-slideshow .ja-slide-thumbs-wrap {
+	background: #ccc;
+	bottom: 10px;
+	position: absolute;
+	right: 10px;
+	z-index: 100;
+}
+
+#ja-slideshow .ja-slide-buttons {
+	bottom: 10px;
+	display: block;
+	left: 10px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	z-index: 101;
+}
+
+#ja-slideshow .ja-slide-thumb img {
+	background: #CCCCCC;
+	border: 1px solid #fff;
+	margin: 4px;
+}
+
+#ja-slideshow .ja-slide-item img {
+	border: none;
+	padding: 0;
+}
+
+#ja-slideshow .maskdesc {
+	background: none;
+}
+
+#ja-slideshow .maskdesc .ja-slide-desc {
+	color: #fff;
+	font-size: 100%;
+	padding: 20px 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 230px;
+}
+
+#ja-slideshow .maskdesc .ja-slide-desc h3 {
+	color: #ccc;
+	text-transform: uppercase;
+}
+
+/* SCROLL LEFT
+-----------------------------------------*/
+/* Horizontal ---*/
+.ja-vertical_right {
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 100;
+}
+
+/* horizontal ---*/
+.ja-vertical_left {
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	z-index: 100;
+}
+
+.ja-vertical_right .active {
+	background: url(arrow-bg.png) no-repeat center left;
+}
+
+.ja-vertical_left .active {
+	background: url(arrow-bg.png) no-repeat center right;
+}
+
+.ja-slide-right {
+	margin-left: auto;
+	right: 0;
+	top: 0;
+}
+
+.ja-slide-thumbs, .ja-slide-thumbs-mask, .ja-slide-thumbs-handles {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	width: 5000px;
+}
+/* 
+.ja-articles .ja-slide-thumbs-handles {
+	background: #fff;
+	filter: alpha(opacity=0);
+	opacity: 0.00;
+} */
+
+.ja-slide-descs {
+	display: none;
+}
+
+.ja-slide-thumb, .ja-slide-thumbs-handles span {
+	cursor: pointer;
+	display: block;
+	float: left;
+	margin: 0;
+}
+
+/* horizontal  */
+.ja-vertical_right .ja-slide-thumb, .ja-vertical_right .ja-slide-thumbs-handles span{
+	float: none!important;
+}
+
+.ja-vertical_left .ja-slide-thumb, .ja-vertical_left .ja-slide-thumbs-handles span{
+	float: none!important;
+}
+
+.ja-slide-thumbs-wrap .active .ja-slide-thumb-inner {
+	background: url(grad-bg.gif) repeat-x top left #57212A;
+}
+
+.ja-slide-thumbs-wrap .active .ja-slide-thumb-inner h3 {
+	color: #fff !important;
+}
+/*
+.ja-slide-thumbs-handles span {
+}
+*/
+.ja-slide-thumbs-mask-left,
+.ja-slide-thumbs-mask-right,
+.ja-slide-thumbs-mask-center {
+	float: left;
+}
+
+.ja-vertical_right .ja-slide-thumbs-mask-left,
+.ja-vertical_right .ja-slide-thumbs-mask-right,
+.ja-vertical_right .ja-slide-thumbs-mask-center {
+	display: block;
+	float: none;
+}
+
+.ja-vertical_left .ja-slide-thumbs-mask-left,
+.ja-vertical_left .ja-slide-thumbs-mask-right,
+.ja-vertical_left .ja-slide-thumbs-mask-center {
+	display: block;
+	float: none;
+}
+
+.ja-slide-thumb-inner {
+	background: #000;
+	border-top: 1px solid #191A1B;
+	color: #757575;
+	height: 100%;
+	margin-left: 19px;
+	padding: 0 15px;
+}
+
+.ja-vertical_left .ja-slide-thumb-inner {
+	margin-left: 0px;
+	margin-right: 19px;
+}
+
+.ja-slide-thumb-inner img {
+	background: #000;
+	border: 1px solid #1C1C1C;
+	margin: 15px 5px 0 0;
+	padding: 3px;
+}
+
+.ja-slide-thumb-inner h3 {
+	font-size: 11px;
+	margin: 0px !important;
+	padding: 15px 0 0 !important;
+}
+
+.ja-slide-thumb-inner .ja-createdate {
+}
+
+.active .ja-slide-thumb-inner {
+	border: none;
+	color: #fff;
+}
+
+.active .ja-slide-thumb-inner img {
+	background: #57212A;
+	border: 1px solid #67373F;
+}
+
+.ja-slide-thumbs-mask-left,
+.ja-slide-thumbs-mask-right,
+.ja-slide-thumbs-mask-center {
+	float: left;
+}
+
+.ja-slide-thumbs-mask-left, .ja-slide-thumbs-mask-right {
+	background: #000;
+}

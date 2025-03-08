@@ -1,0 +1,243 @@
+// Mixin Global
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin make-row($gutter: calc(var(--grid-gutter-width)/-2)) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: $gutter;
+  margin-left: $gutter;
+}
+
+@mixin make-col-ready($gutter: calc(var(--grid-gutter-width)/2)) {
+  position: relative;
+  width: 100%;
+  padding-right: $gutter;
+  padding-left: $gutter;
+}
+
+@mixin make-col($size, $columns: $jacl-grid-columns) {
+  flex: 0 0 percentage($size / $columns);
+  max-width: percentage($size / $columns);
+}
+
+@mixin make-col-offset($size, $columns: $jacl-grid-columns) {
+  $num: $size / $columns;
+  margin-left: if($num == 0, 0, percentage($num));
+}
+
+@mixin make-grid-columns($columns: $jacl-grid-columns, $gutter: calc(var(--grid-gutter-width)/2), $breakpoints: $grid-breakpoints) {
+  // Common properties for all breakpoints
+  %grid-column {
+    position: relative;
+    width: 100%;
+    padding-right: $gutter;
+    padding-left: $gutter;
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    // Allow columns to stretch full width below their breakpoints
+    @for $i from 1 through $columns {
+      .jacl-col#{$infix}-#{$i} {
+        @extend %grid-column;
+      }
+    }
+    .jacl-col#{$infix},
+    .jacl-col#{$infix}-auto {
+      @extend %grid-column;
+    }
+    // for 5 cols
+    .jacl-col#{$infix}-5c {
+      @extend %grid-column;
+    }
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      // Provide basic `.jacl-col-{bp}` classes for equal-width flexbox columns
+      .jacl-col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+      .jacl-col#{$infix}-auto {
+        flex: 0  0 auto;
+        width: auto;
+        max-width: 100%; // Reset earlier grid tiers
+      }
+
+      @for $i from 1 through $columns {
+        .jacl-col#{$infix}-#{$i} {
+          @include make-col($i, $columns);
+        }
+      }
+
+      // for 5 cols
+      .jacl-col#{$infix}-5c {
+          @include make-col(2.4, $columns);
+      }
+
+      .order#{$infix}-first { order: -1; }
+
+      .order#{$infix}-last { order: $columns + 1; }
+
+      @for $i from 0 through $columns {
+        .order#{$infix}-#{$i} { order: $i; }
+      }
+
+      // `$columns - 1` because offsetting by the width of an entire row isn't possible
+      @for $i from 0 through ($columns - 1) {
+        @if not ($infix == "" and $i == 0) { // Avoid emitting useless .offset-0
+          .offset#{$infix}-#{$i} {
+            @include make-col-offset($i, $columns);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Grid Render
+.jacl-row {
+  @include make-row();
+}
+
+@if $enable-grid-classes {
+  @include make-grid-columns();
+}
+
+@each $gutters-size, $value in $gutters-size {
+  .jacl-row.#{$gutters-size}-gutters {
+    margin-left: calc(#{$value} / -2);
+    margin-right: calc(#{$value} / -2);
+
+    // Fix for responsive
+    margin-top: calc(#{$value} / -2);
+    margin-bottom: calc(#{$value} / -2);
+
+    + .jacl-row {
+      margin-top: calc(#{$value} / 2);
+    }
+
+    @if $gutters-size == no {
+      > div {
+        margin-bottom: 0;
+      }
+    }
+
+    @if $gutters-size == normal or $gutters-size == large or $gutters-size == extra-large {
+      // Medium View
+      @media (max-width: 1199px) {
+        margin-left: calc(#{$value} / -4);
+        margin-right: calc(#{$value} / -4);
+
+        // Fix for responsive
+        margin-top: calc(#{$value} / -4);
+        margin-bottom: calc(#{$value} / -4);
+
+        + .jacl-row {
+          margin-top: calc(#{$value} / 4);
+        }
+      }
+    }
+
+    > div {
+      padding-left: calc(#{$value} / 2);
+      padding-right: calc(#{$value} / 2);
+
+      // Fix for responsive
+      padding-top: calc(#{$value} / 2);
+      padding-bottom: calc(#{$value} / 2);
+
+      @media (max-width: 768px) {
+        margin-bottom: 0;
+      }
+
+      @if $gutters-size == normal or $gutters-size == large or $gutters-size == extra-large {
+        // Medium view
+        @media (max-width: 1199px) {
+          padding-left: calc(#{$value} / 4);
+          padding-right: calc(#{$value} / 4);
+
+          // Fix for responsive
+          padding-top: calc(#{$value} / 4);
+          padding-bottom: calc(#{$value} / 4);
+        }
+      }
+    }
+
+    > div.highlight-item {
+      @media (max-width: 667px) {
+        margin-bottom: calc(#{$value} / 2);
+      }
+    }
+
+    > div.highlight-item + div.highlight-item {
+      @media (max-width: 667px) {
+        margin-bottom: 0;
+      }
+    }
+
+    &.other-items {
+      > div {
+        margin-top: $value;
+
+        // Tablet view
+        @media (max-width: 1199px) {
+          margin-top: calc(#{$value} / 2);
+        }
+      }
+    }
+
+    .col-child {
+      > div {
+        + div {
+          margin-top: $value;
+
+          // Tablet view
+          @media (max-width: 1199px) {
+            margin-top: calc(#{$value} / 2);
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $gutters-size, $value in $gutters-size {
+  .col-mt-#{$gutters-size}-gutters {
+    margin-top: $value;
+
+    // Tablet view
+    @media (max-width: 1199px) {
+      margin-top: calc(#{$value} / 2);
+    }
+  }
+
+  .col-mb-#{$gutters-size}-gutters {
+    margin-bottom: $value;
+
+    // Tablet view
+    @media (max-width: 1199px) {
+      margin-bottom: calc(#{$value} / 2);
+    }
+  }
+}
+

@@ -1,0 +1,323 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Slideshow Module for J25 & J31
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+
+.active .ja-slide-thumb-inner { border: none; color: #fff; }
+
+.active .ja-slide-thumb-inner img { background: #57212A; border: 1px solid #67373F; }
+
+.but_next {
+	background: url(arrow-r.gif) no-repeat left center;
+	right: 0;
+}
+
+.but_prev {
+	background: url(arrow-l.gif) no-repeat right center;
+	left: 0;
+}
+
+.but_prev, .but_next {
+	background: #000;
+	position: absolute;
+	top: 0;
+	z-index: 99;
+}
+
+.but_prev:hover, .but_next:hover { cursor: pointer; }
+
+.ja-slide-buttons { z-index: 900; }
+
+.ja-slide-buttons span {
+	background: #000;
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	float: left;
+	margin-right: 5px;
+	padding: 2px 5px;
+}
+
+.ja-slide-descs { display: none; }
+
+.ja-slide-item {
+	display: block;
+	float: right;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+	text-align: right;
+}
+
+.ja-slide-item img { background: #000; }
+
+.ja-slide-main { position: absolute; z-index: 1; }
+
+.ja-slide-main-wrap { overflow: hidden; position: relative; }
+
+.ja-slide-right { margin-left: auto; right: 0; top: 0; }
+
+.ja-slide-thumbs-handles {
+	margin: 0 !important;
+}
+
+.ja-slide-thumb, .ja-slide-thumbs-handles span {
+	cursor: pointer;
+	display: block;
+	float: left;
+	margin: 0;
+	background: url(circle-bg.png) no-repeat center center;
+	text-indent: -300%;
+}
+
+.ja-slide-thumb.active, .ja-slide-thumbs-handles span.active {
+	background-image: url(circle-active.png);
+}
+
+.ja-slide-thumbnail .ja-slide-thumb,.ja-slide-thumbnail .ja-slide-thumbs-handles span { 
+	text-indent: 0;
+	background: none;
+}
+
+.ja-slide-thumb-inner {
+	background: #000;
+	border-top: 1px solid #191A1B;
+	color: #757575;
+	height: 100%;
+	margin-left: 19px;
+	padding: 0 15px;
+}
+
+.ja-slide-thumb-inner .ja-createdate { }
+
+.ja-slide-thumb-inner h3 {
+	font-size: 11px;
+	margin: 0px !important;
+	padding: 15px 0 0 !important;
+}
+
+.ja-slide-thumb-inner img {
+	background: #000;
+	border: 1px solid #1C1C1C;
+	margin: 15px 5px 0 0;
+	padding: 3px;
+}
+
+.ja-slide-thumbs, .ja-slide-thumbs-mask, .ja-slide-thumbs-handles {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	width: 5000px;
+}
+
+.ja-slide-thumbs-mask-left, .ja-slide-thumbs-mask-right { background: none; }
+
+.ja-slide-thumbs-mask-left,
+.ja-slide-thumbs-mask-right,
+.ja-slide-thumbs-mask-center { float: left; }
+
+.ja-slide-thumbs-mask-left,
+.ja-slide-thumbs-mask-right,
+.ja-slide-thumbs-mask-center { float: left; }
+
+.ja-slide-thumbs-wrap { clear: both; overflow: hidden; position: relative; margin-left: 280px; margin-bottom: 10px; }
+
+.ja-slide-thumbs-wrap .active .ja-slide-thumb-inner { background: url(grad-bg.gif) repeat-x top left #57212A; }
+
+.ja-slide-thumbs-wrap .active .ja-slide-thumb-inner h3 { color: #fff !important; }
+
+.ja-slidewrap {
+	border: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+/* horizontal ---*/
+.ja-vertical_left {
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	z-index: 100;
+}
+
+.ja-vertical_left .active { background: url(arrow-bg.png) no-repeat center right; }
+
+.ja-vertical_left .ja-slide-thumb, .ja-vertical_left .ja-slide-thumbs-handles span{ float: none!important; }
+
+.ja-vertical_left .ja-slide-thumb-inner { margin-left: 0px; margin-right: 19px; }
+
+.ja-vertical_left .ja-slide-thumbs-mask-left,
+.ja-vertical_left .ja-slide-thumbs-mask-right,
+.ja-vertical_left .ja-slide-thumbs-mask-center { display: block; float: none; }
+
+/* SCROLL LEFT
+-----------------------------------------*/
+/* Horizontal ---*/
+.ja-vertical_right {
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 100;
+}
+
+.ja-vertical_right .active { background: url(arrow-bg.png) no-repeat center left; }
+
+/* horizontal  */
+.ja-vertical_right .ja-slide-thumb, .ja-vertical_right .ja-slide-thumbs-handles span{ float: none!important; }
+
+.ja-vertical_right .ja-slide-thumbs-mask-left,
+.ja-vertical_right .ja-slide-thumbs-mask-right,
+.ja-vertical_right .ja-slide-thumbs-mask-center { display: block; float: none; }
+
+.maskDesc {
+	background: url(maskdesc.png) no-repeat right top;
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	z-index: 2;
+}
+
+.maskDesc .ja-slide-desc {
+	color: #fff;
+	font-size: 100%;
+	padding: 15px 45px 15px 15px;
+	display: block;
+}
+
+.maskDesc .ja-slide-desc h1 {
+	font-size: 220%;
+	font-family: "Trebuchet MS",Arial,sans-serif;
+	font-weight: bold;
+	margin: 0;
+}
+
+.maskDesc .ja-slide-desc h2 {
+	font-size: 180%;
+	font-family: "Trebuchet MS",Arial,sans-serif;
+	font-weight: normal;
+	margin: 0;
+}
+
+.maskDesc .ja-slide-desc h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #d3dfed;
+	margin: 10px 0 0;
+	padding: 5px 0 5px 35px;
+	background: url(h3-icon.png) no-repeat left center;
+}
+
+.maskDesc .ja-slide-desc a span {
+	color: #fff;
+	font-size: 150%;
+	font-weight: bolder;
+	text-transform: uppercase;
+}
+
+.maskDesc .ja-slide-desc a,
+.maskDesc .ja-slide-desc a:hover,
+.maskDesc .ja-slide-desc a:focus,
+.maskDesc .ja-slide-desc a:active {
+	border: none !important;
+	text-decoration: none !important;
+}
+
+.maskDesc .ja-slide-desc br { display: none; }
+
+.maskDesc .ja-slide-desc p a { color: #ccc; }
+
+.maskDesc a.readon {
+	background: url(arrow-ri.gif) no-repeat right 7px;
+	bottom: 15px;
+	color: #fff;
+	display: block;
+	font-size: 100%;
+	font-weight: bold;
+	padding: 0 8px 0 0;
+	position: absolute;
+	right: 45px;
+	display: none;
+}
+
+.maskDesc a.readon:hover,
+.maskDesc a.readon:active,
+.maskDesc a.readon:focus {
+	background: url(arrow-ri-hover.gif) no-repeat right 7px;
+	color: #fff;
+}
+
+div.moduletableevents {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.moduletableevents .ja-box-ct,
+#ja-content-top .moduletableevents .ja-box-ct { padding: 0; }
+
+#ja-slideshow .ja-slide-buttons {
+	bottom: 10px;
+	display: block;
+	left: 10px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	z-index: 101;
+}
+
+#ja-slideshow .ja-slide-item img { border: none; padding: 0; }
+
+#ja-slideshow .ja-slide-mask {
+	background: #ccc;
+	bottom: 10px;
+	display: none;
+	height: 70px;
+	position: absolute;
+	right: 10px;
+	width: 210px;
+	z-index: 99;
+}
+
+#ja-slideshow .ja-slide-thumb img {
+	background: #CCCCCC;
+	border: 1px solid #fff;
+	margin: 4px;
+}
+
+#ja-slideshow .ja-slide-thumbs-wrap {
+	background: none;
+	bottom: 10px;
+	position: absolute;
+	right: 10px;
+	z-index: 3;
+}
+
+/*JA Sideshow [ Topspotlight 1]*/
+#ja-slideshow .ja-slidewrap { margin: 0; padding: 0; position: relative; }
+
+#ja-slideshow .maskdesc { background: none; }
+
+#ja-slideshow .maskdesc .ja-slide-desc {
+	color: #fff;
+	font-size: 100%;
+	padding: 20px 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 230px;
+}
+
+#ja-slideshow .maskdesc .ja-slide-desc h3 { color: #ccc; text-transform: uppercase; }
+
+.moduletable_sadv2 .maskDesc {
+	background: none !important;
+}

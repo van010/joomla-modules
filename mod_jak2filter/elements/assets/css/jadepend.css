@@ -1,0 +1,468 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA K2 Filter Module for J25 & J3.4
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2016 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+
+fieldset.adminform {
+	background: url("../images/table-bg.gif") repeat-x bottom center ;
+	padding: 10px 0px;
+}
+
+fieldset.adminform legend {
+	margin-left: 15px;
+	padding: 0px 5px;
+}
+
+table.admintable { 
+	width: 100%; 
+	border-collapse: collapse;
+	empty-cells: hide !important;
+	padding: 0px;
+	margin: 0px;
+}
+
+fieldset.adminform #jat3-profile-params {
+	border-collapse: collapse;
+}
+
+#menu-pane .paramlist td {
+	font-size: 11px;
+	padding:  3px !important;
+}
+
+.paramlist td {
+	font-size: 12px;
+	padding:  0px !important;
+}
+
+.block-head-1.open, .block-head-1.close {
+	background: url(../images/level1-block.gif) repeat-x center center !important;
+	border-top: solid 1px #ccc;
+	border-bottom: solid 1px #ccc;
+	padding: 11px 0px;
+	height: auto;
+}
+
+.block-head-1 a.toggle-btn {
+	height: 17px;
+	padding: 0px;
+	width: 17px;
+	text-transform: none;
+	top: 9px;
+	display: block;
+	text-indent: 0px;
+	text-decoration: none;
+	text-indent: -2000em;
+}
+
+.block-head-1 a.open {
+	background: url(../images/open-all.png) no-repeat left center !important;
+	right: 34px;
+}
+
+.block-head-1 a.close{
+	background: url(../images/close-all.png) no-repeat left center !important;
+}
+
+.block-head.open, .paramlist_value .block-head.open {
+	background: url(../images/level2-close.gif) repeat-x center center;
+	border-top: solid 1px #b5dfef;
+	border-bottom: solid 1px #b5dfef;
+	clear:left;
+	float:left;
+	width:100%;
+	position: relative;
+	text-align: left;
+	padding: 5px 0px;
+}
+
+.block-setting, .paramlist_value .block-setting {
+	background: url(../images/arrow-blue.png) no-repeat 20px center;
+	border-left: none;
+	padding: 0px 0px 0px 28px;
+	color: #278cd4;
+	text-align: left;
+	font-size: 11px;
+}
+
+#jat3-profile-params table.paramlist tr.level3.disabled {
+	border: none;
+}
+
+tr.level3 td.paramlist_key, 
+tr.level3 td.paramlist_value {
+	padding: 5px !important;
+}
+
+tr.disabled td.paramlist_key, 
+tr.disabled td.paramlist_value {
+	color: #A9A9A9 !important;
+	background: #f7f7f7 !important;
+}
+
+tr.disabled:hover td {
+	background: #fcfce7 !important;
+}
+
+.first {
+	margin-top: -10px;
+}
+
+.block-des{
+	color: #999;
+	font-size: 11px;
+	margin: 0 -10px;
+	padding: 10px 5px 10px 35px;
+}
+
+.block-des p {
+	margin: 5px 0 0;
+}
+
+td.paramlist_key {
+	color: #333 !important;
+	padding-right: 0 !important;
+}
+
+.group_title{width:100%; clear:both; padding:10px 0px 5px 0px;}
+
+.group_title span{font-weight:bold;}
+
+.group_item{float:left; overflow:hidden;}
+
+.group_item label{clear: none; cursor: pointer;}
+
+
+.panel input, select, textarea {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px !important;
+	border: 1px solid #999 !important;
+	border-right-color: #ddd !important;
+	border-bottom-color: #ddd !important;
+	padding: 4px 5px !important;
+}
+
+#menu-pane input, select, textarea {
+	padding: 0 !important;
+	border: 1px solid silver !important;
+	font-size: 10px !important;
+}
+
+#ja-layouts-content #content_layout {
+	width: 99.5% !important;
+	border-left: none !important;
+	border-right: none !important;
+}
+
+/* Toggle */
+a.toggle-btn {
+	width: 11px;
+	height: 7px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	text-indent: -2000em;
+	background: url(../images/toggle-btn.png) no-repeat center center;
+	cursor: pointer;
+}
+
+.ja-tab-subcontent table.adminform {
+	border-right: none;
+	border-left: none;
+}
+
+.pane-sliders .panel h3{
+	clear: both;
+	text-align: left;
+}
+.block-head, .paramlist_value .block-head {
+	padding: 5px 0px;	
+	position: relative;
+}
+
+.block-head.close, .paramlist_value .block-head.close {
+	background: url(../images/level2-block.gif) repeat-x center center;
+	border-top: solid 1px #ccc;
+	border-bottom: solid 1px #ccc;
+	text-align: left;
+	float: left;
+	width: 100%;
+	margin-bottom: 2px;
+}
+
+.open a.toggle-btn {
+	background-position: top left;
+}
+
+.open a.toggle-btn:hover {
+	background-position: top right;
+}
+
+.close a.toggle-btn {
+	background-position: bottom left;
+}
+
+.close a.toggle-btn:hover {
+	background-position: bottom right;
+}
+
+.enable-row {
+	display: block;
+}
+
+.disable-row{
+	display: none;
+}
+
+.radio label {
+	width: auto !important;
+}
+
+#ja-profile-actions-core,
+#ja-profile-actions-local{
+	display: none;
+}
+
+#japrams-form,
+#ext_params_from_template {
+	padding: 0;
+}
+
+#japrams-form tr.level2 td {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+/* Profile */
+.ja-profile {
+	position: relative; 
+	width: 100%;
+	float: left;
+}
+
+.profile_action {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+
+span.clone {
+	background: url("../images/copy.png") no-repeat left top;
+	padding-left: 17px;
+}
+
+span.delete {
+	background: url("../images/del2.gif") no-repeat left top;
+	padding-left: 17px;
+}
+
+#jform_params_style_of_follow_button input {
+    clear: left;
+}
+
+/* Add style ---*/
+.adminformlist li {
+	display: block;
+	float: left;
+	margin-bottom: 5px !important;
+	width: 100%;
+}
+
+fieldset.panelform fieldset#jform_params_filter_by_extrafield {
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	float: none;
+	padding: 20px;
+}
+
+fieldset.panelform fieldset#jform_params_filter_by_extrafield legend {
+	background: #f5f5f5;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	color: #555;
+	font-size: 16px;
+	padding: 5px 10px;
+	font-weight:normal;
+}
+
+.adminformlist li h4.jagroup {
+    color: #555;
+	margin: 0 0 10px;
+	padding: 10px 0;
+    text-transform: uppercase;
+    border-bottom:1px solid #CCCCCC;
+}
+.adminformlist li h4.jagroup > span {
+    background: url("../images/arrow-list.gif") right center no-repeat;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.adminformlist ul,
+#options-basic .control-group .checkboxes ul {
+	display: block;
+	float: left;
+	margin: 0 0 10px 0;
+	list-style: none;
+	width: 100%;
+}
+
+.adminformlist ul li,
+#options-basic .control-group .checkboxes ul li {
+	padding: 5px 10px !important;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.adminformlist ul li.even,
+#options-basic .control-group .checkboxes ul li.even {
+	background: #f5f5f5;
+	border-bottom: 1px solid #eee;
+}
+
+.adminformlist ul li br,
+#options-basic .control-group ul li br {
+	display: block;
+	width: 100%;
+}
+
+.adminformlist ul li .ja-field-note,
+#options-basic .control-group .checkboxes ul li .ja-field-note {
+	color: #666;
+	font-size: 11px;
+	text-shadow: 1px 1px 0 #fff;
+}
+
+.adminformlist select {
+	padding: 2px !important;
+	font-size: 12px !important;
+}
+
+#options-basic .control-group .checkboxes ul li label {
+	display: inline-block;
+	margin-left: 5px;
+	padding-top: 10px;
+	vertical-align: middle;
+}
+
+.params-container {
+	padding:5px 10px 5px 25px;
+	clear:both;
+}
+.params-container div {
+	position:relative;
+	clear:both;
+}
+.params-container div span {
+	display:block;
+	float:left;
+	padding: 10px 20px 0 0;
+	min-width: 110px;
+}
+
+/*****System *****/
+#system-message {
+	margin-bottom:10px;
+	padding:0;
+	clear: both;
+	z-index: 100;
+	width: 100%;
+}
+
+#system-message .success-message {
+	font-weight: bold;
+	background: url("../images/success-bg.gif") repeat-x center center;
+	border: solid 1px #dadada;
+	margin-bottom: 10px;
+	padding: 0px 10px;
+	border: solid 1px #dadada;
+	float: right;
+	width: 47%;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+
+.success-icon {
+	background: url("../images/icon-success.png") no-repeat left top;
+	color: #0f85d8;
+	float: left;
+	padding-left: 35px;
+	padding-bottom: 13px;
+	margin: 5px 0px;
+}
+
+p.msg {
+	color: #333;
+	padding: 0px;
+	margin: 0px;
+}
+
+#system-message .error-message {
+	font-weight: bold;
+	background: url("../images/message-bg.gif") repeat-x center center;
+	border: solid 1px #dadada;
+	margin-bottom: 10px;
+	padding: 0px 10px;
+	border: solid 1px #dadada;
+	float: right;
+	width: 48%;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+
+.error-icon {
+	background: url("../images/icon-message.png") no-repeat left center;
+	color: red;
+	float: left;
+	padding-left: 35px;
+	margin: 5px 0px;
+	padding-bottom: 13px;
+}
+
+.field_group {}
+.field_group label { 
+	color:#555; 
+	font-size:16px; 
+	padding: 0 5px 10px 0 !important;
+	max-width:100% !important;
+	width:100%;
+	border-bottom:1px solid #CCC;
+}
+
+ul.extrafields li:first-child div.ordering {
+    float: right;
+    margin-top: -55px;
+}
+
+ul.extrafields li:first-child div.ordering input[type="text"] {
+    width: 30px;
+}
+
+/*3.x style*/
+ul.extrafields ul, ul.extrafields li {
+    list-style: none outside none;
+}
+
+.spacer hr {
+    border: 0 none;
+    height: 1px;
+    background: #e4e4e4;
+    margin: 0px !important;
+}
+
+ul.extrafields ul{
+	width: 97%;
+}
+
+.com_modules .form-horizontal .span9 .controls .chzn-container-multi{
+	width: 220px!important;
+}

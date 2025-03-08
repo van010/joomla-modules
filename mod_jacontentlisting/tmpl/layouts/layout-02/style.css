@@ -1,0 +1,18 @@
+.layout-2 .col-child .jacl-item:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .layout-2 .col-child .jacl-item__title {
+    font-size: 16px;
+  }
+}
+.layout-2 .col-child .item-style-2.jacl-item,
+.layout-2 .col-child .eitem-style-2.jacl-item {
+  height: auto;
+}
+.layout-2 .highlight-item .item-style-1 {
+  height: 100%;
+}
+.layout-2 .highlight-item .item-style-1 .jacl-item__media {
+  height: 100%;
+}

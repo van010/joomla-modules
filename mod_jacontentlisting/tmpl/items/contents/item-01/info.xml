@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+  <fields name="jaitem-settings" addfieldpath="/modules/mod_jacontentlisting/admin/fields">
+    <fieldset name="item">
+    </fieldset>
+  </fields>
+</form>

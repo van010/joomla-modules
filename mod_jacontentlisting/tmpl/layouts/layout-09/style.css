@@ -1,0 +1,101 @@
+.layout-9 .owl-carousel {
+  position: relative;
+}
+.layout-9 .owl-stage {
+  display: flex;
+}
+.layout-9 .owl-stage .owl-item {
+  display: flex;
+  flex: 1 0 auto;
+}
+.layout-9 .owl-stage .item {
+  height: 100%;
+  width: 100%;
+}
+.layout-9 .jacl-item {
+  height: 100%;
+}
+.layout-9 .jacl-item .jacl-item__tags ul.tags {
+  margin: 0;
+}
+@media (max-width: 1200px) {
+  .layout-9 .highlight-item .item-style-1 {
+    height: 100%;
+  }
+  .layout-9 .highlight-item .item-style-1 .jacl-item__media {
+    padding-bottom: 0;
+    height: 100%;
+  }
+  .layout-9 .highlight-item .item-style-1 .jacl-item__media img {
+    position: relative;
+  }
+}
+.layout-9 .owl-nav {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -20px !important;
+  width: 100%;
+  z-index: 100;
+}
+.layout-9 .owl-nav .owl-prev,
+.layout-9 .owl-nav .owl-next {
+  border-radius: 0 !important;
+  float: left;
+  margin: 0 24px !important;
+  outline: none;
+}
+.layout-9 .owl-nav .owl-prev:hover, .layout-9 .owl-nav .owl-prev:focus,
+.layout-9 .owl-nav .owl-next:hover,
+.layout-9 .owl-nav .owl-next:focus {
+  background-color: transparent !important;
+}
+.layout-9 .owl-nav .owl-prev:hover span, .layout-9 .owl-nav .owl-prev:focus span,
+.layout-9 .owl-nav .owl-next:hover span,
+.layout-9 .owl-nav .owl-next:focus span {
+  background-color: var(--color-primary);
+}
+.layout-9 .owl-nav .owl-prev span,
+.layout-9 .owl-nav .owl-next span {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  color: #fff;
+  display: block;
+  height: 40px;
+  line-height: 30px;
+  font-size: 32px;
+  text-align: center;
+  width: 40px;
+}
+.layout-9 .owl-nav .owl-next {
+  float: right;
+}
+.layout-9 .owl-carousel .owl-dots {
+  margin-top: calc(var(--global-spacing) * 4) !important;
+  margin-bottom: calc(var(--global-spacing) * 2) !important;
+}
+@media (max-width: 767px) {
+  .layout-9 .owl-carousel .owl-dots {
+    margin-top: calc(var(--global-spacing) * 2) !important;
+  }
+}
+.layout-9 .owl-carousel .owl-dots .owl-dot {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  height: 18px;
+  padding: 4px !important;
+  margin: 0 4px;
+  outline: none;
+  width: 18px;
+}
+.layout-9 .owl-carousel .owl-dots .owl-dot.active {
+  border-color: var(--gray-600);
+}
+.layout-9 .owl-carousel .owl-dots .owl-dot.active span {
+  background-color: var(--gray-600);
+}
+.layout-9 .owl-carousel .owl-dots .owl-dot span {
+  margin: 0;
+  height: 6px;
+  width: 6px;
+}

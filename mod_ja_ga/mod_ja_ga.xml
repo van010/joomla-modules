@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	client="site"
+	method="upgrade"
+	version="2.5"
+>
+	<name>JA Google Analytics Module</name>
+	<author>JoomlArt</author>
+	<creationDate>Nov 2017</creationDate>
+	<copyright>Copyright © 2005 - 2017 JoomlArt.com. All Rights Reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@joomlart.com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>1.0.2</version>
+	<description>JA Google Analytics Stats is Joomla Module to help user integrate Google Analytics to their Joomla front-site. The module displays active users, page views and bounce rate of the page they are viewing.</description>
+	
+	<updateservers>
+		<server type="extension" priority="2" name="JA Google Analytics Frontend">http://update.joomlart.com/service/tracking/j31/mod_ja_ga.xml</server>
+	</updateservers>
+	
+	<files>
+		<filename module="mod_ja_ga">mod_ja_ga.php</filename>
+		<filename>mod_ja_ga.xml</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>elements</folder>
+		<folder>tmpl</folder>
+		<folder>languages</folder>
+		<folder>layouts</folder>
+		<folder>vendors</folder>
+		<folder>src</folder>
+	</files>
+	
+	<languages>
+		<language tag="en-GB">languages/en-GB/en-GB.mod_ja_ga.ini</language>
+		<language tag="en-GB">languages/en-GB/en-GB.mod_ja_ga.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_ja_ga/elements">
+			<fieldset name="Options" label="JA_GA_CONFIGURATIONS">
+				<!--API Configurations -->
+				<field name="api_config" label="JA_GA_API_CONFIG" description="JA_GA_API_CONFIG_DESC" type="legend" />
+				<field name="api_key" type="password" default="" label="JA_GA_API_KEY" description="JA_GA_API_KEY_DESC" />
+				<field name="client_id" type="password" default="" label="JA_GA_CLIENT_ID" description="JA_GA_CLIENT_ID_DESC" />
+				<field name="client_secret" type="password" default="" label="JA_GA_CLIENT_SECRET" description="JA_GA_CLIENT_SECRET_DESC" />
+			<!-- Options -->
+				<field name="ja_ga_options" type="legend" label="JA_GA_OPTIONS" description="JA_GA_OPTIONS_DESC" />
+				<field name="site_url" type="text" default="" label="JA_GA_OPTION_SITE_URL" description="JA_GA_OPTION_SITE_URL_DESC" />
+				<field name="users_gr" type="legend" subgroup="1" label="JA_GA_USERS_GROUP" />
+				<field name="active_users" type="radio" class="btn-group btn-group-yesno" default="1" label="JA_GA_OPTIONS_ACTIVE_USERS_STAT" description="JA_GA_OPTIONS_ACTIVE_USERS_STAT_DESC" >
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
+				</field>
+				<field name="time_getuser" type="text" default="35" label="JA_GA_TIME_TO_GET_ACTIVE_USERS" description="JA_GA_TIME_TO_GET_ACTIVE_USERS_DESC" />
+				<field name="pages_gr" type="legend" subgroup="1" label="JA_GA_PAGE_GROUP" />
+				<field name="pageview" type="radio" default="1" class="btn-group btn-group-yesno" label="JA_GA_OPTION_PAGE_VIEWS_STAT" description="JA_GA_OPTION_PAGE_VIEWS_STAT_DESC">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
+				</field>
+				<field name="bounce_rate" type="radio" default="1" class="btn-group btn-group-yesno" label="JA_GA_OPTION_BOUNCE_RATE_STAT" description="JA_GA_OPTION_BOUNCE_RATE_STAT_DESC">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
+				</field>
+				<field name="ja_ga_time" type="list" default="today" label="JA_GA_OPTION_TIME" description="JA_GA_OPTION_TIME_DESC">
+					<option value="today">JA_GA_TODAY</option>
+					<option value="yesterday">JA_GA_YESTERDAY</option>
+					<option value="7daysAgo">JA_GA_7_DAYS_AGO</option>
+					<option value="14daysAgo">JA_GA_14_DAYS_AGO</option>
+					<option value="30daysAgo">JA_GA_30_DAYS_AGO</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="moduleclass_sfx"	type="text"	label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"	description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

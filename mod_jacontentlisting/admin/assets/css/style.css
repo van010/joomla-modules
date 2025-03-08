@@ -1,0 +1,341 @@
+/**
+ * $JA#COPYRIGHT$
+*/
+:root {
+  --color-primary: #0d6efd;
+  --color-success: #46A546;
+  --color-danger: #dc3545;
+  --border-color: #dee2e6;
+  --text-color: #333;
+  --active-color: var(--color-primary);
+}
+
+.ja-backend-style textarea, .ja-backend-style input[type=text],
+.ja-backend-style input[type=password],
+.ja-backend-style input[type=datetime],
+.ja-backend-style input[type=datetime-local],
+.ja-backend-style input[type=date],
+.ja-backend-style input[type=month],
+.ja-backend-style input[type=time],
+.ja-backend-style input[type=week],
+.ja-backend-style input[type=number],
+.ja-backend-style input[type=email],
+.ja-backend-style input[type=url],
+.ja-backend-style input[type=search],
+.ja-backend-style input[type=tel],
+.ja-backend-style input[type=color],
+.ja-backend-style .uneditable-input {
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 8px;
+}
+.ja-backend-style input.choices__input {
+  border-radius: 0;
+  border: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ja-backend-style #jaform_jaitem_settings_layout + .btn,
+.ja-backend-style #jaform_jalayout_settings_layout + .btn {
+  height: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.ja-backend-style button.btn, .ja-backend-style input[type=submit].btn {
+  border: 0;
+  border-radius: 5px;
+  height: 36px;
+  font-weight: 600;
+  padding: 0 16px;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.ja-backend-style .btn.btn-primary {
+  background-color: var(--color-primary);
+}
+.ja-backend-style .btn.btn-primary:hover, .ja-backend-style .btn.btn-primary:focus, .ja-backend-style .btn.btn-primary:active {
+  background-color: #0A58CA;
+}
+.ja-backend-style .chzn-container-single .chzn-single {
+  border: 1px solid var(--border-color);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  line-height: 36px;
+}
+.ja-backend-style .chzn-container-single .chzn-single div {
+  border-left: 1px solid var(--border-color);
+}
+.ja-backend-style .chzn-container-multi .chzn-choices {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  padding: 4px;
+}
+.ja-backend-style .chzn-container-multi .chzn-choices li.search-choice {
+  background-color: var(--color-primary);
+  border-radius: 12px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.ja-backend-style .controls .btn-group.btn-group-yesno {
+  border-radius: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 44px;
+  height: 24px;
+  padding: 0 !important;
+  position: relative;
+}
+.ja-backend-style .controls .btn-group.btn-group-yesno > .btn {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 0;
+  border-radius: 25px;
+  color: #999;
+  font-weight: 600;
+  padding: 0;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  text-indent: -500px;
+  min-width: 0;
+  width: 100%;
+  z-index: 20;
+}
+.ja-backend-style .controls .btn-group.btn-group-yesno > .btn::after {
+  background-color: #fff;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: 2px;
+  height: 20px;
+  width: 20px;
+}
+.ja-backend-style .controls .btn-group.btn-group-yesno > .btn:first-of-type {
+  left: 0;
+}
+.ja-backend-style .controls .btn-group.btn-group-yesno > .btn:last-of-type {
+  right: 0;
+}
+.ja-backend-style .controls .btn-group.btn-group-yesno > .active.btn-success {
+  background-color: var(--color-success);
+  width: 100%;
+  z-index: 10;
+}
+.ja-backend-style .controls .btn-group.btn-group-yesno > .active.btn-success::after {
+  right: 2px;
+}
+.ja-backend-style .controls .btn-group.btn-group-yesno > .active.btn-danger {
+  background-color: #DEE2E6;
+  width: 100%;
+  z-index: 10;
+}
+.ja-backend-style .controls .btn-group.btn-group-yesno > .active.btn-danger::after {
+  left: 2px;
+}
+.ja-backend-style .btn-group.radio > .btn {
+  border-color: var(--border-color);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  line-height: 24px;
+}
+.ja-backend-style .btn-group.radio > .btn.active {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.ja-backend-style .field-spacer .control-label.spacer {
+  width: 100%;
+}
+.ja-backend-style .control-label.spacer .spacer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  gap: 8px;
+}
+.ja-backend-style .control-label.spacer .spacer .before {
+  background-color: var(--color-primary);
+  height: 8px;
+  width: 4px;
+  z-index: 10;
+}
+.ja-backend-style .control-label.spacer .spacer .after {
+  background-color: #f6f6f6;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 8px;
+}
+.ja-backend-style .control-label.spacer .spacer span {
+  position: relative;
+  z-index: 1;
+}
+.ja-backend-style .control-label.spacer .spacer span hr {
+  display: none;
+}
+.ja-backend-style .control-label.spacer .spacer label {
+  background-color: #fff;
+  color: #333;
+  border: 0;
+  display: inline-block;
+  font-size: 12px;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0;
+  text-transform: uppercase;
+  width: auto;
+}
+.ja-backend-style .form-inline-header input {
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  height: 24px;
+  line-height: 24px;
+}
+.ja-backend-style .form-inline-header input:focus {
+  border-color: var(--color-primary);
+}
+.ja-backend-style .nav-tabs {
+  border-bottom: 2px solid var(--border-color);
+}
+.ja-backend-style .nav-tabs > li {
+  margin-bottom: -2px;
+  padding: 0 8px;
+}
+.ja-backend-style .nav-tabs > li > a {
+  border: 0;
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 12px 0;
+  position: relative;
+}
+.ja-backend-style .nav-tabs > li > a::after {
+  background-color: transparent;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.ja-backend-style .nav-tabs > li > a:hover, .ja-backend-style .nav-tabs > li > a:focus, .ja-backend-style .nav-tabs > li > a:active {
+  background: transparent;
+}
+.ja-backend-style .nav-tabs > li > a:hover::after, .ja-backend-style .nav-tabs > li > a:focus::after, .ja-backend-style .nav-tabs > li > a:active::after {
+  background-color: #ADB5BD;
+}
+.ja-backend-style .nav-tabs > li.active > a {
+  border: 0;
+  color: var(--active-color);
+}
+.ja-backend-style .nav-tabs > li.active > a::after {
+  background-color: var(--color-primary);
+}
+
+#attrib-advanced .field-spacer {
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+#attrib-advanced .field-spacer .control-label.spacer {
+  width: 100%;
+}
+#attrib-advanced .control-label.spacer .spacer {
+  display: block;
+  position: relative;
+  padding-left: 4px;
+}
+#attrib-advanced .control-label.spacer .spacer .before {
+  background-color: var(--color-primary);
+  position: absolute;
+  display: block;
+  height: 8px;
+  top: 5px;
+  left: 0;
+  z-index: 10;
+  width: 4px;
+}
+#attrib-advanced .control-label.spacer .spacer::after {
+  background-color: #f6f6f6;
+  content: "";
+  display: block;
+  height: 8px;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  right: 0;
+}
+#attrib-advanced .control-label.spacer .spacer span {
+  position: relative;
+  z-index: 1;
+}
+#attrib-advanced .control-label.spacer .spacer label {
+  background-color: #fff;
+  color: #333;
+  border: 0;
+  display: inline-block;
+  font-size: 12px;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0 8px 0 8px;
+  text-transform: uppercase;
+  width: auto;
+}
+
+/* MISC.
+------------------------------------------------*/
+/* Ghost container when moving ---*/
+.ja-ghost .items-row {
+  border: 2px solid #ddd;
+  background: #EBF2F7;
+  padding: 0;
+}
+
+.ja-ghost .ja-box-inner {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.move {
+  border: 2px dotted #999 !important;
+}
+
+.move-wrap .items-row:hover .ja-zinsec {
+  background: #f7f7f7 !important;
+  color: #000 !important;
+}
+
+/* 1st & last row/column style ---*/
+.row-last {
+  border-bottom: 0 !important;
+}
+
+.ja-mod-inner {
+  position: relative;
+}
+
+.tool-tip {
+  max-width: 300px;
+}
+
+.tool-tip img {
+  max-width: 290px;
+  float: left;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+/***Fix error tools tip***/
+.tip-wrap {
+  max-width: 300px;
+  z-index: 999;
+}

@@ -1,0 +1,102 @@
+.jacontentlisting__modal {
+  border-radius: 5px;
+}
+
+.jacontentlisting__modal .modal-header {
+  padding: 8px 24px;
+  position: relative;
+}
+
+.jacontentlisting__modal .modal-header h5 {
+  font-size: 16px;
+}
+
+.jacontentlisting__modal .modal-header .close {
+  border: 0;
+  border-radius: 50%;
+  font-weight: 400;
+  position: absolute;
+  right: 16px;
+  top: 8px;
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+  transition: all 0.35s ease-in-out;
+  width: 40px;
+}
+
+.jacontentlisting__modal .modal-header .close:hover {
+  background-color: #ddd;
+}
+
+.jacontentlisting__modal .modal-body * {
+  box-sizing: border-box;
+}
+
+.jacontentlisting__modal .modal-body {
+  box-sizing: border-box;
+  padding: 24px;
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
+.modal-dialog {
+  min-width: 80%;
+}
+
+.modal-body ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 -16px;
+  padding: 0;
+}
+
+.modal-body ul li {
+  padding: 16px;
+  max-width: 20%;
+}
+
+.modal-body ul li > div {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+  padding: 12px;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.modal-body ul li > div:hover {
+  border-color: #ccc;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+
+.modal-body ul li.active > div,
+.modal-body ul li.active > div:hover {
+  border-color: #0d6efd;
+}
+
+.modal-body ul li img {
+  max-width: 100%;
+}
+
+.modal-body ul li span.thumb-name {
+  background-color: #fff;
+  border: 1px solid #D1D5DB;
+  border-radius: 15px;
+  bottom: -15px;
+  padding: 4px 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.modal-body ul li span.thumb-name {
+
+}
+
+.modal-body ul li.active span.thumb-name {
+  background-color: #0d6efd;
+  border: 0;
+  color: #fff;
+}

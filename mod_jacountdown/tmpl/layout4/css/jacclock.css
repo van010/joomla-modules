@@ -1,0 +1,64 @@
+.ja-countdown.layout4 {
+	margin:0 auto;
+	background-image:url(../img/bg.png);
+	padding: 20px 0;
+	text-align: center;
+}
+
+.ja-countdown.layout4 h1 {
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.ja-countdown.layout4 h1 a {
+	color:#FFF;
+	text-decoration:underline;
+}
+
+.ja-countdown.layout4 h1 a:hover {
+	color:#000;
+	text-decoration:none;
+}
+
+.ja-countdown.layout4 h4 {
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size:30px;
+    text-align: center;
+    text-transform:uppercase;
+	font-weight: normal;
+	margin-top:0px;
+	float:left;
+	width:340px;
+}
+
+.ja-countdown.layout4 .clock {
+	width:267px;
+	height:267px;
+	background-image:url(../img/clock_bg.png);
+	margin: 0 auto;
+    position: relative;
+}
+
+.ja-countdown.layout4 .clock .val {
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;
+    color: #FFF;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+}
+
+.ja-countdown.layout4 .right {
+	float:right;
+	width:350px;
+	height:267px;
+	
+}

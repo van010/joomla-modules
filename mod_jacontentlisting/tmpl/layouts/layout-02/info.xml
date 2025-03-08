@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+	<layout>
+		<name>layout 02</name>
+		<description>demo description</description>
+		<items>8</items>
+	</layout>
+	<form>
+		<fields name="jalayout-settings" addfieldpath="/modules/mod_jacontentlisting/admin/fields">
+			<fieldset name="layout">
+			</fieldset>
+		</fields>
+</form>
+</form>

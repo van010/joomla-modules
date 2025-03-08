@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<extension 
+	type="module" 
+	version="2.5" 
+	client="site"
+	method="upgrade">
+	
+	<name>JA Slideshow</name>
+	<author>JoomlArt.com</author>
+	<creationDate>July 23, 2018</creationDate>
+	<copyright>Copyright (C), J.O.O.M Solutions Co., Ltd. All Rights Reserved.</copyright>
+	<license>license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>2.7.7</version>
+	<updateservers>
+	    <server type="extension">http://update.joomlart.com/service/tracking/j16/mod_jaslideshow.xml</server>
+	</updateservers>
+	<description>
+		<![CDATA[
+		<div align="left">
+		<h1><img border='0' alt='JA Slidehow for Joomla! 2.5 & Joomla! 3.x' src='http://asset.joomlart.com/images/stories/extensions/drupal/jdec_slideshow.png?javer=1109270933' style='float: left'>JA Slideshow module for Joomla! 2.5 & Joomla! 3.3</h1>
+		<div style='font-weight: normal'>
+		<p><span style='color: #ff6600;'><strong>Features:</strong></span>
+		Display images from a folder or from articles. Includes auto-resized images, beautiful animation effects, and inline text-embeded descriptions.</p>
+		
+		<strong>JA Slideshow for Joomla! 2.5 & 3.3</strong> includes advanced functionality which allows to build slideshows from image folders - OR - directly from images included in articles. <br/>
+It is one of our most requested and most versatile modules which can be found in over 30 JA templates.
+		<br/><br/>
+		<strong><span style='color: #ff0000;'>Usage Instructions:</span></strong><br />
+		<ul>
+		<li><strong>The module display can be enhanced by CSS overrides in the demo templates (used in over 30+ JA templates). Thus when using JA Slideshow module in different templates, the results may vary and you may have to customize CSS to get your desired effects.</strong></li>
+		<li>Configuration is easy and supports setup profiles in over 25 layouts.</li></ul>
+		<strong><span style='color: #ff0000;'>Upgrade Methods:</span><br /></strong>
+		<ul>
+		  <li>You can install new version directly over this version. Uninstallation of old version is not required.</li>
+		  <li>Backup any customized files before upgrading.</li>
+		</ul>
+		<span style='color: #008000;'><strong>Links:</strong></span><br />
+		<ul>
+		<li><a target="_blank" href="http://www.joomlart.com/forums/showthread.php?49766">General Userguide</a></li>
+		 <li><a target='_blank' href='http://update.joomlart.com/#products.list//JA%20Slideshow%20Module%20for%20Joomla%202.5/'>Updates &amp; Versions</a></li>
+		 <li><a target='_blank' href='http://www.joomlart.com/forums/forumdisplay.php?154-JA-SlideShow'>Forum</a></li>
+		</ul>
+		<p>Copyright 2004 - 2018 <a href='http://www.joomlart.com/' title='Visit Joomlart.com!'>JoomlArt.com</a>.</p>
+		</div>
+		</div>
+		]]>
+	</description>
+
+	<files>
+		<filename module="mod_jaslideshow">index.html</filename>
+		<filename module="mod_jaslideshow">mod_jaslideshow.php</filename>
+		<folder>helpers</folder>		
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+		<folder>admin</folder>		
+		<folder>profiles</folder>
+	</files>
+	<languages>
+		<language 
+			tag="en-GB">en-GB.mod_jaslideshow.ini</language>
+	</languages>
+	<config>
+		<fields 
+			name="params" 
+			addfieldpath="/modules/mod_jaslideshow/assets/elements">
+			<fieldset 
+				name="basic" 
+				label="RESOURCE_SETTINGS">
+				<field type="japanel" path="modules/mod_jaslideshow/assets/elements/" />
+				
+				<field 
+					name="source" 
+					type="list"
+					default="images" 
+					label="SOURCE"
+					description="SOURCE_DESC">
+						<option value="articles">FROM_ARTICLES</option>
+						<option value="images">FROM_IMAGES_FOLDER</option>
+						<option value="com_k2">FROM_K2</option>
+				</field>
+				
+				<field 
+					name="source-articles-display_model" 
+					type="list"
+					default="0" 
+					label="DISPLAY_FEATURED_ARTICLES" 
+					description="DISPLAY_FEATURED_ARTICLES_DESC">
+						<option value="1">Show only featured articles</option>
+						<option value="2">Show</option>
+						<option value="0">Hide</option>
+				</field>
+
+				<field 
+					name="source-articles-display_model-modcats-category"
+					type="category" 
+					default=""
+					extension="com_content"
+					class="mselect"
+					multiple="true"
+					size="5"
+					label="CATEGORIES_SELECTION"
+					description="CATEGORIES_SELECTION_DESC">
+					<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+				<field
+                    name="showvideos"
+                    type="list"
+                    default="0"
+                    label="DISPLAY_VIDEOS_ARTICLES"
+                    description="DISPLAY_VIDEOS_ARTICLES_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+				<field name="k2catsid" 
+					type="k2category"
+					published="1"
+					class="mselect"
+					multiple="true"
+					default="" 
+					label="K2_CATEGORIES_SELECTION" 
+					description="K2_CATEGORIES_SELECTION_DESC" />
+
+				<field 
+					name="source-articles-sort_order_field" 
+					type="list"
+					default="created" 
+					label="SORT_ORDER_BY" 
+					description="SORT_ORDER_BY_DESC">
+						<option value="created">DATE</option>
+						<option value="ordering">ORDER</option>
+						<option value="hits">HITS</option>
+				</field>
+				<field 
+					name="source-articles-sort_order"
+					type="list" 
+					default="DESC"
+					label="ASC_OR_DESC" 
+					description="ASC_OR_DESC_DESC">
+						<option value="ASC">ASC</option>
+						<option value="DESC">DESC</option>
+				</field>
+				<field
+					name="open_target" 
+					type="list" 
+					default="parent"
+					label="CLICK_LINK_OPEN_IN" 
+					description="CLICK_LINK_OPEN_IN_DESC">
+						<option value="blank">New window</option>
+						<option value="parent">Parent window</option>
+				</field>
+				<field 
+					name="jarequest"
+					type="jarequest" />	
+				<field 
+					name="source-articles-max_items" 
+					type="text" 
+					default="5"
+					cols="30"
+					rows="2" 
+					label="MAX_ARTICLES_DISPLAY" 
+					description="MAX_ARTICLES_DISPLAY_DESC" />
+
+				<field 
+					name="source-images-orderby" 
+					type="list"
+					onchange="jaListImages();"
+					default="0"
+					label="SORT_TYPE" 
+					description="SORT_TYPE_DESC">
+						<option value="0">NAME</option>
+						<option value="1">TIME</option>
+				</field>
+				<field 
+					name="source-images-sort" 
+					type="list" 
+					onchange="jaListImages();"
+					default="0"
+					label="SORT_ORDER" 
+					description="SORT_ORDER_DESC">
+						<option value="0">RANDOM</option>
+						<option value="1">ASCENDING</option>
+						<option value="2">DESCENDING</option>
+				</field>
+
+				<field 
+					name="folder"
+					type="jafolder"
+					default="images/"
+					class="mselect"
+					onchange="jaListImages();"
+					label="IMAGE_FOLDER"
+					description="IMAGE_FOLDER_DESC" />
+				<field 
+					name="description"
+					type="jagallery"
+					updatedata="1"
+					filter="raw"
+					label="JA_GALLERY"
+					description="JA_GALLERY_DESC" />					
+				
+			</fieldset>
+			
+			<fieldset 
+				name="profile_settings" 
+				label="PROFILE_SETTINGS">				
+				<field 
+					name="profile"
+					type="japrofile"					
+					extpath="modules/mod_jaslideshow"
+					default="default"
+					label="Profile" 
+					description="Choose an profile"/>		
+				<field 
+					name="group4" 
+					hidden="true" 
+					type="japanel"
+					function="depend">
+						<option for="source-articles-images-thumbnail_mode" value="resize" hideRow="true">
+							source-articles-images-thumbnail_mode-resize-use_ratio
+						</option>
+				</field>
+				<field 
+					name="source-articles-images-thumbnail_mode" 
+					type="list"
+					default="crop"
+					label="THUMBNAIL_MODE" 
+					description="THUMBNAIL_MODE_DESC">
+						<option value="none">USING_IMAGE_SOURCE</option>
+						<option value="resize">USING_RESIZE</option>
+						<option value="crop">USING_CROP</option>
+				</field>
+
+				<field 
+					name="source-articles-images-thumbnail_mode-resize-use_ratio"
+					type="radio" 
+					default="0" 
+					label="RESIZE_WITH_THE_RATIO" 
+					description="RESIZE_WITH_THE_RATIO_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>			
+			</fieldset>				
+				
+			<fieldset name="advanced">
+				<field 
+					name="moduleclass_sfx" 
+					type="text" 
+					default=""
+					label="MODULE_CLASS_SUFFIX" 
+					description="PARAMMODULECLASSSUFFIX" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+											
+				<field
+					name="group"
+					hidden="true" 
+					type="japanel"
+					function="depend">
+						<option for="source" value="articles" hideRow="true">
+							source-articles-display_model,
+							source-articles-display_model-modarts-with_keyword,
+							source-articles-display_model-modcats-category,
+							source-articles-sort_order_field,
+							source-articles-sort_order,
+							source-articles-max_items,
+							showvideos
+						</option>
+						<option for="source" value="images" hideRow="true">
+							source-images-orderby,source-images-sort,folder,description
+						</option>
+						<option for="source" value="com_k2" hideRow="true">
+							source-articles-display_model,
+							source-articles-display_model-modarts-with_keyword,
+							k2catsid,
+							source-articles-sort_order_field,
+							source-articles-sort_order,
+							source-articles-max_items
+						</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

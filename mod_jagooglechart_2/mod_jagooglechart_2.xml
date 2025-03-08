@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+		type="module"
+		version="2.5"
+		client="site"
+		method="upgrade">
+	<name>JA Google Chart 2</name>
+	<author>JoomlArt_com</author>
+	<creationDate>April 11th, 2023</creationDate>
+	<copyright>Copyright (C), J.O.O.M Solutions Co., Ltd. All Rights Reserved_</copyright>
+	<license>license GNU/GPLv3 http://www_gnu_org/licenses/gpl-3.0.html</license>
+	<authorEmail>webmaster@joomlart_com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<updateservers>
+		<server type="extension">http://update.joomlart.com/service/tracking/j16/mod_jagooglechart_2.xml</server>
+	</updateservers>
+	<version>1.1.2</version>
+	<description>
+		<![CDATA[
+		<div style='text-align: left;'>
+	 	<p><strong>JA Google Chart 2</strong> is a responsive joomla module for Joomla 3 and Joomla 4 used to display your data in google charts: bar chart, pie chart, column chart, line chart, geo chart, area chart. You can customize the display of each chart.</p>
+		<p style="clear:both"><span style="color: #ff6600;"><strong>Key Features:</strong></span></p>
+		 <ul>
+		   	<li>Native with Joomla 3 and Joomla 4</li>
+			<li>Fully responsive</li>
+            <li>Support 12 chart types</li>
+            <li>3 ways to upload data: manual, import and Google Speadsheet CSV url</li>
+            <li>Configurable Axis: horizontal and vertical</li>
+            <li>3D view for Pie chart</li>
+            <li>3 Display modes for GEO Chart</li>	
+		 </ul>	
+		<p><span style="color: #008000;"><strong>References:</strong></span></p>
+		<p>Copyright 2004 - 2021 <a href="http://www.joomlart.com/" title="Visit Joomlart.com!">JoomlArt.com</a>.</p>
+		</div>
+	 ]]>
+	</description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_jagooglechart_2.ini</language>
+	</languages>
+	<files>
+		<filename module="mod_jagooglechart_2">mod_jagooglechart_2.php</filename>
+		<folder>admin</folder>
+		<folder>tmpl</folder>
+		<folder>asset</folder>
+		<folder>vendors</folder>
+		<filename>index.html</filename>
+		<filename>mod_jagooglechart_2.xml</filename>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="chart_settings"
+					  addfieldpath="/modules/mod_jagooglechart_2/asset/elements"
+					  label="JA_GOOGLECHART_CHARTS_SETTINGS_LABEL">
+
+				<field
+						name="jarequest"
+						type="jarequest" />
+
+				<field
+						name="tplhelper"
+						type="tplhelper"
+						default="1" />
+
+				<!-- General Settings -->
+				<field type="legend" label="General" />
+				<field name="chartType"
+					   type="list"
+					   default="ColumnChart"
+					   label="JA_GOOGLECHART_TYPE"
+					   description="JA_GOOGLECHART_TYPE_DESC">
+					<option value="AreaChart">AREA_CHARTS</option>
+					<option value="BarChart">BAR_CHARTS</option>
+					<option value="ColumnChart">COLUMN_CHARTS</option>
+					<option value="GeoChart">GEO_CHARTS</option>
+					<option value="LineChart">LINE_CHARTS</option>
+					<option value="PieChart">PIE_CHARTS</option>
+					<option value="ComboChart">COMBO_CHARTS</option>
+					<option value="SteppedAreaChart">STEPPED_CHARTS</option>
+					<option value="CandlestickChart">WATERFALL_CHARTS</option>
+					<option value="ScatterChart">SCATTER_CHARTS</option>
+					<option value="TrendlineChart">TRENDLINES_CHARST</option>
+				</field>
+
+				<field type="legend" subgroup="1" label="CHARTS_DATA_LABEL" expend="all" />
+				<field name="chartData"
+					   type="list"
+					   default="csv"
+					   label="DATA_SOURCE" >
+					<option value="csv">DATA_INPUT_FROM_CSV</option>
+					<option value="googlesheet">DATA_INPUT_FROM_GOOGLE_SHEET</option>
+				</field>
+
+				<field name="data_input"
+					   type="jaimportcsv"
+					   cols="45"
+					   rows="5"
+					   default=""
+					   label="DATA_INPUT_LABEL"
+					   description="DATA_INPUT_DESC"/>
+
+				<field name="data_input_url"
+					   type="text"
+					   default=""
+					   label="DATA_INPUT_URL"
+					   description="DATA_INPUT_URL_DESC" />
+
+				<field name="series_targetLine"
+					   type="text"
+					   default=""
+					   label="OPTION_SERIES_TARGET_LINE"
+					   description="OPTION_SERIES_TARGET_LINE_DESC" />
+				<field name="max_min_settting" type="legend" subgroup="1" class="ja_maxmin_settings"
+					   label="JA_GOOGLECHART_MAX_MIN_SETTING_LABEL" expend="all" />
+				<field name="enable_max_line"
+					   type="radio"
+					   default="0"
+					   label="JA_GOOGLECHART_MAX_LINE_STAT"
+					   description="JA_GOOGLECHART_MAX_LINE_STAT_DESC" >
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<field name="max_value"
+					   type="text"
+					   default="5"
+					   label="MAXIMUM_LINE_VALUE"
+					   description="MAXIMUM_LINE_VALUE_DESC" />
+				<field name="max_color"
+					   type="color"
+					   default="#0732e0"
+					   label="MAXIMUM_LINE_COLOR"
+					   description="MAXIMUM_LINE_COLOR_DESC" />
+				<field name="enable_min_line"
+					   type="radio"
+					   default="0"
+					   label="JA_GOOGLECHART_MIN_LINE_STAT"
+					   description="JA_GOOGLECHART_MIN_LINE_STAT_DESC" >
+
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<field name="min_value"
+					   type="text"
+					   default="5"
+					   label="MINIMUM_LINE_VALUE"
+					   description="MINIMUM_LINE_VALUE_DESC" />
+				<field name="min_color"
+					   type="color"
+					   default="#d40808"
+					   label="MINIMUM_LINE_COLOR"
+					   description="MINIMUM_LINE_COLOR_DESC" />
+
+				<field type="legend" subgroup="1" label="CHARTS_CUSTOMIZE_LABEL" expend="all" />
+				<field name="colors_custom"
+					   type="text"
+					   default=""
+					   label="CHART_CUSTOM_COLORS"
+					   description="CHART_CUSTOM_COLORS_DESC" />
+
+				<field name="chart_description"
+					   type="textarea"
+					   filter="safehtml"
+					   rows="3"
+					   cols="40"
+					   label="CHART_DESCRIPTION"
+					   description="CHART_DESCRIPTION_DESC" />
+
+				<!-- Geo Chart Settings -->
+				<field type="legend" label="GEO_CHART_SETTINGS_LABEL" description="GEO_CHART_SETTINGS_DESC" />
+				<field type="legend" subgroup="1" label="General"/>
+				<field name="option_displayMode"
+					   type="list"
+					   default="regions"
+					   label="GEO_DISPLAYMODE_LABEL"
+					   description="GEO_DISPLAYMODE_DESC">
+					<option value="auto">AUTO_CHOOSE_BASED_ON_THE_FORMAT_OF_THE_DATA</option>
+					<option value="regions">REGION_MAP</option>
+					<option value="markers">MARKER_MAP</option>
+				</field>
+				<field name="option_region"
+					   type="text"
+					   size="30"
+					   default="world"
+					   label="GEO_REGION_LABEL"
+					   description="GEO_REGION_DESC" />
+				<field name="option_resolution"
+					   type="list"
+					   default="countries"
+					   label="GEO_RESOLUTION_LABEL"
+					   description="GEO_RESOLUTION_DESC">
+					<option value="countries">COUNTRIES</option>
+					<option value="provinces">PROVINCES</option>
+					<option value="metros">METROS</option>
+				</field>
+				<field name="option_enableRegionInteractivity"
+					   type="radio"
+					   default="1"
+					   label="GEO_ENABLEREGIONINTERACTIVITY_LABEL"
+					   description="GEO_ENABLEREGIONINTERACTIVITY_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="option_keepAspectRatio"
+					   type="radio"
+					   default="1"
+					   label="GEO_KEEPASPECTRATIO_LABEL"
+					   description="GEO_KEEPASPECTRATIO_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="option_markerOpacity"
+					   type="list"
+					   class="btn-group"
+					   default="1.0"
+					   label="GEO_MARKEROPACITY_LABEL"
+					   description="GEO_MARKEROPACITY_DESC">
+					<option value="0.0">0.0</option>
+					<option value="0.1">0.1</option>
+					<option value="0.2">0.2</option>
+					<option value="0.3">0.3</option>
+					<option value="0.4">0.4</option>
+					<option value="0.5">0.5</option>
+					<option value="0.6">0.6</option>
+					<option value="0.7">0.7</option>
+					<option value="0.8">0.8</option>
+					<option value="0.9">0.9</option>
+					<option value="1.0">1.0</option>
+				</field>
+				<field type="legend" subgroup="1" label="GEO_CHART_COLOR_AXIS"/>
+				<field name="option_colorAxis_minValue"
+					   type="text"
+					   default="0"
+					   label="GEO_COLORAXIS_MINVALUE_LABEL"
+					   description="GEO_COLORAXIS_MINVALUE_DESC" />
+				<field name="option_colorAxis_maxValue"
+					   type="text"
+					   default=""
+					   label="GEO_COLORAXIS_MAXVALUE_LABEL"
+					   description="GEO_COLORAXIS_MAXVALUE_DESC" />
+				<field name="geo_colorAxis_fromColor"
+					   type="color"
+					   default="#FFFFFF"
+					   label="GEO_COLORAXIS_FROMCOLOR_LABEL"
+					   description="GEO_COLORAXIS_FROMCOLOR_DESC" />
+				<field name="geo_colorAxis_toColor"
+					   type="color"
+					   default="#35A339"
+					   label="GEO_COLORAXIS_TOCOLOR_LABEL"
+					   description="GEO_COLORAXIS_TOCOLOR_DESC" />
+				<field name="option_datalessRegionColor"
+					   type="color"
+					   default="#F5F5F5"
+					   label="GEO_DATALESSREGIONCOLOR_LABEL"
+					   description="GEO_DATALESSREGIONCOLOR_DESC" />
+				<!-- Pie Chart Settings -->
+				<field name="pie_chart" type="legend" label="PIE_CHARTS_SETTINGS_LABEL" />
+				<field type="legend" subgroup="1" label="General" />
+				<field name="option_pieHole"
+					   type="text"
+					   default=""
+					   label="PIE_HOLE"
+					   description="PIE_HOLE_DESC" />
+				<field name="option_explode"
+					   type="radio"
+					   class="btn-group"
+					   default="0"
+					   label="PIE_EXPLODING_SLICE"
+					   description="PIE_EXPLODING_SLICE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="option_slices_explode"
+					   type="text"
+					   default=""
+					   label="PIE_SLICES_TO_EXPLODE"
+					   description="PIE_SLICES_TO_EXPLODE_DESC" />
+				<field name="option_is3D"
+					   type="radio"
+					   default="0"
+					   label="PIE_IS3D_LABEL"
+					   description="PIE_IS3D_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="option_pieSliceBorderColor"
+					   type="color"
+					   default="#FFFFFF"
+					   label="PIE_PIESLICEBORDERCOLOR_LABEL"
+					   description="PIE_PIESLICEBORDERCOLOR_DESC" />
+
+				<field name="option_PieChart_tooltip_trigger"
+					   type="list"
+					   label="Tooltip trigger"
+					   description="Choose how tooltip display"
+					   default="focus">
+					<option value="focus">Focus</option>
+					<option value="selection">Selection</option>
+				</field>
+
+				<field name="option_PieChart_set_selection"
+					   type="radio"
+					   class="btn-group"
+					   default="0"
+					   label="Set selection"
+					   description="Set selection on first load"
+					   showon="option_PieChart_tooltip_trigger:selection">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="option_PieChart_selections"
+					   type="input"
+					   default="0"
+					   label="Selections"
+					   description="Each selection separates by comma(,)"
+					   showon="option_PieChart_set_selection:1[AND]option_PieChart_tooltip_trigger:selection" />
+
+				<field type="legend" label="Slice Text Style" description="An object that specifies the slice text style" subgroup="2" />
+				<field name="option_pieSliceText"
+					   type="list"
+					   default="percentage"
+					   label="PIE_PIESLICETEXT_LABEL"
+					   description="PIE_PIESLICETEXT_DESC">
+					<option value="percentage">PERCENTAGE</option>
+					<option value="value">VALUE</option>
+					<option value="label">LABEL</option>
+					<option value="none">None</option>
+				</field>
+				<field name="option_pieSliceTextStyle_fontName"
+					   type="fontface"
+					   default=""
+					   label="PIESLICE_FONT_LABEL"
+					   description="PIESLICE_FONT_DESC">
+					<option value="">USE_GLOBAL</option>
+				</field>
+				<field name="option_pieSliceTextStyle_fontSize"
+					   type="text"
+					   default="9"
+					   label="PIESLICE_TEXTSIZE_LABEL"
+					   description="PIESLICE_TEXTSIZE_DESC"/>
+				<field name="option_pieSliceTextStyle_color"
+					   type="color"
+					   default="#000000"
+					   label="PIESLICE_TEXTCOLOR_LABEL"
+					   description="PIESLICE_TEXTCOLOR_DESC"/>
+				<!-- Scatter Chart Settings -->
+				<field type="legend" label="SCATTER_CHARTS_SETTING" description="SCATTER_CHARTS_SETTING_DESC" />
+				<field name="option_pointShape"
+					   type="list"
+					   default="circle"
+					   label="SCATTER_POINT_SHAPE"
+					   dedication="SCATTER_POINT_SHAPE_DESC" >
+					<option value="circle">SCATTER_POINT_SHAPE_CIRCLE</option>
+					<option value="triangle">SCATTER_POINT_SHAPE_TRIANGLE</option>
+					<option value="square">SCATTER_POINT_SHAPE_SQUARE</option>
+					<option value="diamond">SCATTER_POINT_SHAPE_DIAMOND</option>
+					<option value="star">SCATTER_POINT_SHAPE_STAR</option>
+					<option value="polygon">SCATTER_POINT_SHAPE_POLYGON</option>
+				</field>
+				<!-- Trendlines Chart Settings -->
+				<field name="trendlines-chart" type="legend" label="TRENDLINES_CHARST_SETTINGS" />
+				<field name="option_trendlines_0_type"
+					   type="list"
+					   default="linear"
+					   label="OPTION_TRENDLINE_TYPE"
+					   description="OPTION_TRENDLINE_TYPE_DESC">
+					<option value="linear">TRENDLINES_TYPE_LINEAR</option>
+					<option value="exponential">TRENDLINES_TYPE_EXPONENTIAL</option>
+					<option value="polynomial">TRENDLINES_TYPE_POLYNOMIAL</option>
+				</field>
+				<field name="option_trendlines_0_degree"
+					   type="text"
+					   default=""
+					   label="OPTION_TRENDLINE_DEGREE"
+					   description="OPTION_TRENDLINE_DEGREE_DESC" />
+				<field name="option_trendlines_0_color"
+					   type="color"
+					   default=""
+					   label="OPTION_TRENDLINE_COLOR"
+					   description="OPTIONS_TRENDLINES_COLOR_DESC" />
+				<field name="option_trendlines_lineWidth"
+					   type="text"
+					   default=""
+					   label="OPTION_TRENDLINE_LINEWIDTH"
+					   dedication="OPTION_TRENDLINE_LINEWIDTH_DESC" />
+				<field name="option_trendlines_0_opacity"
+					   type="text"
+					   default=""
+					   label="OPTION_TRENDLINE_OPACITY"
+					   description="OPTIONS_TRENDLINE_OPACITY_DESC" />
+				<!-- WaterFall Chart Settings -->
+				<field type="legend" label="WATERFALL_CHARTS_SETTING" dedication="WATERFALL_CHARTS_SETTING_DESC" />
+				<field name="bar_setting"
+					   type="radio"
+					   default="1"
+					   label="REMOVE_SPACE_BETWEEN_BARS"
+					   description="REMOVE_SPACE_BETWEEN_BARS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="option_candlestick_fallingColor"
+					   type="color"
+					   default="#FFFFFF"
+					   label="FALLING_COLOR"
+					   description="FALLING_COLOR_DESC" />
+				<field name="option_candlestick_risingColor"
+					   type="color"
+					   default="#3366CC"
+					   label="RISING_COLOR"
+					   description="RISING_COLOR_DESC" />
+
+				<!-- Chart Container Settings -->
+				<field type="legend" label="CHARTS_CONTAINER_SETTINGS_LABEL" />
+				<field name="option_width"
+					   type="text"
+					   default="100%"
+					   label="WIDTH_LABEL"
+					   description="WIDTH_DESC"/>
+				<field name="option_height"
+					   type="text"
+					   default="600"
+					   label="HEIGHT_LABEL"
+					   description="HEIGHT_DESC"/>
+
+				<!-- Chart Area Settings -->
+				<field type="legend" label="CHARTS_AREA_SETTINGS_LABEL" description="CHARTS_AREA_SETTINGS_DESC" />
+				<field type="legend" subgroup="1" label="CHARST_AREA_POSITIONS_LABEL" expend="all" />
+				<field name="option_chartArea_left"
+					   type="text"
+					   default="50"
+					   label="CHARTAREA_LEFT_LABEL"
+					   description="CHARTAREA_LEFT_DESC"/>
+				<field name="option_chartArea_top"
+					   type="text"
+					   default="50"
+					   label="CHARTAREA_TOP_LABEL"
+					   description="CHARTAREA_TOP_DESC"/>
+				<field name="option_chartArea_width"
+					   type="text"
+					   default="750"
+					   label="CHARTAREA_WIDTH_LABEL"
+					   description="CHARTAREA_WIDTH_DESC" />
+				<field name="option_chartArea_height"
+					   type="text"
+					   default="500"
+					   label="CHARTAREA_HEIGHT_LABEL"
+					   description="CHARTAREA_HEIGHT_DESC" />
+
+				<field type="legend" subgroup="1" label="CHARTS_AREA_STYLE_LABEL" expend="all" />
+				<field name="option_backgroundColor_fill"
+					   type="color"
+					   default="#ffffff"
+					   label="BACKGROUNDCOLOR_LABEL"
+					   description="BACKGROUNDCOLOR_DESC"/>
+
+				<field name="option_backgroundColor_stroke"
+					   type="color"
+					   default="#666666"
+					   label="STROKE_LABEL"
+					   description="STROKE_DESC"/>
+
+				<field name="option_backgroundColor_strokeWidth"
+					   type="text"
+					   default="0"
+					   label="STROKEWIDTH_LABEL"
+					   description="STROKEWIDTH_DESC"/>
+				<field name="option_fontName"
+					   type="fontface"
+					   default="arial"
+					   label="FONT_LABEL"
+					   description="FONT_DESC">
+				</field>
+
+				<field name="option_chartArea_tooltip_trigger"
+					   type="list"
+					   label="Tooltip trigger"
+					   description="Choose how tooltip display"
+					   default="focus">
+					<option value="focus">Focus</option>
+					<option value="selection">Selection</option>
+				</field>
+
+				<field name="option_chartArea_set_selection"
+					   type="radio"
+					   class="btn-group"
+					   default="0"
+					   label="Set selection"
+					   description="Set selection on first load"
+					   showon="option_chartArea_tooltip_trigger:selection">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="option_chartArea_selections"
+					   type="textarea"
+					   default="1,1"
+					   rows="5"
+					   label="Selections"
+					   description="Selection has two part, row and colum, separate by comma(,). Each selection separates by line break."
+					   showon="option_chartArea_set_selection:1[AND]option_chartArea_tooltip_trigger:selection" />
+
+				<!-- Axis Charts Settings -->
+				<field name="axis-chart-settings" type="legend" label="AXIS_CHART_SETTINGS_LABEL" description="AXIS_CHART_SETTINGS_DESC" />
+				<!-- General settings -->
+				<field name="option_reverseCategories"
+					   type="radio"
+					   default="0"
+					   label="OPTION_REVERSECATEGORIES_LABEL"
+					   description="OPTION_REVERSECATEGORIES_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="option_lineWidth"
+					   type="text"
+					   default="2"
+					   label="AXIS_LINEWIDTH_LABEL"
+					   description="AXIS_LINEWIDTH_DESC" />
+				<field name="option_pointSize"
+					   type="text"
+					   default="0"
+					   label="AXIS_POINTSIZE_LABEL"
+					   description="AXIS_POINTSIZE_DESC" />
+				<!-- hAxis settings -->
+				<field name="hAxis-settings" type="legend" subgroup="1" label="HORIZONTAL_AXIS_SETTING_LABEL" expend="all" />
+				<field type="spacer" label="HORIZONTAL_AXIS_TITLE_LABEL" />
+				<field name="option_hAxis_title"
+					   type="text"
+					   default=""
+					   label="HAXIS_TITLE_LABEL"
+					   description="HAXIS_TITLE_DESC" />
+				<field name="hAxis_ticks"
+					   default=""
+					   type="text"
+					   label="CHART_HAXIS_OPTIONS"
+					   description="CHART_HAXIS_OPTION_DESC" />
+				<field name="option_hAxis_titleTextStyle_fontName"
+					   type="fontface"
+					   default=""
+					   label="HAXIS_TITLE_FONT_LABEL"
+					   description="HAXIS_TITLE_FONT_DESC">
+					<option value="">USE_GLOBAL</option>
+				</field>
+				<field name="hAxis_titletextSize_fontSize"
+					   type="text"
+					   default="11"
+					   label="HAXIS_TITLE_TEXTSIZE_LABEL"
+					   description="HAXIS_TITLE_TEXTSIZE_DESC"/>
+				<field name="option_hAxis_titleTextStyle_color"
+					   type="color"
+					   default="#000000"
+					   label="HAXIS_TITLE_TEXTCOLOR_LABEL"
+					   description="HAXIS_TITLE_TEXTCOLOR_DESC"/>
+				<field type="spacer" label="HORIZONTAL_AXIS_TEXT_LABEL"/>
+				<field name="option_hAxis_textPosition"
+					   type="list"
+					   default="out"
+					   label="HAXIS_TEXTPOSITION_LABEL"
+					   description="HAXIS_TEXTPOSITION_DESC">
+					<option value="out">Out</option>
+					<option value="in">In</option>
+					<option value="none">None</option>
+				</field>
+				<field name="option_hAxis_textStyle_fontName"
+					   type="fontface"
+					   default=""
+					   label="HAXIS_TEXT_FONT_LABEL"
+					   description="HAXIS_TEXT_FONT_DESC">
+					<option value="">USE_GLOBAL</option>
+				</field>
+				<field name="option_hAxis_textStyle_fontSize"
+					   type="text"
+					   default="9"
+					   label="HAXIS_TEXT_TEXTSIZE_LABEL"
+					   description="HAXIS_TEXT_TEXTSIZE_DESC"/>
+				<field name="hAxis_textStyle_color"
+					   type="color"
+					   default="#000000"
+					   label="HAXIS_TEXT_TEXTCOLOR_LABEL"
+					   description="HAXIS_TEXT_TEXTCOLOR_DESC"/>
+
+				<field name="option_hAxis_direction"
+					   type="list"
+					   default="1"
+					   label="HAXIS_DIRECTION_LABEL"
+					   description="HAXIS_DIRECTION_DESC">
+					<option value="1">1</option>
+					<option value="-1">-1</option>
+				</field>
+				<!-- Vertical Axis Settings -->
+				<field type="legend" label="VERTICAL_AXIS_SETTING_LABEL" expend="all" subgroup="1" />
+				<field type="spacer" label="VERTICAL_AXIS_TITLE_LABEL"/>
+				<field name="option_vAxis_title"
+					   type="text"
+					   default=""
+					   label="VAXIS_TITLE_LABEL"
+					   description="VAXIS_TITLE_DESC" />
+				<field name="vAxis_ticks"
+					   default=""
+					   type="text"
+					   label="CHART_XAXIS_OPTIONS"
+					   description="CHART_XAXIS_OPTION_DESC" />
+				<field name="option_vAxis_titleTextStyle_fontName"
+					   type="fontface"
+					   default=""
+					   label="VAXIS_TITLE_FONT_LABEL"
+					   description="VAXIS_TITLE_FONT_DESC">
+					<option value="">USE_GLOBAL</option>
+				</field>
+				<field name="option_vAxis_titleTextStyle_fontSize"
+					   type="text"
+					   default="11"
+					   label="VAXIS_TITLE_TEXTSIZE_LABEL"
+					   description="VAXIS_TITLE_TEXTSIZE_DESC"/>
+				<field name="option_vAxis_titleTextStyle_color"
+					   type="color"
+					   default="#000000"
+					   label="VAXIS_TITLE_TEXTCOLOR_LABEL"
+					   description="VAXIS_TITLE_TEXTCOLOR_DESC"/>
+				<field type="spacer" label="VERTICAL_AXIS_TEXT_LABEL"  />
+				<field name="option_vAxis_textPosition"
+					   type="list"
+					   default="out"
+					   label="VAXIS_TEXTPOSITION_LABEL"
+					   description="VAXIS_TEXTPOSITION_DESC">
+					<option value="out">Out</option>
+					<option value="in">In</option>
+					<option value="none">None</option>
+				</field>
+				<field name="option_vAxis_textStyle_fontName"
+					   type="fontface"
+					   default=""
+					   label="VAXIS_TEXT_FONT_LABEL"
+					   description="VAXIS_TEXT_FONT_DESC">
+					<option value="">USE_GLOBAL</option>
+				</field>
+				<field name="option_vAxis_textStyle_size"
+					   type="text"
+					   default="9"
+					   label="VAXIS_TEXT_TEXTSIZE_LABEL"
+					   description="VAXIS_TEXT_TEXTSIZE_DESC"/>
+				<field name="option_vAxis_textStyle_color"
+					   type="color"
+					   default="#000000"
+					   label="VAXIS_TEXT_TEXTCOLOR_LABEL"
+					   description="VAXIS_TEXT_TEXTCOLOR_DESC"/>
+				<field name="option_vAxis_direction"
+					   type="list"
+					   default="1"
+					   label="VAXIS_DIRECTION_LABEL"
+					   description="VAXIS_DIRECTION_DESC">
+					<option value="1">1</option>
+					<option value="-1">-1</option>
+				</field>
+
+				<!-- Chart Title Settings -->
+				<field type="legend" label="Charts Title Settings"/>
+				<field name="option_title"
+					   type="text"
+					   size="30"
+					   default=""
+					   label="CHART_TITLENAME_LABEL"
+					   description="CHART_TITLENAME_DESC"/>
+
+				<field name="option_titleTextStyle_fontName"
+					   type="fontface"
+					   default=""
+					   label="CHART_TITLEFONT_LABEL"
+					   description="CHART_TITLEFONT_DESC">
+					<option value="">USE_GLOBAL</option>
+				</field>
+				<field name="option_titleTextStyle_fontSize"
+					   type="text"
+					   default="9"
+					   label="CHART_TITLESIZE_LABEL"
+					   description="CHART_TITLESIZE_DESC"/>
+				<field name="option_titleTextStyle_color"
+					   type="color"
+					   default="#000000"
+					   label="CHART_TITLECOLOR_LABEL"
+					   description="CHART_TITLECOLOR_DESC"/>
+
+				<!-- Legend Settings -->
+				<field type="legend" label="Legend Settings"/>
+				<field name="option_legend_position"
+					   type="list"
+					   default="right"
+					   label="LEGEND_POSITION_LABEL"
+					   description="LEGEND_POSITION_DESC">
+					<option value="right">RIGHT</option>
+					<option value="top">ABOVE_THE_CHART</option>
+					<option value="bottom">BELOW_THE_CHART</option>
+					<option value="in">INSIDE_THE_CHART_BY_THE_TOP_LEFT_CORNER</option>
+					<option value="none">NO_LEGEND_IS_DISPLAYED</option>
+				</field>
+				<field name="option_legend_textStyle_fontName"
+					   type="fontface"
+					   default=""
+					   label="LEGEND_FONT_LABEL"
+					   description="LEGEND_FONT_DESC">
+					<option value="">USE_GLOBAL</option>
+				</field>
+				<field name="option_legend_textStyle_fontSize"
+					   type="text"
+					   default="9"
+					   label="LEGEND_TEXTSIZE_LABEL"
+					   description="LEGEND_TEXTSIZE_DESC"/>
+				<field name="option_legend_textStyle_color"
+					   type="color"
+					   default="#000000"
+					   label="LEGEND_TEXTCOLOR_LABEL"
+					   description="LEGEND_TEXTCOLOR_DESC"/>
+
+				<!-- Tooltip Settings -->
+				<field type="legend" label="Tooltip Settings"/>
+				<field name="option_tooltip_trigger"
+					   type="radio"
+					   default="focus"
+					   label="TOOLTIP_ENABLED_LABEL"
+					   description="TOOLTIP_ENABLED_DESC">
+					<option value="none">JNO</option>
+					<option value="focus">JYES</option>
+				</field>
+				<field name="option_tooltip_textStyle_fontName"
+					   type="fontface"
+					   default=""
+					   label="TOOLTIP_FONT_LABEL"
+					   description="TOOLTIP_FONT_DESC">
+					<option value="">USE_GLOBAL</option>
+				</field>
+				<field name="option_tooltip_textStyle_fontSize"
+					   type="text"
+					   default="9"
+					   label="TOOLTIP_TEXTSIZE_LABEL"
+					   description="TOOLTIP_TEXTSIZE_DESC"/>
+				<field name="option_tooltip_textStyle_color"
+					   type="color"
+					   default="#000000"
+					   label="TOOLTIP_TEXTCOLOR_LABEL"
+					   description="TOOLTIP_TEXTCOLOR_DESC"/>
+				<field name="group"
+					   hidden="true"
+					   type="japanel"
+					   function="depend">
+					<option for="chartData" value="csv" hideRow="true">data_input</option>
+					<option for="chartData" value="googlesheet" hideRow="true">data_input_url</option>
+					<option for="chartType" value="ComboChart" hideRow="true">series_targetLine</option>
+					<option for="option_is3D" value="1" hideRow="true">option_pieSliceBorderColor</option>
+					<option for="option_explode" value="1" hideRow="true">option_slices_explode</option>
+					<option for="enable_max_line" value="1" hideRow="true">max_value, max_color</option>
+					<option for="enable_min_line" value="1" hideRow="true">min_value, min_color</option>
+					<option for="chartType" value="AreaChart" hideRow="false">enable_max_line,enable_min_line</option>
+					<option for="chartType" value="BarChart" hideRow="false">enable_max_line,enable_min_line</option>
+					<option for="chartType" value="ColumnChart" hideRow="false">enable_max_line,enable_min_line</option>
+					<option for="chartType" value="LineChart" hideRow="false">enable_max_line,enable_min_line</option>
+					<option for="chartType" value="SteppedAreaChart" hideRow="false">enable_max_line,enable_min_line</option>
+					<option for="chartType" value="CandlestickChart" hideRow="false">enable_max_line,enable_min_line</option>
+				</field>
+				<field type="japanel" path="modules/mod_jagooglechart_2/asset/elements/" />
+			</fieldset>
+
+			<!-- Advanced Settings -->
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout"
+					   label="JFIELD_ALT_LAYOUT_LABEL"
+					   class="form-control"
+					   description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx"
+					   type="text"
+					   label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					   description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list"
+					   default="1"
+					   label="COM_MODULES_FIELD_CACHING_LABEL"
+					   description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="text"
+					   default="900"
+					   label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					   description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field name="cachemode"
+					   type="hidden"
+					   default="static">
+					<option
+							value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

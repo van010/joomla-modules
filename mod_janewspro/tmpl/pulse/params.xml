@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+	<fields 
+		name="params" 
+		addfieldpath="/modules/mod_janewspro/elements">
+		<fieldset 
+			name="basic">				
+			<field
+				name="showhits"
+				type="radio"
+				default="1" 
+				label="SHOW_HITS_COLUMN" 
+				description="SHOW_HITS_COLUMN_DESC">
+					<option value="1">Show</option>
+					<option value="0">Hide</option>
+			</field>
+		</fieldset>
+	</fields>
+</form>

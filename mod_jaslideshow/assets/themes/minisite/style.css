@@ -1,0 +1,115 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Slideshow Module for J25 & J31
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+#ja-slideshow{background: url(bgd_slideshow.png) 50% 0 repeat-y; height:400px;}
+.mask{height:400px; width:660px; position:absolute; z-index:5; background: url(bgd_mask.png) 0 0 repeat-y; display: block; left:0; top:0}
+
+.ja-slide-main-wrap { overflow: hidden; position: relative; }
+
+.ja-slide-main { position: absolute; z-index: 1; }
+
+.maskDesc, .maskdesc{
+	background: none;
+	display: block;
+	position: absolute;
+	z-index: 10;
+}
+.ja-slide-item{text-align:right; z-index:1 !important}
+
+ja-slide-item {
+	display: block;
+	float: left;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.ja-slide-item { left: 0; right: 0; }
+
+#ja-slideshow .ja-slide-buttons {
+	display: block;
+	left: 0;
+	position: absolute;
+	top: 330px;
+	z-index: 20;
+}
+
+.ja-slide-buttons span {
+	cursor: pointer;
+	display: block;
+	float: left;
+	height: 30px;
+	overflow: hidden;
+	text-indent: -9999px;
+	width: 30px;
+	margin-right:0;
+}
+
+.ja-slide-buttons .ja-slide-next{ background: #222 url(btn_next.png) 50% 50% no-repeat; }
+
+.ja-slide-buttons .ja-slide-next:hover{ background: #0a0a0a url(btn_next_hover.png) 50% 50% no-repeat; }
+
+.ja-slide-buttons .ja-slide-prev{ background: #222 url(btn_prev.png) 50% 50% no-repeat; }
+
+.ja-slide-buttons .ja-slide-prev:hover{ background: #0a0a0a url(btn_prev_hover.png) 50% 50% no-repeat; }
+
+.ja-slide-desc{
+	background: url(bgd_desc.jpg) 0 0 repeat;
+	color: #666;
+	height: 170px;
+	left: 0;
+	padding: 20px 40px;
+	position: absolute;
+	text-align: center;
+	top: 120px;
+	width: 380px;
+	z-index:20
+}
+.ja-slide-desc h3, .ja-articles .ja-slide-desc a span{
+	color: #fff;
+	font-family: 'BebasNeueRegular', Arial, sans-serif;
+	font-size: 400%;
+	font-weight: normal;
+	line-height: 100%;
+	margin: 0 0 10px;
+}
+
+.ja-articles .ja-slide-desc a:hover, .ja-articles .ja-slide-desc a:active, .ja-articles .ja-slide-desc a:focus { text-decoration:none }
+
+.ja-articles .ja-slide-thumbs-handles, .ja-articles .ja-slide-buttons span.ja-slide-playback,
+  .ja-articles .ja-slide-buttons span.ja-slide-play, .ja-articles .ja-slide-buttons span.ja-slide-play, .ja-articles .ja-slide-buttons span.ja-slide-stop { display:none }
+
+#ja-slideshow .readon{
+	background: #186fb2;
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	height: 30px;
+	left: 355px;
+	line-height: 30px;
+	position: absolute;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	top: 330px;
+	width: 105px;
+	z-index:20;
+}
+
+#ja-slideshow .ja-articles .readon { background: url(ico_arrow_01.png) 94% 50% no-repeat; top: 210px; }
+
+#ja-slideshow .readon span{
+	background: url(ico_arrow_01.png) 100% 3px no-repeat;
+	padding: 0 15px 0 0;
+}
+
+.ja-slide-thumbs-handles {width:auto}

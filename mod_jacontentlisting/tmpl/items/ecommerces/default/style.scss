@@ -1,0 +1,44 @@
+/* Inherit style from global style */
+.jacl-item {
+}
+
+// Item media
+.jacl-item__media {
+
+  &.rounded img {
+  }
+
+  &.circle img {
+  }
+}
+
+
+// Item category
+.jacl-item__cat {
+}
+
+
+// Item heading
+.jacl-item__title {
+}
+
+
+// Item meta
+.jacl-item__meta {
+  ul {
+    li {
+      span {
+      }
+    }
+  }
+}
+
+
+// Item Introduction
+.jacl-item__introtext {
+}
+
+
+// Read more
+.jacl-item__readmore {
+}

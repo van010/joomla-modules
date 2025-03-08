@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>JA Countdown</name>
+	<author>JoomlArt.com</author>
+	<creationDate>May 2015</creationDate>
+	<copyright>Copyright (C), J.O.O.M Solutions Co., Ltd. All Rights Reserved.</copyright>
+	<license>license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>1.0.7</version>
+	<updateservers>
+		<server type="collection">http://update.joomlart.com/service/tracking/list.xml</server>
+	</updateservers>
+	<description>
+		<![CDATA[
+	<h2>Module JA Countdown</h2>
+	<div style='font-weight: normal'>
+		<p>JA Countdown is a simple and helpful Joomla! module to display a countdown to any specific date and time.</p>
+		<p>You don't have to worry about the format, simply choose the date and time in back-end and you have a cool countdown clock to go.</p>
+		<p>The module works well on any Joomla! 2.5 and 3.3 template.</p>
+
+		<p><strong><span style="color: #ff0000;">Upgrade Method:</span><br /></strong></p>
+		<ol>
+		<li>You can install new version directly over this version. Uninstallation is not required. Backup any customized files before upgrading. OR</li>
+		<li>Use <strong><a href="http://extensions.joomla.org/extensions/core-enhancements/installers/12077" target="_blank">JA Extensions Manager</a></strong> Component for easy upgrades and rollbacks. <strong><a href="http://www.youtube.com/user/JoomlArt#p/c/BC9B0C0BFE98657E/2/mNAuJRmifG8" target="_blank">Watch Video..</a></strong></li>
+		</ol>
+		<p><span style="color: #008000;"><strong>Links:</strong></span></p>
+		<ul>
+		<li><a target="_blank" href="http://pm.joomlart.com/browse/JMC">Report Bug</a></li>
+		<li><a target="_blank" href="http://update.joomlart.com/">Updates &amp; Versions</a></li>
+		</ul>
+		<p>Copyright 2004 - 2014 <a href="http://www.joomlart.com/" title="Visit Joomlart.com!">JoomlArt.com</a>.</p>
+	</div>
+	]]>
+	</description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_jacountdown.ini</language>
+	</languages>
+
+	<files>
+		<filename module="mod_jacountdown">mod_jacountdown.php</filename>
+		<filename module="mod_jacountdown">index.html</filename>
+		<folder>asset</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields
+				name="params"
+				addfieldpath="/modules/mod_jacountdown/asset/elements">
+			<fieldset name="basic">
+				<field type="japanel" path="modules/mod_jacountdown/asset/elements/" />
+
+				<field
+						name="group"
+						type="japanel"
+						function="depend" hidden="true">
+					<option for="jalayout" value="layout1" hideRow="true">
+						minutesColor,hoursColor,daysColor
+					</option>
+					<option for="jalayout" value="layout2" hideRow="true">
+						secondsGlow
+					</option>
+					<option for="jalayout" value="layout3" hideRow="true">
+						minutesColor,hoursColor,daysColor
+					</option>
+					<option for="jalayout" value="layout5" hideRow="true">
+						minutesColor,hoursColor,daysColor
+					</option>
+					<option for="choisebackground" value="bg_images" hideRow="true">
+						backgroundimages
+					</option>
+					<option for="choisebackground" value="bg_color" hideRow="true">
+						backgroundcolor
+					</option>
+				</field>
+				<field
+						name="custom_titles"
+						type="text"
+						default=""
+						label="MODULE_CUSTOM_TITLES"
+						description="MODULE_CUSTOM_TITLES_DESC" />
+				<field
+						name="custom_message"
+						type="textarea"
+						default=""
+						label="MODULE_CUSTOM_MESSAGE"
+						cols="40"
+						rows="5"
+						size="120"
+						filter="safehtml"
+						description="MODULE_CUSTOM_MESSAGE_DESC" />
+				<field name="jastartDate"
+					   type="calendar" default="2021-09-14 00:00:00"
+					   label="JACD_STARTDATE" description="JACD_STARTDATE_DES"
+					   class="input-long" required="true"
+					   filter="user_utc" format="%Y-%m-%d %H:%M:%S"
+					   filterformat="Y-m-d H:i:s"
+					   singleheader="true" showtime="true"
+					   timeformat="12" todaybutton="true" weeknumbers="true"
+					   filltable="true" minyear="-3" maxyear="5" />
+				<field name="jaendDate"
+					   type="calendar" default="2021-12-31 11:59:00"
+					   label="JACD_ENDDATE" description="JACD_ENDDATE_DES"
+					   class="input-long" required="true"
+					   filter="user_utc" format="%Y-%m-%d %H:%M:%S"
+					   filterformat="Y-m-d H:i:s"
+					   singleheader="true" showtime="true"
+					   timeformat="12" todaybutton="true" weeknumbers="true"
+					   filltable="true" minyear="-3" maxyear="5" />
+				<field
+						name="jalayout"
+						type="list"
+						class="sselect"
+						label="JACD_LAYOUT_LABEL"
+						description="JACD_LAYOUT_LABEL_DESC">
+					<option value="layout1">Layout 1</option>
+					<option value="layout2">Layout 2</option>
+					<option value="layout3">Layout 3</option>
+					<option value="layout4">Layout 4</option>
+					<option value="layout5">Layout 5</option>
+				</field>
+				<field
+						name="daysColor"
+						type="jacolorpicker"
+						size="10"
+						label="JACD_DAYSCOLOR"
+						description="JACD_DAYSCOLOR_DESC"
+						default="#ff6565" />
+				<field
+						name="hoursColor"
+						type="jacolorpicker"
+						size="10"
+						label="JACD_HOURSCOLOR"
+						description="JACD_HOURSCOLOR_DESC"
+						default="#378cff" />
+
+				<field
+						name="minutesColor"
+						type="jacolorpicker"
+						size="10"
+						label="JACD_MINUTESCOLOR"
+						description="JACD_MINUTESCOLOR_DESC"
+						default="#9cdb7d" />
+
+				<field
+						name="secondsColor"
+						type="jacolorpicker"
+						size="10"
+						label="JACD_SECONDCOLOR"
+						description="JACD_SECONDCOLOR_DESC"
+						default="#ffdc50" />
+
+				<field
+						name="secondsGlow"
+						type="jacolorpicker"
+						size="10"
+						label="JACD_SECONDSGLOW"
+						description="JACD_SECONDSGLOW_DESC"
+						default="#ffdc50" />
+				<field
+						name="choisebackground"
+						type="list"
+						class="sselect"
+						default="bg_images"
+						label="JACD_CHOICEBACKGROUND"
+						description="JACD_CHOICEBACKGROUND_DESC">
+					<option value="bg_images">JACD_BACKGROUND_IMAGES</option>
+					<option value="bg_color">JACD_BACKGROUND_COLOR</option>
+				</field>
+				<field
+						name="backgroundimages"
+						type="media"
+						showon="choisebackground:bg_images"
+						preview="show"
+						label="JACD_BACKGROUND_IMAGES"
+						description="JACD_BACKGROUND_IMAGES_DESC"/>
+				<field
+						name="backgroundcolor"
+						type="jacolorpicker"
+						size="10"
+						showon="choisebackground:bg_color"
+						label="JACD_BACKGROUND_COLOR"
+						description="JACD_BACKGROUND_COLOR_DESC"
+						default="" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+						name="moduleclass_sfx"
+						type="text"
+						default=""
+						label="MODULE_CLASS_SUFFIX"
+						description="MODULE_CLASS_SUFFIX_DESC" />
+				<field
+						name="cache"
+						type="list"
+						class="sselect"
+						default="1"
+						label="COM_MODULES_FIELD_CACHING_LABEL"
+						description="COM_MODULES_FIELD_CACHING_DESC"
+				>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field name="cache_time" type="text"
+					   default="900"
+					   label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					   description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+						name="cachemode"
+						type="hidden"
+						default="static">
+					<option
+							value="static"/>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

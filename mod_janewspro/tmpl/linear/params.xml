@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+	<fields 
+		name="params" 
+		addfieldpath="/modules/mod_janewspro/elements">
+		<fieldset 
+			name="basic">		
+			<field 
+				name="duration" 
+				type="text" 
+				default="1000" 
+				class="validate-numeric"
+				label="Duration" 
+				description="DURATION_DESC"/>
+		</fieldset>
+	</fields>
+</form>

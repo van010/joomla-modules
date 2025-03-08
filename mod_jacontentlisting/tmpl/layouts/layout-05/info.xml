@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+	<layout>
+		<name>layout 05</name>
+		<description>demo description</description>
+		<items>8</items>
+	</layout>
+		<fields name="jalayout-settings" addfieldpath="/modules/mod_jacontentlisting/admin/fields">
+			<fieldset name="layout">
+				<field name="COM_CONTENT_LISTING_LAYOUT_OTHER_EXTEND" type="spacer" hr="false" label="COM_CONTENT_LISTING_LAYOUT_OTHER_EXTEND" />
+				<field name="item_per_row" type="list" default="3" label="MOD_CONTENT_LISTING_ITEM_PER_ROW" description="MOD_CONTENT_LISTING_ITEM_PER_ROW_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="6">J6</option>
+				</field>
+
+				<field name="feature_item" type="number" default="1" label="MOD_CONTENT_LISTING_ITEM_HIGHLIGHT" description="MOD_CONTENT_LISTING_ITEM_HIGHLIGHT_DESC" />
+				<field name="feature_item_size" type="list" default="1" label="MOD_CONTENT_LISTING_ITEM_HIGHLIGHT_SIZE" description="MOD_CONTENT_LISTING_ITEM_HIGHLIGHT_SIZE_DESC">
+					<option value="1">Normal</option>
+					<option value="2">Large (2 cols)</option>
+					<option value="3">Larger (3 cols)</option>
+					<option value="12">Full Width (All cols)</option>
+				</field>
+			</fieldset>
+		</fields>
+</form>

@@ -1,0 +1,71 @@
+.layout-1.item-border .jacl-row {
+  position: relative;
+}
+.layout-1.item-border .jacl-row::before, .layout-1.item-border .jacl-row::after {
+  background-color: var(--border-color);
+  content: "";
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: calc(var(--grid-gutter-width) / 4);
+  right: calc(var(--grid-gutter-width) / 4);
+}
+@media (min-width: 1200px) {
+  .layout-1.item-border .jacl-row::before, .layout-1.item-border .jacl-row::after {
+    left: calc(var(--grid-gutter-width) / 2);
+    right: calc(var(--grid-gutter-width) / 2);
+  }
+}
+.layout-1.item-border .jacl-row::after {
+  top: auto;
+  bottom: 0;
+}
+.layout-1.item-border .jacl-row > div {
+  border-left: 0;
+}
+@media (min-width: 1200px) {
+  .layout-1.item-border .jacl-row > div {
+    border-right: 1px solid var(--border-color);
+    padding: var(--grid-gutter-width);
+  }
+}
+.layout-1.item-border .jacl-row > div:last-child {
+  border-right: 0;
+}
+@media (min-width: 1200px) {
+  .layout-1.item-border-2 .jacl-row {
+    margin: 0 calc(var(--grid-gutter-width) / -1);
+  }
+}
+@media (min-width: 1200px) {
+  .layout-1.item-border-2 .jacl-row > div {
+    padding: 0 var(--grid-gutter-width);
+  }
+  .layout-1.item-border-2 .jacl-row > div + div {
+    border-left: 1px solid var(--border-color);
+  }
+}
+@media (min-width: 1200px) {
+  .layout-1.item-border-2 .jacl-row.cols-2 > div:nth-child(2n+1), .layout-1.item-border-2 .jacl-row.cols-3 > div:nth-child(3n+1), .layout-1.item-border-2 .jacl-row.cols-4 > div:nth-child(4n+1), .layout-1.item-border-2 .jacl-row.cols-5 > div:nth-child(5n+1), .layout-1.item-border-2 .jacl-row.cols-6 > div:nth-child(6n+1) {
+    border-left: 0;
+  }
+  .layout-1.item-border-2 .jacl-row.cols-2 > div:nth-child(2n) ~ div, .layout-1.item-border-2 .jacl-row.cols-3 > div:nth-child(3n) ~ div, .layout-1.item-border-2 .jacl-row.cols-4 > div:nth-child(4n) ~ div, .layout-1.item-border-2 .jacl-row.cols-5 > div:nth-child(5n) ~ div, .layout-1.item-border-2 .jacl-row.cols-6 > div:nth-child(6n) ~ div {
+    padding-top: var(--grid-gutter-width);
+  }
+}
+.layout-1 .jacl-actions {
+  margin-top: calc(var(--global-spacing) * 4);
+  text-align: center;
+}
+.layout-1 .jacl-actions a {
+  background: #42484F;
+  color: #fff;
+  border-radius: 5px;
+  display: block;
+  padding: calc(var(--global-spacing) * 1.5) 0;
+  max-width: 280px;
+  margin: 0 auto;
+}
+.layout-1 .jacl-actions a:hover, .layout-1 .jacl-actions a:focus, .layout-1 .jacl-actions a:active {
+  background: #1D2124;
+}

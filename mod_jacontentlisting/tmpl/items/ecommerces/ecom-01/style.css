@@ -1,0 +1,122 @@
+/* Item style 1 */
+.eitem-style-1 {
+  height: auto;
+}
+.eitem-style-1 .jacl-item__inner {
+  display: block;
+}
+.eitem-style-1 .jacl-item__media {
+  position: relative;
+}
+.eitem-style-1 .jacl-item__media .item-media-mask {
+  display: none;
+}
+.eitem-style-1 .media-circle + .jacl-item__body {
+  top: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.eitem-style-1 .media-circle + .jacl-item__body .jacl-item__meta {
+  margin-top: 0;
+}
+.eitem-style-1 .media-circle + .jacl-item__body .jacl-item__cat {
+  position: static;
+}
+.eitem-style-1.has-media {
+  position: relative;
+  overflow: hidden;
+}
+.eitem-style-1.has-media .jacl-item__body {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 4px;
+  position: absolute;
+  left: calc(var(--grid-gutter-width) / 2);
+  bottom: calc(var(--grid-gutter-width) / 2);
+  right: calc(var(--grid-gutter-width) / 2);
+  padding: 32px;
+  height: auto;
+  -webkit-transition: var(--trans-base);
+  transition: var(--trans-base);
+}
+@media (max-width: 991px) {
+  .eitem-style-1.has-media .jacl-item__body {
+    padding: 16px;
+  }
+}
+.eitem-style-1 .jacl-item__cat.style-outline,
+.eitem-style-1 .jacl-item__cat.style-rounded {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: calc(var(--global-spacing) * 2);
+  left: auto;
+  top: auto;
+  padding-left: 0;
+}
+.eitem-style-1.has-media .jacl-item__cat.style-outline, .eitem-style-1.has-media .jacl-item__cat.style-rounded {
+  padding-left: 0;
+}
+.eitem-style-1.has-media .jacl-item__cat {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: calc(var(--global-spacing) * 2);
+}
+.eitem-style-1.has-media .jacl-item__cat.style-underline a {
+  color: var(--gray-700);
+}
+.eitem-style-1.has-media .jacl-item__cat.style-outline a, .eitem-style-1.has-media .jacl-item__cat.style-outline-rounded a {
+  background: transparent;
+  border-color: var(--gray-700);
+  color: var(--gray-700);
+}
+.eitem-style-1.has-media .jacl-item__cat.style-outline a:hover, .eitem-style-1.has-media .jacl-item__cat.style-outline a:focus, .eitem-style-1.has-media .jacl-item__cat.style-outline a:active, .eitem-style-1.has-media .jacl-item__cat.style-outline-rounded a:hover, .eitem-style-1.has-media .jacl-item__cat.style-outline-rounded a:focus, .eitem-style-1.has-media .jacl-item__cat.style-outline-rounded a:active {
+  background-color: var(--body-link-hover-color);
+  border-color: var(--body-link-hover-color);
+}
+.eitem-style-1.has-media .jacl-item__cat.style-blank a {
+  color: var(--gray-700);
+}
+.eitem-style-1.has-media .jacl-item__cat.style-blank a:hover, .eitem-style-1.has-media .jacl-item__cat.style-blank a:focus, .eitem-style-1.has-media .jacl-item__cat.style-blank a:active {
+  color: var(--body-link-hover-color);
+}
+@media (max-width: 767px) {
+  .eitem-style-1 .jacl-item__title {
+    font-size: 16px;
+  }
+}
+.eitem-style-1.has-media .jacl-item__title, .eitem-style-1.has-media .jacl-item__title a, .eitem-style-1.has-media .readmore-link {
+  color: var(--gray-900);
+}
+.eitem-style-1.has-media .jacl-item__title:hover, .eitem-style-1.has-media .jacl-item__title a:hover, .eitem-style-1.has-media .readmore-link:hover {
+  text-decoration: underline;
+}
+.eitem-style-1 .jacl-item__meta ul {
+  text-transform: uppercase;
+}
+.eitem-style-1.has-media .jacl-item__meta span {
+  color: var(--gray-800);
+}
+.eitem-style-1 .jacl-item__intro,
+.eitem-style-1 .jacl-item__introtext {
+  margin-top: 16px;
+}
+.eitem-style-1.has-media .jacl-item__intro, .eitem-style-1.has-media .jacl-item__introtext {
+  color: var(--gray-800);
+  opacity: 0.7;
+}
+.eitem-style-1.has-media .jacl-item__tags ul.tags > li > a {
+  color: #fff;
+}
+.eitem-style-1.has-media .jacl-item__tags ul.tags > li > a:hover, .eitem-style-1.has-media .jacl-item__tags ul.tags > li > a:focus, .eitem-style-1.has-media .jacl-item__tags ul.tags > li > a:active {
+  color: var(--body-text-color);
+}
+
+.layout-1 .highlight-item .item-style-1 {
+  height: 100%;
+}
+.layout-1 .highlight-item .item-style-1 .jacl-item__inner {
+  height: 100%;
+}
+.layout-1 .highlight-item .item-style-1 .jacl-item__media {
+  height: 100%;
+}

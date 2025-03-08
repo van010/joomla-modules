@@ -1,0 +1,6 @@
+.layout-6 .main-items {
+  margin-bottom: var(--grid-gutter-width);
+}
+.layout-6 .other-items > div {
+  padding-bottom: var(--grid-gutter-width);
+}

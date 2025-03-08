@@ -1,0 +1,178 @@
+/*
+ * ------------------------------------------------------------------------
+ * JA Slideshow Module for J25 & J31
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+*/
+
+/* COMMON STYLE
+--------------------------------------------------------- */
+#ja-slideshow {}
+
+#ja-slideshow .main {
+	z-index: 6;
+}
+
+#ja-slideshow .ja-slide-thumbs-wrap.ja-horizontal, .ja-horizontal {
+	position: absolute;
+	z-index: 200;
+	bottom: 0;
+	background: none;
+	right: 20px;
+	bottom: 100px;
+	left: auto;
+}
+
+.ja-slide-thumbs {
+	float: left;
+	height: 40px;
+}
+
+.ja-slide-thumbs .ja-slide-thumb span { display:block; text-align: center; vertical-align: middle;}
+
+.maskDesc {
+	bottom: 140px !important ;
+	z-index: 100;
+	background: url(thumb-mask.png) repeat-x left top;
+	left: 20px;
+}
+
+.maskDesc .ja-slide-desc,
+.ja-slide-desc a {
+	position: relative;
+	color: #fff; 
+	text-transform: uppercase; 
+	font-family: 'TeXGyreAdventorRegular',Arial,Helvetica,sans-serif;
+	line-height: 80px;
+	font-size: 170%;
+	text-align: center;
+	border-left: solid 1px #0e1311;
+	border-right: solid 1px #0e1311; 
+	margin: 0px 80px;
+}
+
+.ja-slide-desc a {
+	font-size: 100%;
+	border: none;
+}
+
+.ja-slide-thumbs-mask { display:none }
+ 
+.maskDesc .ja-slide-desc p {
+	color: #fff;
+	display: none;
+}
+
+.maskDesc .ja-slide-desc a.readon, .maskDesc .inner a.readon {
+	background: url("arrow-normal.png") no-repeat left top;
+	color: #999999;
+	padding: 0px 0px 0px 15px;
+	top: 60px;
+	text-align: right;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	left: inherit;
+	line-height: 12px;
+	margin: 0px;
+	right: 90px;
+	text-transform: none;
+	position: absolute;
+	z-index: 100;
+	border: none;
+}
+
+
+.maskDesc .ja-slide-desc a.readon:hover,
+.maskDesc .ja-slide-desc a.readon:focus,
+.maskDesc .ja-slide-desc a.readon:active,
+.maskDesc .inner a.readon:hover,
+.maskDesc .inner a.readon:focus,
+.maskDesc .inner a.readon:active {
+	background-position: left bottom;
+	color: #cc3333;
+}
+
+.ja-slide-thumbs-handles {
+	background: none;
+	position: absolute; 
+	z-index: 150;
+	width: auto;
+	bottom: 80px;
+}
+
+.ja-slide-thumb-inner {
+	margin-left: 0px;
+	background: none;
+	border: none;
+	padding: 0px;
+	height: auto;
+}
+.ja-slide-thumb-inner h3 { display: none; }
+
+.ja-slide-main .ja-slide-item .ja-slide-desc { display: none !important; }
+
+#ja-slideshow .ja-slide-thumbs-wrap { right: 0px; bottom: 250px; left: 0px; }
+
+#ja-slideshow .ja-slide-thumb img { margin: 0; border: none !important; padding: 0px; }
+
+#ja-slideshow .ja-slide-buttons {
+	left: 20px;
+	width: 940px;
+	margin: 0px 20px;
+	bottom: 160px;
+}
+
+.ja-slide-buttons span {
+	font-size: 0px;
+	text-indent: -9999em;
+	width: 40px;
+	height: 40px;
+	display: block;
+	background-position: left top;
+	background-repeat: no-repeat;
+	margin: 0px;
+	padding: 0px;
+	background-color: transparent;
+}
+
+.ja-slide-buttons span:hover { background-position: left bottom; }
+
+.ja-slide-buttons span.ja-slide-playback,
+.ja-slide-buttons span.ja-slide-stop,
+.ja-slide-buttons span.ja-slide-play {
+	display: none;
+}
+
+.ja-slide-buttons span.ja-slide-prev { background-image: url(arrow-back.png); }
+
+.ja-slide-buttons span.ja-slide-next { background-image: url(arrow-next.png); float: right; }
+
+.ja-slide-thumbs-wrap .active .ja-slide-thumb-inner {
+	background: none !important;
+}
+
+.active .ja-slide-thumb-inner img {
+	background-color: transparent;
+}
+
+.ja-slide-thumbs-handles span {
+	opacity: 0.5 !important;
+	filter:alpha(opacity=50) !important;
+	background: #0e1311 !important;
+}
+
+.ja-slide-thumbs-handles span.active {
+	filter:alpha(opacity=1)!important;
+	opacity: 0.001 !important;
+}
+
+#ja-topsl1 div.ja-moduletable, #ja-topsl1 div.moduletable  {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 0px;
+	padding: 10px;
+}

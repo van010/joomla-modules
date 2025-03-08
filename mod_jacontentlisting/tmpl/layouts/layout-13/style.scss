@@ -1,0 +1,122 @@
+$start-direction : left!default;
+$end-direction : right!default;
+
+.layout-13 {
+  .jacl-row.normal-gutters.other-items > div {
+    margin-top: 0;
+  }
+
+  
+  // Border For Layout
+  .jacl-row.normal-gutters {
+    > div {
+      position: relative;
+
+      + div {
+        &:before {
+          background: var(--border-color);
+          bottom: calc(var(--grid-gutter-width) / 2);
+          content: "";
+          #{$start-direction}: 0;
+          top: calc(var(--grid-gutter-width) / 2);
+          position: absolute;
+          width: 1px;
+
+          // Tablet view
+          @media (max-width: 1199px) {
+            bottom: calc(var(--grid-gutter-width) / 4);
+            top: calc(var(--grid-gutter-width) / 4);
+          }
+
+          @media (max-width: 991px) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .sub-layout {
+      .jacl-row {
+        > div {
+          position: relative;
+
+          &:before {
+            // Border top on Mobile
+            @media (max-width: 991px) {
+              background: var(--border-color);
+              content: "";
+              left: calc(var(--grid-gutter-width) / 4);
+              height: 1px;
+              right: calc(var(--grid-gutter-width) / 4);
+              top: calc(var(--grid-gutter-width) / 4);
+              position: absolute;
+              width: auto;
+            }
+          }
+          
+
+          // Normal Border
+          + div:before {
+            background: var(--border-color);
+            content: "";
+            left: calc(var(--grid-gutter-width) / 2);
+            height: 1px;
+            right: calc(var(--grid-gutter-width) / 2);
+            top: 0;
+            position: absolute;
+            width: auto;
+
+            // Tablet view
+            @media (max-width: 1199px) {
+              left: calc(var(--grid-gutter-width) / 4);
+              right: calc(var(--grid-gutter-width) / 4);
+            }
+
+            @media (max-width: 991px) {
+              display: block;
+              top: calc(var(--grid-gutter-width) / 4);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    // Highlight Order
+    .order-highlight-2 {
+      .highlight-item {
+        order: 2;
+
+        &:before {
+          background: var(--border-color);
+          bottom: calc(var(--grid-gutter-width) / 2);
+          content: "";
+          #{$start-direction}: 0;
+          top: calc(var(--grid-gutter-width) / 2);
+          position: absolute;
+          width: 1px;
+        }
+      }
+
+      .col-child {
+        order: 1;
+
+        &:before {
+          display: none;
+        }
+      }
+
+      .sub-layout {
+        order: 3;
+      }
+    }
+  }
+
+  // Fix for item style 2
+  .jacl-item.item-style-2,
+  .jacl-item.eitem-style-2 {
+    height: auto;
+  }
+  
+}

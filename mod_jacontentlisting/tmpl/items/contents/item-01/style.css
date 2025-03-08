@@ -1,0 +1,128 @@
+/* Item style 1 */
+.item-style-1 {
+  height: auto;
+}
+.item-style-1 .jacl-item__inner {
+  display: block;
+}
+.item-style-1 .jacl-item__media {
+  position: relative;
+}
+.item-style-1 .jacl-item__media .item-media-mask {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(transparent));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.item-style-1 .media-circle + .jacl-item__body {
+  top: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.item-style-1 .media-circle + .jacl-item__body .jacl-item__meta {
+  margin-top: 0;
+}
+.item-style-1 .media-circle + .jacl-item__body .jacl-item__cat {
+  position: static;
+}
+.item-style-1.has-media {
+  position: relative;
+  overflow: hidden;
+}
+.item-style-1.has-media .jacl-item__body {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 32px;
+  height: auto;
+}
+@media (max-width: 991px) {
+  .item-style-1.has-media .jacl-item__body {
+    padding: 16px;
+  }
+}
+.item-style-1 .jacl-item__cat.style-outline,
+.item-style-1 .jacl-item__cat.style-rounded {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: calc(var(--global-spacing) * 2);
+  left: auto;
+  top: auto;
+  padding-left: 0;
+}
+.item-style-1.has-media .jacl-item__cat.style-outline, .item-style-1.has-media .jacl-item__cat.style-rounded {
+  padding-left: 0;
+}
+.item-style-1.has-media .jacl-item__cat {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: calc(var(--global-spacing) * 2);
+}
+.item-style-1.has-media .jacl-item__cat.style-underline a {
+  color: #fff;
+}
+.item-style-1.has-media .jacl-item__cat.style-outline a, .item-style-1.has-media .jacl-item__cat.style-outline-rounded a {
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+.item-style-1.has-media .jacl-item__cat.style-outline a:hover, .item-style-1.has-media .jacl-item__cat.style-outline a:focus, .item-style-1.has-media .jacl-item__cat.style-outline a:active, .item-style-1.has-media .jacl-item__cat.style-outline-rounded a:hover, .item-style-1.has-media .jacl-item__cat.style-outline-rounded a:focus, .item-style-1.has-media .jacl-item__cat.style-outline-rounded a:active {
+  background-color: var(--body-link-hover-color);
+  border-color: var(--body-link-hover-color);
+}
+.item-style-1.has-media .jacl-item__cat.style-blank a {
+  color: #fff;
+}
+.item-style-1.has-media .jacl-item__cat.style-blank a:hover, .item-style-1.has-media .jacl-item__cat.style-blank a:focus, .item-style-1.has-media .jacl-item__cat.style-blank a:active {
+  color: var(--body-link-hover-color);
+}
+@media (max-width: 767px) {
+  .item-style-1 .jacl-item__title {
+    font-size: 16px;
+  }
+}
+.item-style-1.has-media .jacl-item__title, .item-style-1.has-media .jacl-item__title a, .item-style-1.has-media .readmore-link {
+  color: #fff;
+}
+.item-style-1.has-media .jacl-item__title:hover, .item-style-1.has-media .jacl-item__title a:hover, .item-style-1.has-media .readmore-link:hover {
+  text-decoration: underline;
+}
+.item-style-1 .jacl-item__meta ul {
+  text-transform: uppercase;
+}
+.item-style-1.has-media .jacl-item__meta span {
+  color: #fff;
+}
+.item-style-1 .jacl-item__intro,
+.item-style-1 .jacl-item__introtext {
+  margin-top: 16px;
+}
+.item-style-1.has-media .jacl-item__intro, .item-style-1.has-media .jacl-item__introtext {
+  color: #fff;
+  opacity: 0.7;
+}
+.item-style-1 .jacl-item__fields ul {
+  margin: 0;
+  padding: 0;
+}
+.item-style-1.has-media .jacl-item__tags ul.tags > li > a {
+  color: #fff;
+}
+.item-style-1.has-media .jacl-item__tags ul.tags > li > a:hover, .item-style-1.has-media .jacl-item__tags ul.tags > li > a:focus, .item-style-1.has-media .jacl-item__tags ul.tags > li > a:active {
+  color: var(--body-text-color);
+}
+
+.layout-1 .highlight-item .item-style-1 {
+  height: 100%;
+}
+.layout-1 .highlight-item .item-style-1 .jacl-item__inner {
+  height: 100%;
+}
+.layout-1 .highlight-item .item-style-1 .jacl-item__media {
+  height: 100%;
+}

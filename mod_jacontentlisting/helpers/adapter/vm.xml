@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+    <fields name="jasource-settings" addfieldpath="/modules/mod_jacontentlisting/admin/fields">
+        <fieldset name="basic">
+            <field name="vmcatid" type="vmcat"
+                   default="" required="true" extension="com_virtuemart"
+                   class="mselect" multiple="true" size="5"
+                   label="CATEGORIES_SELECTION"
+                   description="CATEGORIES_SELECTION_DESC">
+            </field>
+            <field name="product_group" type="list"
+                   default="featured" label="MOD_JACL_PRODUCT_DISPLAY"
+                   description="MOD_JACL_PRODUCT_DISPLAY_DESC">
+                <option value="featured">MOD_JACL_PRODUCT_FEATURED_PRODUCTS</option>
+                <option value="latest">MOD_JACL_PRODUCT_LATEST_PRODUCTS</option>
+                <option value="random">MOD_JACL_PRODUCT_RANDOM_PRODUCTS</option>
+                <option value="topten">MOD_JACL_PRODUCT_BEST_SALES</option>
+            </field>
+            <field name="resize_img" type="radio"
+                   class="btn-group btn-group-yesno"
+                   default="0"
+                   label="MOD_JA_CONTENT_LISTING_RESIZE_IMAGES" description="">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+
+            <field name="group1" hidden="true" type="japanel" function="depend">
+                <!--<option for="show_child_category_articles" value="1" hideRow="true">maxSubCats</option>-->
+            </field>
+        </fieldset>
+    </fields>
+</form>

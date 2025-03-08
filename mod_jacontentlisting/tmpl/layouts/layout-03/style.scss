@@ -1,0 +1,60 @@
+@import "../../../assets/vars";
+
+.layout-3 {
+	.highlight-item {
+		// Medium view
+		// @media (max-width: 991px) {
+		// 	margin-bottom: calc(var(--grid-gutter-width) / 2);
+		// }
+
+		// Item Style 2
+		.item-style-2 {
+			height: 100%;
+		}
+	}
+
+	.sub-items:last-child > div {
+		margin-bottom: 0;
+	}
+
+  // Fix equal height for highlight item style 1
+  .highlight-item {
+    .item-style-1 {
+      height: 100%;
+
+      .jacl-item__media {
+        height: 100%;
+
+        img {
+					@media (min-width: 992px) {
+						width: auto;
+					}
+        }
+      }
+    }
+  }
+
+	@each $gutters-size, $value in $gutters-size {
+		.jacl-row.#{$gutters-size}-gutters {
+			.#{$gutters-size}-gutters > div {				
+				@media (max-width: 576px) {
+					margin-bottom: $value / 2;
+				}
+			}
+
+			.highlight-item {
+				margin-bottom: $value / 2;
+
+				@media (min-width: 1200px) {
+					margin-bottom: 0;
+				}
+			}
+
+			&.other-items > div {
+				@media (max-width: 576px) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}

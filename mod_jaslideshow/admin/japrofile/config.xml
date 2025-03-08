@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+	<fields 
+		addfieldpath="/modules/mod_jaslideshow/assets/elements"
+		name="params">
+		<fieldset 
+			name="basic">				
+				
+				<field 
+					name="skin" 
+					type="folderlist"
+					directory="modules/mod_jaslideshow/assets/themes/" 
+					default=""
+					label="SKIN" 
+					description="SKIN_FOR_SLIDER"/>
+					
+				<field
+					name="animation_settings"			
+					type="spacer"
+					label="ANIMATION_SETTINGS"				
+					description="ANIMATION_SETTINGS_DESC" />
+
+				<field 
+					name="autoplay" 
+					type="radio"
+					class="btn-group"	
+					default="0" 
+					label="AUTO_PLAY"
+					description="AUTO_PLAY_DESC">	
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>					
+				</field>
+				
+				<field 
+					name="animation" 
+					type="list" 
+					default="fade" 
+					label="ANIMATION_TYPE"
+					description="ANIMATION_TYPE_DESC">
+						<option value="move">MOVING</option>
+						<option value="fade">FADING</option>
+						<option value="slice">RANDOM_SLICE</option>
+				</field>
+				
+				<field 
+					name="fallback_anim"
+					type="list" 
+					default="fade" 
+					label="FALLBACK_ANIMATION_TYPE"
+					description="FALLBACK_ANIMATION_TYPE_DESC">
+						<option value="move">MOVING</option>
+						<option value="fade">FADING</option>
+				</field>
+				
+				<field 
+					name="duration" 
+					type="text" 
+					default="400"
+					class="validate-numeric"
+					label="ANIMATION_DURATION" 
+					description="ANIMATION_DURATION_DESC" />
+
+
+				<field 
+					name="effect" 
+					type="list" 
+					default="Fx.Transitions.Quad.easeInOut"
+					label="ANIMATION_TRANSITION" 
+					description="ANIMATION_TRANSITION_DESC">
+						<option value="Fx.Transitions.linear">linear</option>
+						<option value="Fx.Transitions.quartOut">QuartOut</option>
+						<option value="Fx.Transitions.Quad.easeIn">Quad.easeIn</option>
+						<option value="Fx.Transitions.Quad.easeOut">Quad.easeOut</option>
+						<option value="Fx.Transitions.Quad.easeInOut">Quad.easeInOut</option>
+						<option value="Fx.Transitions.Cubic.easeIn">Cubic.easeIn</option>
+						<option value="Fx.Transitions.Cubic.easeOut">Cubic.easeOut</option>
+						<option value="Fx.Transitions.Cubic.easeInOut">Cubic.easeInOut</option>
+						<option value="Fx.Transitions.Quart.easeIn">Quart.easeIn</option>
+						<option value="Fx.Transitions.Quart.easeOut">Quart.easeOut</option>
+						<option value="Fx.Transitions.Quart.easeInOut">Quart.easeInOut</option>
+						<option value="Fx.Transitions.Quint.easeIn">Quint.easeIn</option>
+						<option value="Fx.Transitions.Quint.easeOut">Quint.easeOut</option>
+						<option value="Fx.Transitions.Quint.easeInOut">Quint.easeInOut</option>
+						<option value="Fx.Transitions.Pow.easeIn">Pow.easeIn</option>
+						<option value="Fx.Transitions.Pow.easeOut">Pow.easeOut</option>
+						<option value="Fx.Transitions.Pow.easeInOut">Pow.easeInOut</option>
+						<option value="Fx.Transitions.Expo.easeIn">Expo.easeIn</option>
+						<option value="Fx.Transitions.Expo.easeOut">Expo.easeOut</option>
+						<option value="Fx.Transitions.Expo.easeInOut">Expo.easeInOut</option>
+						<option value="Fx.Transitions.Circ.easeIn">Circ.easeIn</option>
+						<option value="Fx.Transitions.Circ.easeOut">Circ.easeOut</option>
+						<option value="Fx.Transitions.Circ.easeInOut">Circ.easeInOut</option>
+						<option value="Fx.Transitions.Sine.easeIn">Sine.easeIn</option>
+						<option value="Fx.Transitions.Sine.easeOut">Sine.easeOut</option>
+						<option value="Fx.Transitions.Sine.easeInOut">Sine.easeInOut</option>
+						<option value="Fx.Transitions.Back.easeIn">Back.easeIn</option>
+						<option value="Fx.Transitions.Back.easeOut">Back.easeOut</option>
+						<option value="Fx.Transitions.Back.easeInOut">Back.easeInOut</option>
+						<option value="Fx.Transitions.Bounce.easeIn">Bounce.easeIn</option>
+						<option value="Fx.Transitions.Bounce.easeOut">Bounce.easeOut</option>
+						<option value="Fx.Transitions.Bounce.easeInOut">Bounce.easeInOut</option>
+						<option value="Fx.Transitions.Elastic.easeIn">Elastic.easeIn</option>
+						<option value="Fx.Transitions.Elastic.easeOut">Elastic.easeOut</option>
+						<option value="Fx.Transitions.Elastic.easeInOut">Elastic.easeInOut</option>
+				</field>
+
+				<field 
+					name="interval" 
+					type="text" 
+					default="5000" 
+					class="validate-numeric"
+					label="INTERVAL"
+					description="INTERVAL_DESC" />
+					
+				<field 
+					name="animationRepeat" 
+					type="radio" 
+					default="yes"
+					class="btn-group"
+					label="ANIMATION_REPEAT" 
+					description="ANIMATION_REPEAT_DESC">
+						<option value="no">JNO</option>
+						<option value="yes">JYES</option>
+				</field>
+					
+				<field
+					name="display_settings"			
+					type="spacer"
+					label="DISPLAY_SETTINGS"				
+					description="DISPLAY_SETTINGS_DESC" />
+
+				<field 
+					name="mainWidth" 
+					type="text" 
+					default="360"
+					class="validate-numeric"
+					label="MAIN_ITEM_WIDTH_DESC" 
+					description="MAIN_ITEM_WIDTH_DESC" />
+					
+				<field 
+					name="mainHeight" 
+					type="text" 
+					default="240"
+					class="validate-numeric"
+					label="MAIN_ITEM_HEIGHT_DESC" 
+					description="MAIN_ITEM_HEIGHT_DESC" />
+					
+				<field 
+					name="source-images-startItem" 
+					type="text" 
+					default="0" 
+					class="validate-numeric"
+					label="START_ITEM"
+					description="START_ITEM_DESC" />
+				
+				<field 
+					name="group10" 
+					hidden="true" 
+					type="japanel"
+					function="depend">
+						 <option for="animation" value="slice" hideRow="true">
+							number_slices,
+							number_box_rows,
+							number_box_cols,
+							fallback_anim
+						</option>
+						<option for="animation" value="move" hideRow="true">
+							container
+						</option>
+				</field>
+				
+				<field 
+					name="number_slices" 
+					type="text" 
+					default="8" 
+					class="validate-numeric"
+					label="NUMBER_SLICES"
+					description="NUMBER_SLICES_DESC" />
+					
+				<field 
+					name="number_box_cols" 
+					type="text" 
+					default="8" 
+					class="validate-numeric"
+					label="NUMBER_BOX_COLS"
+					description="NUMBER_BOX_COLS_DESC" />
+					
+				<field 
+					name="number_box_rows" 
+					type="text" 
+					default="4" 
+					class="validate-numeric"
+					label="NUMBER_BOX_ROWS"
+					description="NUMBER_BOX_ROWS_DESC" />							
+
+				<field 
+					name="group2" 
+					hidden="true" 
+					type="japanel"
+					function="depend">
+						<option for="showdesc" value="desc" hideRow="true">
+							show_readmore,title_max_chars,maxchars,includeTags,descOpacity,showdescwhen,masker-alignment,masker-width,masker-height,masker-transition-style,marker-transition
+						</option>
+						<option for="show_readmore" value="1" hideRow="true">
+							readmoretext
+						</option>
+				</field>
+				
+				<field 
+					name="showdesc" 
+					type="radio" 
+					class="btn-group"
+					default="" 
+					label="SHOW_DESCRIPTION"
+					description="SHOW_DESCRIPTION_DESC">
+						<option value="">JNO</option>
+						<option value="desc">JYES</option>
+				</field>
+				
+				<field 
+					name="show_readmore" 
+					type="radio"
+					class="btn-group"	
+					default="0" 
+					label="SHOW_READMORE"
+					description="SHOW_READMORE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field 
+					name="readmoretext" 
+					type="text" 
+					default="Readmore"
+					label="READMORE_TEXT" 
+					description="READMORE_TEXT_DESC" />
+					
+				<field 
+					name="title_max_chars" 
+					type="text" 
+					default="200"
+					class="validate-numeric"
+					label="TITLE_MAX_LENGTH" 
+					description="TITLE_MAX_LENGTH_DESC" />
+					
+				<field 
+					name="maxchars" 
+					type="text" 
+					default="255" 
+					class="validate-numeric"
+					label="MAX_CHARS"
+					description="MAX_CHARS_DESC" />
+					
+				<field 
+					name="includeTags" 
+					type="text" 
+					default="p,h5,h4" 
+					label="INCLUDE_TAGS"
+					description="INCLUDE_TAGS_IN_DESCRIPTION" />
+					
+				<field 
+					name="descOpacity" 
+					type="list" 
+					default="0.5"
+					label="DESCRIPTION_BACKGROUND_OPACITY" 
+					description="DESCRIPTION_BACKGROUND_OPACITY_DESC">
+						<option value="0">0</option>
+						<option value="0.1">0.1</option>
+						<option value="0.2">0.2</option>
+						<option value="0.3">0.3</option>
+						<option value="0.4">0.4</option>
+						<option value="0.5">0.5</option>
+						<option value="0.6">0.6</option>
+						<option value="0.7">0.7</option>
+						<option value="0.8">0.8</option>
+						<option value="0.9">0.9</option>
+						<option value="1">1</option>
+				</field>	
+				
+				<field 
+					name="showdescwhen" 
+					type="list" 
+					default="mouseover"
+					label="SHOW_DESCRIPTION_WHEN" 
+					description="SHOW_DESCRIPTION_WHEN_DESC">
+						<option value="always">ALWAYS</option>
+						<option value="mouseover">MOUSE_OVER_IMAGE</option>
+						<option value="load">IMAGE_ANIMATED</option>
+				</field>
+				
+				<field 
+					name="masker-width" 
+					type="text" 
+					default="auto" 
+					label="MASK_WIDTH"
+					description="MASK_WIDTH_DESC" />
+					
+				<field 
+					name="masker-height" 
+					type="text" 
+					default="auto"
+					label="MASK_HEIGHT" 
+					description="MASK_HEIGHT_DESC" />
+				
+				<field 
+					name="container" 
+					type="list" 
+					default="0" 
+					label="MASK_STYLE"
+					description="MASK_STYLE_DESC">
+						<option value="0">FIT_TO_MAIN_IMAGE</option>
+						<option value="1">FULL_SIZE</option>
+				</field>
+				
+				<field 
+					name="masker-transition-style" 
+					type="radio" 
+					class="btn-group"
+					default="opacity"
+					label="MASK_TRANSITION_STYLE" 
+					description="MASK_TRANSITION_STYLE_DESC">
+						<option value="opacity">OPACITY</option>
+						<option value="style">SLIDING</option>
+				</field>
+				
+				<field 
+					name="marker-transition" 
+					type="list" 
+					default="Fx.Transitions.linear"
+					label="MASK_TRANSITION" 
+					description="MASK_TRANSITION_DESC">
+						<option value="Fx.Transitions.linear">linear</option>
+						<option value="Fx.Transitions.quartOut">QuartOut</option>
+						<option value="Fx.Transitions.Quad.easeIn">Quad.easeIn</option>
+						<option value="Fx.Transitions.Quad.easeOut">Quad.easeOut</option>
+						<option value="Fx.Transitions.Quad.easeInOut">Quad.easeInOut</option>
+						<option value="Fx.Transitions.Cubic.easeIn">Cubic.easeIn</option>
+						<option value="Fx.Transitions.Cubic.easeOut">Cubic.easeOut</option>
+						<option value="Fx.Transitions.Cubic.easeInOut">Cubic.easeInOut</option>
+						<option value="Fx.Transitions.Quart.easeIn">Quart.easeIn</option>
+						<option value="Fx.Transitions.Quart.easeOut">Quart.easeOut</option>
+						<option value="Fx.Transitions.Quart.easeInOut">Quart.easeInOut</option>
+						<option value="Fx.Transitions.Quint.easeIn">Quint.easeIn</option>
+						<option value="Fx.Transitions.Quint.easeOut">Quint.easeOut</option>
+						<option value="Fx.Transitions.Quint.easeInOut">Quint.easeInOut</option>
+						<option value="Fx.Transitions.Pow.easeIn">Pow.easeIn</option>
+						<option value="Fx.Transitions.Pow.easeOut">Pow.easeOut</option>
+						<option value="Fx.Transitions.Pow.easeInOut">Pow.easeInOut</option>
+						<option value="Fx.Transitions.Expo.easeIn">Expo.easeIn</option>
+						<option value="Fx.Transitions.Expo.easeOut">Expo.easeOut</option>
+						<option value="Fx.Transitions.Expo.easeInOut">Expo.easeInOut</option>
+						<option value="Fx.Transitions.Circ.easeIn">Circ.easeIn</option>
+						<option value="Fx.Transitions.Circ.easeOut">Circ.easeOut</option>
+						<option value="Fx.Transitions.Circ.easeInOut">Circ.easeInOut</option>
+						<option value="Fx.Transitions.Sine.easeIn">Sine.easeIn</option>
+						<option value="Fx.Transitions.Sine.easeOut">Sine.easeOut</option>
+						<option value="Fx.Transitions.Sine.easeInOut">Sine.easeInOut</option>
+						<option value="Fx.Transitions.Back.easeIn">Back.easeIn</option>
+						<option value="Fx.Transitions.Back.easeOut">Back.easeOut</option>
+						<option value="Fx.Transitions.Back.easeInOut">Back.easeInOut</option>
+						<option value="Fx.Transitions.Bounce.easeIn">Bounce.easeIn</option>
+						<option value="Fx.Transitions.Bounce.easeOut">Bounce.easeOut</option>
+						<option value="Fx.Transitions.Bounce.easeInOut">Bounce.easeInOut</option>
+						<option value="Fx.Transitions.Elastic.easeIn">Elastic.easeIn</option>
+						<option value="Fx.Transitions.Elastic.easeOut">Elastic.easeOut</option>
+						<option value="Fx.Transitions.Elastic.easeInOut">Elastic.easeInOut</option>
+				</field>
+				
+				<field 
+					name="masker-alignment" 
+					type="list" 
+					default="bottom"
+					label="MASK_ALIGNMENT" 
+					description="MASK_ALIGNMENT_DESC">
+						<option value="top">TOP</option>
+						<option value="bottom">BOTTOM</option>
+						<option value="left">LEFT</option>
+						<option value="right">RIGHT</option>
+				</field>
+				
+				<field 
+					name="edge-margin" 
+					type="text" 
+					default="0" 
+					label="Edge Margin"
+					description="The margin space from the description box to the Edge" />
+				
+				<field 
+					name="navigator_settings"					
+					type="spacer"
+					hr="false"
+					label="NAVIGATOR_SETTINGS" 					
+					description="NAVIGATOR_SETTINGS_DESC" />
+
+				<field 
+					name="group6" 
+					hidden="true" 
+					type="japanel"
+					function="depend">
+					    <option for="navigation" value="number" hideRow="true">
+							showItem,
+							source-articles-navwidth,
+							source-articles-navheight,
+							navigation-alignment,
+							navigation-alignment,
+							itemSpace,
+							source-articles-nav_showdate,
+							overlapOpacity,
+							itemOpacity,
+							source-articles-nav_showdesc
+						</option>
+						
+						<option for="navigation" value="thumbs" hideRow="true">
+							showItem,
+							source-articles-navwidth,
+							source-articles-navheight,
+							navigation-alignment,
+							navigation-alignment,
+							nav_showthumb,
+							itemSpace,
+							source-articles-nav_showdate,
+							overlapOpacity,
+							itemOpacity,
+							source-articles-nav_showdesc
+						</option>
+						
+						<option for="nav_showthumb" value="1" hideRow="true">
+							nav_thumb-width,
+							nav_thumb-height
+						</option>
+						<option for="source-articles-nav_showdesc" value="1" hideRow="true">
+							source-articles-nav_descmaxlength
+						</option>
+				</field>
+				
+				<field 
+					name="control" 
+					type="radio" 
+					default="1"
+					class="btn-group"		
+					label="CONTROL_BUTTONS"
+					description="CONTROL_BUTTONS_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field 
+					name="navigation" 
+					type="list" 
+					default=""
+					label="NAVIGATION_SHOW" 
+					description="NAVIGATION_SHOW_DESC">
+						<option value="">No</option>
+						<option value="number">NUMBER</option>
+						<option value="thumbs">THUMBNAILS</option>
+				</field>
+				
+				<field 
+					name="showItem" 
+					type="text" 
+					default="4" 
+					class="validate-numeric"
+					label="NUMBER_OF_ITEMS"
+					description="NUMBER_OF_ITEMS_DESC" />
+					
+				<field 
+					name="source-articles-navwidth" 
+					type="text" 
+					default="240"
+					class="validate-numeric"
+					label="NAVIGATION_WIDTH" 
+					description="NAVIGATION_WIDTH_DESC" />
+					
+				<field
+					name="source-articles-navheight" 
+					type="text" 
+					default="80"
+					class="validate-numeric"
+					label="NAVIGATION_HEIGHT" 
+					description="NAVIGATION_HEIGHT_DESC" />
+					
+				<field 
+					name="itemSpace" 
+					type="text" 
+					default="3:3"
+					label="ITEM_SPACING" 
+					description="ITEM_SPACING_DESC" />
+
+				<field 
+					name="itemOpacity" 
+					type="list" 
+					default="0.8"
+					label="ITEM_OPACITY" 
+					description="ITEM_OPACITY_DESC" >
+						<option value="0">0</option>
+						<option value="0.1">0.1</option>
+						<option value="0.2">0.2</option>
+						<option value="0.3">0.3</option>
+						<option value="0.4">0.4</option>
+						<option value="0.5">0.5</option>
+						<option value="0.6">0.6</option>
+						<option value="0.7">0.7</option>
+						<option value="0.8">0.8</option>
+						<option value="0.9">0.9</option>
+						<option value="1">1</option>
+				</field>
+				
+				<field 
+					name="navigation-alignment" 
+					type="list" 
+					default="vertical"
+					label="NAVIGATION_ALIGNMENT" 
+					description="NAVIGATION_ALIGNMENT_DESC">
+						<option value="horizontal">HORIZONTAL</option>
+						<option value="vertical_left">VERTICAL_LEFT</option>
+						<option value="vertical_right">VERTICAL_RIGHT</option>
+				</field>
+				
+				<field 
+					name="nav_showthumb" 
+					type="radio"
+					class="btn-group"	
+					default="0"
+					label="SHOW_THUMBNAIL" 
+					description="SHOW_THUMBNAIL_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field 
+					name="nav_thumb-width" 
+					type="text" 
+					default="60"
+					label="NAV_THUMB_WIDTH" 
+					description="NAV_THUMB_WIDTH_DESC" />
+					
+				<field 
+					name="nav_thumb-height" 
+					type="text" 
+					default="60"
+					label="NAV_THUMB_HEIGHT" 
+					description="NAV_THUMB_HEIGHT_DESC" />
+					
+				<field 
+					name="source-articles-nav_showdate" 
+					type="radio"
+					class="btn-group"
+					default="0" 
+					label="SHOW_DATE" 
+					description="SHOW_DATE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field 
+					name="source-articles-nav_showdesc" 
+					type="radio"
+					class="btn-group"
+					default="0" 
+					label="SHOW_DESCRTIPTION"
+					description="SHOW_DESCRTIPTION_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field 
+					name="source-articles-nav_descmaxlength" 
+					type="text"
+					default="40" 
+					class="validate-numeric"
+					label="DESCRIPTION_MAX_LENGTH" 
+					description="DESCRIPTION_MAX_LENGTH_DESC" />
+					
+				<field 
+					name="overlapOpacity" 
+					type="text" 
+					default="0.4"
+					label="NEXT_PREV_IMAGES_OPACITY" 
+					description="NEXT_PREV_IMAGES_OPACITY_DESC" >
+						<option value="0">0</option>
+						<option value="0.1">0.1</option>
+						<option value="0.2">0.2</option>
+						<option value="0.3">0.3</option>
+						<option value="0.4">0.4</option>
+						<option value="0.5">0.5</option>
+						<option value="0.6">0.6</option>
+						<option value="0.7">0.7</option>
+						<option value="0.8">0.8</option>
+						<option value="0.9">0.9</option>
+						<option value="1">1</option>
+				</field>	
+		</fieldset>
+	</fields>
+</form>

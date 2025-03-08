@@ -1,0 +1,9 @@
+.layout-4 .main-items {
+  margin-bottom: var(--grid-gutter-width);
+}
+@media (min-width: 768px) {
+  .layout-4 .highlight-item .item-style-1.text-center .jacl-item__body {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}

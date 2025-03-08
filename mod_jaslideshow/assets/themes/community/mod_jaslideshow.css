@@ -1,0 +1,101 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Slideshow Module for J25 & J31
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+
+#ja-slideshow .main { background: #241f1d; position:relative; z-index:10; }
+
+#ja-slideshow .ja-slidewrap { border: 0; margin-bottom: 20px; }
+
+#ja-slideshow .maskDesc { background: #eae8e0; width: 500px !important; right:0; z-index:1;}
+
+#ja-slideshow .maskDesc p { color:#69472f; font-size: 120%; margin: 0 70px 0 30px }
+
+#ja-slideshow .ja-slide-playback,
+#ja-slideshow .ja-slide-stop,
+#ja-slideshow .ja-slide-play { display:none; }
+
+/* Slideshow button ---*/
+#ja-slideshow .ja-slide-buttons { position: relative; margin: 0; padding: 0; }
+
+#ja-slideshow .ja-slide-prev, .ja-slide-next {
+	display: block;
+	background: url(images/btn-l.png) no-repeat left top;
+	text-indent: -9999px;
+	top: -110px;
+	position: absolute;
+	width: 13px;
+	height: 21px;
+	z-index: 3;
+	padding: 0;
+	margin: 0;
+}
+	
+#ja-slideshow .ja-slide-prev { left: 20px; }
+
+#ja-slideshow .ja-slide-next { background: url(images/btn-r.png) no-repeat left top; right: 40px; }
+
+#ja-slideshow .ja-slide-buttons span { margin: 0; padding: 0; }
+
+/* Slideshow content ---*/
+.ja-slide-desc h3 {
+	background: #eae8e0;
+	color: #0f86a8;
+	font-size: 220%;
+	font-weight: normal;
+	margin: 40px 0 0 30px;
+}
+
+#ja-slideshow .readon {
+	background: url(images/btn-bg.png) no-repeat scroll right bottom  #eae8e0;
+	border: 0;
+	color: #69472f;
+	padding: 0 20px 0 0;
+	cursor: pointer;
+	position: absolute;
+	left: 30px;
+	bottom: 40px;
+	z-index: 11;
+	text-transform: none;
+}
+
+#ja-slideshow .readon span {
+	background: url(images/btn-bg.png) no-repeat;
+	display:block;
+	font-weight: bold;
+	padding: 5px 0 5px 20px;
+}
+
+#ja-slideshow .readon:hover,
+#ja-slideshow .readon:focus,
+#ja-slideshow .readon:active { color: #fff; text-decoration: none; }
+
+/* Slideshow Mask ---*/
+#ja-slideshow .ja-slide-mask,
+#ja-slideshow .ja-slide-mask2 {
+	background: url(images/mask-l.png) no-repeat left top;
+	display: block;
+	position: absolute;
+	width: 40px;
+	height: 215px;
+	z-index: 2;
+	top: 0;
+}
+
+#ja-slideshow .ja-slide-mask { left: 0; }
+
+#ja-slideshow .ja-slide-mask2 {
+	background: url(images/mask-r.png) no-repeat left top;
+	right: 0;
+	left: auto;
+}
+
+
+ /* Disable thumbs mask */
+.ja-slide-thumbs-mask-left, .ja-slide-thumbs-mask-right { opactity: 0; }

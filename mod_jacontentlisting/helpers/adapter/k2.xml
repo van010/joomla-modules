@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+    <fields name="jasource-settings" addfieldpath="/modules/mod_jacontentlisting/admin/fields">
+        <fieldset name="basic">
+            <field type="japanel" path="/modules/mod_jacontentlisting/admin/fields/"/>
+            <field name="k2catsid" type="k2category" published="1" class="mselect" multiple="true" default="" label="CATEGORIES_SELECTION" description="CATEGORIES_SELECTION_DESC"/>
+            <field name="getChildren" type="radio" class="btn-group btn-group-yesno" default="0" label="GROUP_BY_SUB_CATEGORY" description="GROUP_BY_SUB_CATEGORY_DESC">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field name="maxSubCats" type="text" default="-1" label="MAXIMUM_SUBCATEGORIES" description="MAXIMUM_SUBCATEGORIES_DESC" showon="getChildren:1"/>
+            <field name="limitstart" type="hidden" default="0" label="CONTENT_LIMIT_START_GET_ITEM" description="CONTENT_LIMIT_START_GET_ITEM_DESC"/>
+
+            <field name="featured" type="list" default="hide" label="DISPLAY_FEATURED_ARTICLES" description="DISPLAY_FEATURED_ARTICLES_DESC">
+                <option value="show">SHOW</option>
+                <option value="only">SHOW_ONLY_FEATURED</option>
+                <option value="hide">HIDE</option>
+            </field>
+
+            <field name="ordering" type="list" default="" label="K2_ITEM_ORDERING" description="">
+                <option value="">K2_DEFAULT</option>
+                <option value="date">K2_OLDEST_FIRST</option>
+                <option value="rdate">K2_MOST_RECENT_FIRST</option>
+                <option value="publishUp">K2_RECENTLY_PUBLISHED</option>
+                <option value="alpha">K2_TITLE_ALPHABETICAL</option>
+                <option value="ralpha">K2_TITLE_REVERSEALPHABETICAL</option>
+                <option value="order">K2_ORDERING</option>
+                <option value="rorder">K2_ORDERING_REVERSE</option>
+                <option value="hits">K2_MOST_POPULAR</option>
+                <option value="best">K2_HIGHEST_RATED</option>
+                <option value="modified">K2_LATEST_MODIFIED</option>
+                <option value="rand">K2_RANDOM_ORDERING</option>
+            </field>
+            <field name="sort_order" type="list" default="DESC" label="ASCENDING_OR_DESCENDING" description="ASCENDING_OR_DESCENDING_DESC">
+                <option value="ASC">ASC</option>
+                <option value="DESC">DESC</option>
+            </field>
+            <field name="group1" hidden="true" type="japanel" function="depend">
+                <option for="getChildren" value="1" hideRow="true">maxSubCats</option>
+            </field>
+        </fieldset>
+    </fields>
+</form>

@@ -1,0 +1,73 @@
+@import "../../../assets/vars";
+
+.layout-7 {
+  .other-items {
+    @media (min-width: 768px) {
+    }
+  }
+
+  .no-gutters {
+    .col-child .item-style-2.jacl-item,
+    .col-child .eitem-style-2.jacl-item {
+      height: 50%;
+    }
+  }
+
+  .small-gutters {
+    .col-child .item-style-2.jacl-item,
+    .col-child .eitem-style-2.jacl-item {
+      height: calc(50% - 1.5px);
+    }
+  }
+
+  .normal-gutters {
+    .col-child .item-style-2.jacl-item,
+    .col-child .eitem-style-2.jacl-item {
+      height: calc(50% - 16px);
+    }
+  }
+  
+  .large-gutters {
+    .col-child .item-style-2.jacl-item,
+    .col-child e.item-style-2.jacl-item {
+      height: calc(50% - 18px);
+    }
+  }
+
+  .extra-large-gutters {
+    .col-child .item-style-2.jacl-item,
+    .col-child .eitem-style-2.jacl-item {
+      height: calc(50% - 20px);
+    }
+  }
+
+  @each $gutters-size, $value in $gutters-size {
+    .jacl-row.#{$gutters-size}-gutters {
+      
+    }
+  }
+
+  // Reorder Highlight Item On Tablet
+  .highlight-item {
+    @media (max-width: 767px) {
+      order: 1;
+    }
+  }
+
+  .col-child {
+    @media (max-width: 767px) {
+      order: 2;
+      margin-top: calc(var(--grid-gutter-width) / 2);
+    }
+  }
+
+  // Item Style 1 on Highlight
+  .highlight-item .item-style-1.has-media {
+    height: 100%;
+
+    .jacl-item__media {
+      padding-bottom: 0;
+      height: 100%;
+    }
+  }
+}

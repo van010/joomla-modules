@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+	<fields name="jaitem-settings" addfieldpath="/modules/mod_jacontentlisting/admin/fields">
+		<fieldset name="item">
+			<field name="layout" type="jamodal" default="default" path="item" label="MOD_JACONTENT_LISTING_ITEMS" description="MOD_JACONTENT_LISTING_ITEMS_DESC" />
+			<field name="item_content_align" type="radio" class="btn-group" label="MOD_JACONTENTLISTING_ITEM_CONTENT_ALIGN_LABEL" description="MOD_JACONTENTLISTING_ITEM_CONTENT_ALIGN_DESC" default="text-left" validate="options">
+				<option value="text-left">MOD_JACONTENTLISTING_ITEM_CONTENT_ALIGN_LEFT</option>
+				<option value="text-center">MOD_JACONTENTLISTING_ITEM_CONTENT_ALIGN_CENTER</option>
+				<option value="text-right">MOD_JACONTENTLISTING_ITEM_CONTENT_ALIGN_RIGHT</option>
+			</field>
+			<field name="tag_titles" type="list" label="MOD_JACONTENTLISTING_CATEGORY_FIELD_TAGTITLE_LABEL" description="MOD_JACONTENTLISTING_CATEGORY_FIELD_TAGTITLE_DESC" default="h4">
+				<option value="h2">h2</option>
+				<option value="h3">h3</option>
+				<option value="h4">h4</option>
+				<option value="h5">h5</option>
+				<option value="h6">h6</option>
+			</field>
+			<field name="show_link_title" type="radio" label="MOD_JACONTENTLISTING_LINKED_TITLES_LABEL" description="MOD_JACONTENTLISTING_LINKED_TITLES_DESC" default="1" filter="integer" class="btn-group btn-group-yesno">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+			<field name="item_media_path" type="list" label="MOD_JACONTENTLISTING_ITEM_MEDIA_PATH_LABEL" description="MOD_JACONTENTLISTING_ITEM_MEDIA_PATH_DESC" default="intro">
+				<option value="intro">MOD_JACONTENTLISTING_ITEM_MEDIA_PATH_INTRO_IMG</option>
+				<option value="full">MOD_JACONTENTLISTING_ITEM_MEDIA_PATH_FULL_IMG</option>
+				<option value="first_img">MOD_JACONTENTLISTING_ITEM_MEDIA_PATH_FIRST_IMG</option>
+			</field>
+			<field name="item_media_style" type="radio" class="btn-group" label="MOD_JACONTENTLISTING_ITEM_MEDIA_STYLE_LABEL" description="MOD_JACONTENTLISTING_ITEM_MEDIA_STYLE_DESC" default="radius-normal" validate="options">
+				<option value="radius-none">MOD_JACONTENTLISTING_ITEM_MEDIA_RADIUS_NONE</option>
+				<option value="radius-small">MOD_JACONTENTLISTING_ITEM_MEDIA_RADIUS_SMALL</option>
+				<option value="radius-normal">MOD_JACONTENTLISTING_ITEM_MEDIA_RADIUS_NORMAL</option>
+				<option value="radius-large">MOD_JACONTENTLISTING_ITEM_MEDIA_RADIUS_LARGE</option>
+			</field>
+			<field name="item_media_ratio" type="list" label="MOD_JACONTENTLISTING_ITEM_MEDIA_RATIO_LABEL" description="MOD_JACONTENTLISTING_ITEM_MEDIA_RATIO_DESC" default="media-1-1" validate="options" showon="show_intro_image:1">
+				<option value="media-normal">MOD_JACONTENTLISTING_ITEM_MEDIA_NORMAL</option>
+				<option value="media-circle">MOD_JACONTENTLISTING_ITEM_MEDIA_CIRCLE</option>
+				<option value="media-1-1">MOD_JACONTENTLISTING_ITEM_MEDIA_RATIO_1_1</option>
+				<option value="media-2-1">MOD_JACONTENTLISTING_ITEM_MEDIA_RATIO_2_1</option>
+				<option value="media-4-5">MOD_JACONTENTLISTING_ITEM_MEDIA_RATIO_4_5</option>
+				<option value="media-4-3">MOD_JACONTENTLISTING_ITEM_MEDIA_RATIO_4_3</option>
+				<option value="media-8-5">MOD_JACONTENTLISTING_ITEM_MEDIA_RATIO_8_5</option>
+				<option value="media-12-15">MOD_JACONTENTLISTING_ITEM_MEDIA_RATIO_12_15</option>
+			</field>
+			<field name="show_cat" type="radio" label="MOD_JACONTENTLISTING_CATEGORY_FIELD_SHOWCAT_LABEL" description="MOD_JACONTENTLISTING_CATEGORY_FIELD_SHOWCAT_DESC" default="1" filter="integer" class="btn-group btn-group-yesno">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+			<field name="item_cat_style" type="list" label="MOD_JACONTENTLISTING_ITEM_CAT_STYLE_LABEL" description="MOD_JACONTENTLISTING_ITEM_CAT_STYLE_DESC" default="blank" validate="options" showon="show_cat:1">
+				<option value="style-blank">MOD_JACONTENTLISTING_ITEM_CAT_STYLE_BLANK</option>
+				<option value="style-underline">MOD_JACONTENTLISTING_ITEM_CAT_STYLE_UNDERLINE</option>
+				<option value="style-outline">MOD_JACONTENTLISTING_ITEM_CAT_STYLE_OUTLINE</option>
+				<option value="style-outline-rounded">MOD_JACONTENTLISTING_ITEM_CAT_STYLE_OUTLINE_ROUNDED</option>
+				<option value="style-bgcolor">MOD_JACONTENTLISTING_ITEM_CAT_STYLE_BGCOLOR</option>
+				<option value="style-rounded">MOD_JACONTENTLISTING_ITEM_CAT_STYLE_BGCOLOR_ROUNDED</option>
+			</field>
+			<field name="show_introtext" type="radio" label="MOD_JACONTENTLISTING_CATEGORY_FIELD_SHOWINTROTEXT_LABEL" description="MOD_JACONTENTLISTING_CATEGORY_FIELD_SHOWINTROTEXT_DESC" default="0" filter="integer" class="btn-group btn-group-yesno">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+			<field name="introtext_limit" type="number" label="MOD_JACONTENTLISTING_CATEGORY_FIELD_INTROTEXTLIMIT_LABEL" description="MOD_JACONTENTLISTING_CATEGORY_FIELD_INTROTEXTLIMIT_DESC" default="100" filter="integer" showon="show_introtext:1" />
+			<field name="show_date" type="radio" label="JDATE" description="MOD_JACONTENTLISTING_CATEGORY_FIELD_SHOWDATE_DESC" default="1" filter="integer" class="btn-group btn-group-yesno">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+			<field name="show_date_field" type="list" label="MOD_JACONTENTLISTING_CATEGORY_FIELD_DATEFIELD_LABEL" description="MOD_JACONTENTLISTING_CATEGORY_FIELD_DATEFIELD_DESC" default="created" showon="show_date:1" validate="options">
+				<option value="created">MOD_JACONTENTLISTING_CATEGORY_OPTION_CREATED_VALUE</option>
+				<option value="modified">MOD_JACONTENTLISTING_CATEGORY_OPTION_MODIFIED_VALUE</option>
+				<option value="publish_up">MOD_JACONTENTLISTING_CATEGORY_OPTION_STARTPUBLISHING_VALUE</option>
+			</field>
+			<field name="show_date_format" type="text" label="MOD_JACONTENTLISTING_CATEGORY_FIELD_DATEFIELDFORMAT_LABEL" description="MOD_JACONTENTLISTING_CATEGORY_FIELD_DATEFIELDFORMAT_DESC" default="Y-m-d H:i:s" showon="show_date:1" />
+			<field name="show_hits" type="radio" label="MOD_JACONTENTLISTING_CATEGORY_FIELD_SHOWHITS_LABEL" description="MOD_JACONTENTLISTING_CATEGORY_FIELD_SHOWHITS_DESC" default="1" filter="integer" class="btn-group btn-group-yesno">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+			<field name="show_author" type="radio" label="JAUTHOR" description="MOD_JACONTENTLISTING_CATEGORY_FIELD_SHOWAUTHOR_DESC" default="1" filter="integer" class="btn-group btn-group-yesno">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+			<field name="show_tags" type="radio" label="JTAG" description="MOD_JACONTENTLISTING_CATEGORY_FIELD_SHOWTAGS_DESC" default="1" filter="integer" class="btn-group btn-group-yesno">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+			<field name="show_custom_fields" type="radio" label="MOD_JACONTENTLISTING_SHOW_CUSTOM_FIELDS" 
+				description="MOD_JACONTENTLISTING_SHOW_CUSTOM_FIELDS_DESC" default="0" 
+				filter="integer" class="btn-group btn-group-yesno">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+			<field name="show_readmore" type="radio" label="JGLOBAL_SHOW_READMORE_LABEL" description="JGLOBAL_SHOW_READMORE_DESC" default="0" filter="integer" class="btn-group btn-group-yesno">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+			<field name="group1" hidden="true" type="japanel" function="depend">
+				<option for="show_cat" value="1" hideRow="true">item_cat_style</option>
+				<option for="show_introtext" value="1" hideRow="true">introtext_limit</option>
+				<option for="show_date" value="1" hideRow="true">show_date_field,show_date_format</option>
+			</field>
+		</fieldset>
+	</fields>
+</form>

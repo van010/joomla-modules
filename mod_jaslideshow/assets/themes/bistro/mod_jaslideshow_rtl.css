@@ -1,0 +1,21 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Slideshow Module for J25 & J31
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+.ja-slide-thumb, .ja-slide-thumbs-handles span {
+	float:right;
+}
+.ja-slide-thumbs-wrap {
+	left:auto;
+	right:30px !important;
+}
+.maskDesc .ja-slide-desc {
+	left:0;
+	right:auto;
+}

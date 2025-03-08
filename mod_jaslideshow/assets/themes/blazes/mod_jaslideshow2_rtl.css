@@ -1,0 +1,11 @@
+.ja-slide-thumb, .ja-slide-thumbs-handles span {
+	float:right;
+}
+.ja-slide-thumbs-wrap {
+	left:auto;
+	right:0;
+}
+.maskDesc .ja-slide-desc {
+	left:0;
+	right:auto;
+}

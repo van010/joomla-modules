@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+  <fields name="jaitem-settings" addfieldpath="/modules/mod_jacontentlisting/admin/fields">
+    <fieldset name="item">
+    	<field name="show_intro_image" type="radio" class="btn-group btn-group-yesno" label="MOD_JACONTENTLISTING_ITEM_MEDIA_CONFIG_LABEL" description="MOD_JACONTENTLISTING_ITEM_MEDIA_CONFIG_DESC" default="1" validate="options" before="item_media_ratio">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+    </fieldset>
+  </fields>
+</form>

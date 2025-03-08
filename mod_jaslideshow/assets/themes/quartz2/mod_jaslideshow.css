@@ -1,0 +1,256 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Slideshow Module for J25 & J31
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+
+.ja-slidewrap_quartz2 {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-main-wrap {
+	position: relative;
+	overflow: hidden;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-main {
+	position: absolute;
+	z-index: 1;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-item {
+	display: block;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-item img {
+	background: #000000;
+	border: 1px solid #1C1C1C;
+	padding: 4px;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-thumbs-wrap {
+	position: relative;
+	clear: both;
+	overflow: hidden;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-thumbs,.ja-slidewrap_quartz2  .ja-slide-thumbs-mask,.ja-slidewrap_quartz2  .ja-slide-thumbs-handles {
+	position: absolute;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	width: 5000px;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-descs {
+	display: none;	
+}
+
+.ja-slidewrap_quartz2 .ja-slide-thumb,.ja-slidewrap_quartz2  .ja-slide-thumbs-handles span {
+	display: block;
+	margin: 0;
+	float: left;
+	cursor: pointer;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-thumbs-handles span {
+	background: none;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-thumbs-mask-left,
+.ja-slidewrap_quartz2 .ja-slide-thumbs-mask-right,
+.ja-slidewrap_quartz2 .ja-slide-thumbs-mask-center {
+	float: left;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-thumbs-mask-left, .ja-slidewrap_quartz2 .ja-slide-thumbs-mask-right{
+	background: #000000;
+}
+
+.ja-slidewrap_quartz2 .but_prev, .ja-slidewrap_quartz2 .but_next {
+	background: #000000;
+	position: absolute;
+	top: 0;
+	z-index: 99;
+}
+
+.ja-slidewrap_quartz2 .but_prev {
+	background: url(arrow-l.gif) no-repeat right center;
+	left: 0;
+}
+.ja-slidewrap_quartz2 .but_prev:hover,.ja-slidewrap_quartz2  .but_next:hover {
+	cursor: pointer;
+}
+
+.ja-slidewrap_quartz2 .but_next {
+	background: url(arrow-r.gif) no-repeat left center;
+	right: 0;
+}
+.ja-slidewrap_quartz2 .maskDesc {
+	display: block;
+	background: #000000;
+	position: absolute;
+	z-index: 100;
+	cursor: pointer;
+}
+
+.ja-slidewrap_quartz2 .maskDesc .ja-slide-desc {
+	padding: 20px 40px;
+	color: #CCCCCC;
+	font-size: 150%;
+}
+
+.ja-slidewrap_quartz2 .maskDesc .ja-slide-desc br {
+	display: none;
+}
+
+.ja-slidewrap_quartz2 .maskDesc .ja-slide-desc h3 {
+	margin: 0;
+	padding: 0;
+}
+
+.ja-slidewrap_quartz2 .maskDesc a.readon {
+	background: url(arrow-ri-hover.gif) no-repeat right 10px;
+	bottom: 10px;
+	color: #810C46;
+	display: block;
+	font-weight: bold;
+	font-size: 100%;
+	position: absolute;
+	padding: 3px 10px 3px 0;
+	right: 20px;
+}
+
+.ja-slidewrap_quartz2 .maskDesc a.readon:hover, .ja-slidewrap_quartz2 .maskDesc a.readon:active, .ja-slidewrap_quartz2 .maskDesc a.readon:focus {
+	background: url(arrow-ri.gif) no-repeat right 10px;
+	color: #FFFFFF;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-buttons {
+	z-index: 900;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-buttons span {
+	background: #000000;
+	color: #FFFFFF;
+	display: block;
+	float: left;
+	margin-right: 5px;
+	padding: 2px 5px;
+	cursor: pointer;
+}
+
+/*JA Sideshow [ Topspotlight 1]*/
+.ja-slidewrap_quartz2 .ja-slidewrapquartz2 {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-mask {
+	background: #CCCCCC;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	height: 70px;
+	width: 210px;
+	z-index: 99;
+	display: none;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-thumbs-wrap {
+	background: #CCCCCC;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	z-index: 100;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-buttons {
+	display: block;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	z-index: 101;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-thumb img {
+	background: #CCCCCC;
+	border: 1px solid #FFFFFF;
+	margin: 4px;
+}
+
+.ja-slidewrap_quartz2 .ja-slide-item img {
+	padding: 0;
+	border: none;
+}
+
+.ja-slidewrap_quartz2 .maskDesc {
+	background: none;
+}
+
+.ja-slidewrap_quartz2 .maskDesc .ja-slide-desc {
+	color: #FFFFFF;
+	font-size: 100%;
+	padding: 20px 10px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 230px;
+}
+
+.ja-slidewrap_quartz2 .maskDesc .ja-slide-desc h3 {
+	color: #CCCCCC;
+	text-transform: uppercase;
+}
+
+/* Choose style */
+.ja-slidewrap_quartz2 #ja-botsl .ja-slide-buttons {
+	z-index: 900;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.ja-slidewrap_quartz2 #ja-botsl .ja-slide-buttons span {
+	background: #0E0E0E;
+	font-size: 10px;
+	text-transform: uppercase;
+	border: 1px solid #1C1C1C;
+	padding: 1px 2px;
+	float: none;
+	display: inline;
+}
+
+.ja-slidewrap_quartz2 #ja-botsl .ja-slide-buttons span:hover {
+	border: 1px solid #373737;
+	color: #810C46;
+}
+
+.ja-slidewrap_quartz2 #ja-botsl .ja-slide-desc {
+	color: #FFFFFF;
+	font-size: 100%;
+}
+
+.ja-slidewrap_quartz2 #ja-botsl .ja-slide-desc h3 {
+	color: #FFFFFF;
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ja-slidewrap_quartz2 #ja-botsl .ja-slide-desc p {
+	font-weight: normal;
+}

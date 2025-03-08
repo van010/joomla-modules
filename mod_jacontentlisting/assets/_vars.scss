@@ -1,0 +1,84 @@
+:root {
+	// Gray Color
+	--gray-100: #FAFAFA;
+	--gray-200: #eee;
+	--gray-300: #E0E0E0;
+	--gray-400: #BDBDBD;
+	--gray-500: #9E9E9E;
+	--gray-600: #757575;
+	--gray-700: #616161;
+	--gray-800: #424242;
+	--gray-900: #212121;
+
+	// Brand colors
+	--color-primary: 	#e45e4d;
+	--color-secondary:#6c757d;
+	--color-success: 	#28a745;
+	--color-info: 		#17a2b8;
+	--color-warning:	#ffc107;
+	--color-danger:		#dc3545;
+	--color-light:		#f8f9fa;
+	--color-dark:			#212529;
+	--color-white:		#ffffff;
+	--color-black:		#000000;
+	--light-reverse:	#fff;
+
+	// Body variables
+	--body-bg-color: 				#fff;
+	--body-text-color: 			#333;
+	--body-link-color: 			#333;
+	--body-link-hover-color:#333;
+	--border-color: 				#eee;
+
+	// Heading variables
+	--heading-text-color: #212121;
+	--heading-border-color: #eeee;
+	--heading-font-size: 1.5rem;
+	--heading-font-weight: 400;
+	--heading-line-height: 32px;
+
+	// Size Space Global
+	--base-spacing: 8px;
+	--global-spacing: 8px;
+	--grid-gutter-width: 32px;
+
+	--gutter-small:				3px;
+	--gutter-large:				36px;
+	--gutter-extra-large:	36px;
+
+
+	// Category variables
+	--link-cat-normal: var(--color-secondary);
+		
+	// Meta variables
+	--meta-color: 					#9e9e9e;
+	--meta-font-size: 				0.6875rem;
+	--meta-link-color: 				var(--body-text-color);
+	--meta-link-hover-color: 	var(--body-link-hover-color);
+
+	// Description variables
+	--color-desc: #616161;
+
+	--trans-base: all 0.35s ease;
+}
+
+// Var Global
+$jacl-grid-columns:                12;
+$grid-gutter-width:                var(--grid-gutter-width);
+$enable-grid-classes:              true;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$gutters-size: (
+  no:             0px,
+  small:          var(--gutter-small),
+  normal:         var(--grid-gutter-width),
+  large:          var(--gutter-large),
+  extra-large:    var(--gutter-extra-large)
+);

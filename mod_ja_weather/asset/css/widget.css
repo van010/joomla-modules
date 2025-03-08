@@ -1,0 +1,67 @@
+/* WIDGET LAYOUT
+-------------------------------------------- */
+.small-widget.jaw-wrapper .jaw-content-list {
+  background: transparent;
+}
+
+.jaw-wrapper .jaw-widget .jaw-current-weather {
+  padding: 0;
+}
+
+.jaw-wrapper .jaw-widget .jaw-current-weather .ja-main-info {
+  flex-basis: 100%;
+}
+
+.jaw-widget .jaw-current-weather .jaw-bg {
+  top: 0;
+}
+
+.jaw-widget {
+  background-color: var(--jaw-gray-100);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border: 1px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 350px;
+}
+
+.jaw-widget + .jaw-widget {
+  margin-top: var(--jaw-border-radius-xl);
+}
+
+.jaw-wrapper .jaw-current-weather .ja-main-info .local-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: var(--jaw-spacing-md);
+}
+
+.jaw-widget .jaw-location-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.jaw-widget .weather-icon {
+  margin-right: var(--jaw-spacing-md);
+}
+
+.jaw-widget .current-temp {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1; 
+}
+
+.jaw-widget .current-temp .max {
+  font-weight: 600;
+}
+
+.jaw-widget .weather-desc {
+  font-size: 14px;
+  padding-top: var(--jaw-spacing-lg);
+}
+
+.jaw-widget .weather-desc span {
+  background-color: rgba(255,255,255,.6);
+  color: #666;
+  border-radius: 20px;
+  padding: 2px 8px;
+}

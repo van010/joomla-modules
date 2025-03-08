@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>JA Twitter Module</name>
+	<author>Joomlart.com</author>
+	<creationDate>December 6, 2022</creationDate>
+	<copyright>Copyright (C), J.O.O.M Solutions Co., Ltd. All Rights
+		Reserved.</copyright>
+	<license>license GNU/GPLv3 https://www.gnu.org/licenses/gpl-3.0.html
+	</license>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<authorUrl>https://www.joomlart.com</authorUrl>
+	<version>3.0.1</version>
+	<updateservers>
+		<server type="extension">https://update.joomlart.com/service/tracking/j16/mod_jatwitter.xml</server>
+	</updateservers>
+	<description>
+	<![CDATA[
+	<div align="left">
+		<h1><img border='0' alt='JA Twitter Module' src='https://asset.joomlart.com/images/stories/extensions/drupal/jdec_twitter.png?javer=1110040930' style='float: left'/>JA Twitter Module for Joomla! 2.5 & 3.x</h1>
+		<div style="font-weight:normal">
+		This module provides API integration with the Twitter microblogging service to drive more traffic to your site. Tweets from your Twitter account and Friends are displayed neatly.
+		<br/><br/><br/><br/>
+		
+		<p style="border:1px solid #F29A3C; padding: 10px 15px; background:#F7E6D4;">
+		<strong><span style='color: #ff0000;'>NOTE: update OAuth information to get new version worked!</span></strong><br /><br />
+		Since 2013-06-11, Twitter has stopped supporting API v1 and fully moved to API v1.1<br />In API v1.1, Twitter deny non-Authorized request, that means you need to provide the information below to authorize your request.<br />
+		<a target="_blank" href="https://www.joomlart.com/forums/showthread.php?50154-Joomla-1.6-JA-Twitter-Module-Installation-Guide">Check how to get OAuth information now</a>
+		</p>
+		
+		<strong><span style='color: #ff0000;'>Usage Ideas:</span><br /></strong>
+		<ol>
+		  <li>Easily configure Twitter account, show or hide Friends list, account infomation, and Twitter updates.</li>
+		  <li>Show Twitter account infomation.</li>
+		  <li>Show Twitter friends list.</li>
+		  <li>Display Twitter updates.</li>
+		</ol>
+	
+		<strong><span style='color: #ff0000;'>Upgrade Methods:</span></strong><br/>
+		<ol>
+		  <li>You can install new version directly over this version. Uninstallation is not required. </li>
+		  <li>Backup any customized files (i.e. CSS files) before upgrading.</li>
+		</ol>
+	
+		<span style='color: #008000;'><strong>Links:</strong></span><br/>
+		<ul>
+		  <li><a target="_blank" href="https://www.joomlart.com/forums/showthread.php?50154-Joomla-1.6-JA-Twitter-Module-Installation-Guide">General Userguide</a></li>
+		  <li><a target='_blank' href='https://update.joomlart.com/#products.list//JA%20Twitter%20Module%20for%20Joomla%202.5/'>Updates &amp; Versions</a></li>
+		</ul>
+		<p>Copyright 2004 - 2014 <a href='https://www.joomlart.com/' title='Visit Joomlart.com!'>JoomlArt.com</a>.</p>
+		</div>
+	</div>
+	]]>
+	</description>
+	<files>
+		<filename module="mod_jatwitter">mod_jatwitter.php</filename>
+		<filename>index.html</filename>
+		<filename>jatwitter.php</filename>
+		<filename>helper.php</filename>
+		<filename>TwitterAPIExchange.php</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_jatwitter.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/modules/mod_jatwitter/assets/elements">
+				<field type="spacer" hr="false" label="OAUTH_SETTINGS" description="OAUTH_SETTINGS_DESC" />
+				<field name="consumer_key" type="password" default="" size="40"
+					label="CONSUMER_KEY" description="CONSUMER_KEY_DESC" />
+				<field name="consumer_secret" type="password" default="" size="40"
+					label="CONSUMER_SECRET" description="CONSUMER_SECRET_DESC" />
+				<field name="oauth_access_token" type="password" default="" size="40"
+					label="OAUTH_ACCESS_TOKEN" description="OAUTH_ACCESS_TOKEN_DESC" />
+				<field name="oauth_access_token_secret" type="password" default="" size="40"
+					label="OAUTH_ACCESS_TOKEN_SECRET" description="OAUTH_ACCESS_TOKEN_SECRET_DESC" />
+
+				<field type="spacer" hr="false" label="TWITTER_ACCOUNT_SETTINGS" description="Twitter account Settings" />
+				<field name="taccount" type="text" default="JoomlartDemo"
+					label="TWITTER_SCREEN_NAME" description="TWITTER_SCREEN_NAME_DESC" />
+                <!--Twitter content settings-->
+				<field name="use_display_taccount" 
+					type="radio" 
+					class="btn-group btn-group-yesno"
+					default="0" 
+					label="SHOW_THE_TWITTER_ACCOUNT_INFO"
+					description="DISPLAY_TWITTER_ACCOUNT_INFORMATION_DESC">
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field name="size_iconaccount" type="text"
+                       default="48" size="10" showon="use_display_taccount:1"
+                       label="SIZE_OF_AVATAR" description="SET_SIZE_OF_AVATAR" />
+
+				<field type="spacer" hr="false" label="CONTENT_SETTINGS" description="CONTENT_SETTINGS_DESC" />
+				<field name="show_tweet" 
+					type="radio" 
+					class="btn-group btn-group-yesno"
+					default="1" 
+					label="SHOW_TWEETS"
+					description="SHOW_TWEETS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="show_limit" size="10"
+                       type="text" default="5"
+                       filter="integer" showon="show_tweet:1"
+                       label="LIMIT_TWEETS" description="LIMIT_TWEETS_DESC" />
+				<field name="show_icon" 
+					type="radio" 
+					class="btn-group btn-group-yesno"
+					default="1"
+                       showon="show_tweet:1"
+					label="TWITTER_AVATAR"
+					description="TWITTER_AVATAR_DESC">
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field name="icon_size" type="text" size="10"
+                       default="30" filter="integer" showon="use_display_taccount:1[AND]show_icon:1"
+                       label="SIZE_OF_AVATAR" description="SIZE_OF_AVATAR_DESC" />
+
+				<field name="show_username" 
+					type="radio" 
+					class="btn-group btn-group-yesno"
+					default="1"
+                       showon="show_tweet:1"
+					label="DISPLAY_TWITTER_USERNAME" 
+					description="DISPLAY_TWITTER_USERNAME_DESC">
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+
+				<field name="show_source" 
+					type="radio" 
+					class="btn-group btn-group-yesno"
+					default="1"
+                       showon="show_tweet:1"
+					label="SHOW_TWEETS_SOURCE" 
+					description="SHOW_TWEETS_SOURCE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="showtextheading" 
+					type="radio" 
+					class="btn-group btn-group-yesno"
+					default="1"
+                       showon="show_tweet:1"
+					label="CUSTOM_TEXT_HEADING" 
+					description="CUSTOM_TEXT_HEADING_DESC">
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field name="headingtext" type="text"
+                       default="My Twitter Updates" showon="use_display_taccount:1[AND]showtextheading:1"
+                       label="TEXT_FOR_CUSTOM_HEADING" description="TEXT_FOR_CUSTOM_HEADING_DESC" />
+
+                <!--Twitter friends settings-->
+				<field type="spacer" hr="false" label="TWITTER_FRIENDS_SETTINGS" description="TWITTER_FRIENDS_SETTINGS_DESC" />
+				<field name="use_friends" 
+					type="radio" 
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="DISPLAY_MY_FRIENDS" 
+					description="DISPLAY_YOUR_FRIENDS_DESC">
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<field name="size_iconfriend" type="text"
+                       size="10" default="24" showon="use_friends:1"
+                       label="SIZE_OF_AVATAR" description="SET_SIZE_AVATAR_WHICH_OWN_BY_FRIEND" />
+
+				<field name="max_friends" type="text"
+                       size="10" default="10" showon="use_friends:1"
+                       label="LIMIT_FRIENDS" description="ENTER_NUMBER_OF_FRIENDS_TO_SHOW_EXAMPLE" />
+
+                <!--Following button Settings-->
+				<field type="spacer" hr="false" label="Following button Settings" description="Following button Settings" />
+
+				<field name="showfollowlink" 
+					type="radio" 
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="DISPLAY_FOLLOWING_BUTTON"
+					description="DISPLAY_FOLLOWING_BUTTON_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="typefollowbutton"
+					type="radio"
+                       class="radio-custom"
+                       showon="showfollowlink:1"
+					default="apiconnect"
+					label="BUTTON_TYPE" 
+					description="BUTTON_TYPE_DESC">
+					<option value="simple">Simple</option>
+					<option value="apiconnect">Api connect</option>
+				</field>
+                <!--Simple-->
+				<field name="style_of_follow_button" 
+					type="radio"
+                       class="radio-custom"
+					default="follow_me-a.png"
+                       showon="typefollowbutton:simple[AND]showfollowlink:1"
+					label="BUTTON_STYLE"
+					description="BUTTON_STYLE_DESC">
+					<option class="ulist" value="follow_me-a.png"><![CDATA[ <img src="https://twitter-badges.s3.amazonaws.com/follow_me-a.png" alt="Follow %s on Twitter" />]]></option>
+					<option class="ulist" value="follow_me-b.png"><![CDATA[ <img src="https://twitter-badges.s3.amazonaws.com/follow_me-b.png" alt="Follow %s on Twitter" />]]></option>
+					<option class="ulist" value="follow_me-c.png"><![CDATA[ <img src="https://twitter-badges.s3.amazonaws.com/follow_me-c.png" alt="Follow %s on Twitter" />]]></option>
+					<option class="ulist" value="twitter-a.png"><![CDATA[ <img src="https://twitter-badges.s3.amazonaws.com/twitter-a.png" alt="Follow %s on Twitter" />]]></option>
+					<option class="ulist" value="twitter-b.png"><![CDATA[ <img src="https://twitter-badges.s3.amazonaws.com/twitter-b.png" alt="Follow %s on Twitter" />]]></option>
+					<option class="ulist" value="twitter-c.png"><![CDATA[ <img src="https://twitter-badges.s3.amazonaws.com/twitter-c.png" alt="Follow %s on Twitter" />]]></option>
+					<option class="ulist" value="t_logo-a.png"><![CDATA[ <img src="https://twitter-badges.s3.amazonaws.com/t_logo-a.png" alt="Follow thuanlq on Twitter" />]]></option>
+					<option class="ulist" value="none">None</option>
+				</field>
+
+                <!--API connect-->
+				<field 
+					name="data-show-count" 
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="false"
+                    showon="typefollowbutton:apiconnect[AND]showfollowlink:1"
+					label="JAF_DATA_SHOW_COUNT"
+					description="JAF_DATA_SHOW_COUNT_DESC">
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>	
+				<field 
+					name="data-lang"
+					type="list" 
+					default="en"
+                    showon="typefollowbutton:apiconnect[AND]showfollowlink:1"
+					label="JAF_DATA_LANGUAGE"
+					description="JAF_DATA_LANGUAGE_DESC">
+						<option value="auto">Auto - Detect</option>
+						<option value="en">English</option>
+						<option value="zh">Chinese</option>
+						<option value="da">Danish</option>
+						<option value="nl">Dutch</option>	
+						<option value="fi">Finnish</option>	
+						<option value="fr">French</option>	
+						<option value="de">German</option>	
+						<option value="he">Hebrew</option>	
+						<option value="is">Icelandic</option>	
+						<option value="it">Italian</option>		
+						<option value="ja">Japanese</option>		
+						<option value="ko">Korean</option>		
+						<option value="no">Norwegian</option>		
+						<option value="pl">Polish</option>		
+						<option value="pt">Portuguese</option>		
+						<option value="ru">Russian</option>		
+						<option value="sl">Slovenian</option>		
+						<option value="es">Spanish</option>		
+						<option value="sv">Swedish</option>	
+						<option value="tr">Turkish</option>	
+						<option value="cy">Welsh</option>	
+				</field>
+				<field 
+					name="data-width" 
+					size="10" 
+					type="text" 
+					default=""
+                    showon="typefollowbutton:apiconnect[AND]showfollowlink:1"
+					class="validate-numeric"
+					label="JAF_DATA_WIDTH"
+					description="JAF_DATA_WIDTH_DESC" />
+<!--				<field -->
+<!--					name="data-align" -->
+<!--					type="radio" -->
+<!--					class="btn-group btn-group-yesno"-->
+<!--					default="left"-->
+<!--                    showon="typefollowbutton:apiconnect[AND]showfollowlink:1"-->
+<!--					label="JAF_DATA_ALIGN"-->
+<!--					description="JAF_DATA_ALIGN_DESC">-->
+<!--					<option value="left">JLEFT</option>-->
+<!--					<option value="right">JRIGHT</option>-->
+<!--				</field>-->
+				<field 
+					name="data-show-screen-name" 
+					type="radio" 
+					class="btn-group btn-group-yesno"
+					default="false"
+                    showon="typefollowbutton:apiconnect[AND]showfollowlink:1"
+					label="JAF_DATA_SHOW_SCREEN_NAME"
+					description="JAF_DATA_SHOW_SCREEN_NAME_DESC">
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+                <field type="japanel" path="/modules/mod_jatwitter/assets/elements/" />
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field 
+					name="moduleclass_sfx" 
+					type="text" 
+					default="" 
+					label="MODULE_CLASS_SUFFIX" 
+					description="MODULE_CLASS_SUFFIX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					filter="integer"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field name="group" type="japanel" function="depend" hidden="true">
+					<option for="use_display_taccount" value="0" hideRow="true"></option>
+					<option for="use_display_taccount" value="1" hideRow="true">size_iconaccount</option>
+					<option for="show_tweet" value="1" hideRow="true">show_limit,show_icon,show_username,group_avatar,show_source,showtextheading</option>
+					<option for="showtextheading" value="0" hideRow="true"></option>
+					<option for="showtextheading" value="1" hideRow="true">headingtext</option>
+					<option for="use_friends" value="0" hideRow="true"></option>
+					<option for="use_friends" value="1" hideRow="true">size_iconfriend,max_friends</option>
+					<option for="show_icon" value="1" hideRow="true">icon_size</option>
+					<option for="showfollowlink" value="1" hideRow="true">typefollowbutton</option>
+					<option for="typefollowbutton" value="simple" hideRow="true">style_of_follow_button</option>
+					<option for="typefollowbutton" value="apiconnect" hideRow="true">data-show-count,data-lang,data-width,data-align,data-show-screen-name</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

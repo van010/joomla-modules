@@ -1,0 +1,36 @@
+// RTL STYLE
+// ------------------
+
+// GLOBAL STYLE
+.text-left {
+	text-align: right;
+}
+
+.text-right {
+	text-align: left;
+}
+
+.owl-carousel {
+	.owl-stage-outer {
+		direction: ltr;
+
+		.owl-stage {
+			direction: rtl;
+		}
+	}
+}
+
+// META
+.jacl-item__meta {
+	ul {
+		li {
+			padding-right: 0;
+			padding-left: calc(var(--global-spacing) * 2);
+
+			&:after {
+				right: auto;
+				left: 4px;
+			}
+		}
+	}
+}

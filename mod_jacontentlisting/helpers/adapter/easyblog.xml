@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+    <fields name="jasource-settings" addfieldpath="/modules/mod_jacontentlisting/admin/fields">
+        <fieldset name="basic">
+            <field type="japanel" path="/modules/mod_jacontentlisting/admin/fields/"/>
+            <field name="catsid" type="easyblogcat" default="" required="true" extension="com_content" class="mselect" multiple="true" size="5" label="CATEGORIES_SELECTION" description="CATEGORIES_SELECTION_DESC">
+            </field>
+
+            <field name="show_child_category_articles" type="radio" class="btn-group btn-group-yesno" default="0" label="GROUP_BY_SUB_CATEGORY" description="GROUP_BY_SUB_CATEGORY_DESC">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+
+            <field name="maxSubCats" type="number" default="-1" label="MAXIMUM_SUBCATEGORIES" description="MAXIMUM_SUBCATEGORIES_DESC" showon="show_child_category_articles:1"/>
+            <field name="limitstart" type="hidden" default="0" label="CONTENT_LIMIT_START_GET_ITEM" description="CONTENT_LIMIT_START_GET_ITEM_DESC"/>
+
+            <field name="featured" type="list" default="hide" label="DISPLAY_FEATURED_ARTICLES" description="DISPLAY_FEATURED_ARTICLES_DESC">
+                <option value="show">SHOW</option>
+                <option value="only">SHOW_ONLY_FEATURED</option>
+                <option value="hide">HIDE</option>
+            </field>
+            <field name="ordering" type="list" label="MOD_JACONTENTLISTING_SORT_POSTS_BY" default="latest" description="MOD_JACONTENTLISTING_SORT_POSTS_BY_DESC">
+                <option value="latest">MOD_JACONTENTLISTING_SORT_POSTS_BY_CREATED</option>
+                <option value="modified">MOD_JACONTENTLISTING_SORT_POSTS_BY_MODIFIED</option>
+                <option value="published">MOD_JACONTENTLISTING_SORT_POSTS_BY_PUBLISHING</option>
+                <option value="alphabet">MOD_JACONTENTLISTING_ORDERING_ALPHABETICAL</option>
+                <option value="popular">MOD_JACONTENTLISTING_ORDERING_POPULAR</option>
+            </field>
+
+            <field name="sort_order" type="list" default="DESC" label="ASCENDING_OR_DESCENDING" description="ASCENDING_OR_DESCENDING_DESC">
+                <option value="ASC">ASC</option>
+                <option value="DESC">DESC</option>
+            </field>
+            <field name="resize_img" type="radio"
+                   class="btn-group btn-group-yesno"
+                   default="0"
+                   label="MOD_JA_CONTENT_LISTING_RESIZE_IMAGES" description="">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+
+            <field name="other_img_src" type="text" default="" label="MOD_JACL_OTHER_IMG_SRC" description="MOD_JACL_OTHER_IMG_SRC_DESC"/>
+
+            <field name="group1" hidden="true" type="japanel" function="depend">
+                <option for="show_child_category_articles" value="1" hideRow="true">maxSubCats</option>
+            </field>
+        </fieldset>
+    </fields>
+</form>

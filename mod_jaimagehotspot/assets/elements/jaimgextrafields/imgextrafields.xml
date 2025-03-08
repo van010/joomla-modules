@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<form>
+	<fields
+		name="params">
+		<fieldset 
+			name="extrafields"
+			addfieldpath="/modules/mod_jaimagehotspot/assets/elements"
+			>	
+			<field type="spacer" name="pointerspacer" label="JAI_POINTER_PARAMETERS" />
+			<field 
+				name="ptype"
+				type="list"
+				default="icon"
+				label="JAI_POINT_TYPE"
+				description="JAI_POINT_TYPE_DESC">
+				<option value="icon">JAI_POINT_TYPE_ICON</option>
+				<option value="image">JAI_POINT_TYPE_IMAGE</option>
+				<option value="jaset">JAI_POINT_TYPE_JASET</option>
+			</field>
+			<field type="hidden" name="jasetimage" label="" />
+			<field
+				name="ptype_image"
+				type="media"
+				directory="/images/"
+				label="JAI_CONTENT_IMAGE_URL"
+				description="JAI_CONTENT_IMAGE_URL_DESC" />
+			<field
+				name="icon"
+				type="text"
+				default="map-marker"
+				label="JAI_ICON"
+				description="JAI_ICON_DESC" />
+			<field
+				name="iconcolor"
+				type="color"
+				default="#ffffff"
+				label="JAI_ICONCOLOR"
+				description="JAI_ICONCOLOR_DESC"/>
+			<field 
+				name="offsetx"
+				type="text"
+				default="50"
+				label="JAI_OFFSET_X" 
+				description="JAI_OFFSET_X_DESC" />
+			<field 
+				name="offsety"
+				type="text"
+				label="JAI_OFFSET_Y"
+				default="50"
+				description="JAI_OFFSET_Y_DESC" />
+
+			<field 
+				name="iconsize"
+				type="number"
+				label="JAI_ICON_SIZE"
+				default="25"
+				description="JAI_ICON_SIZE_DESC" />
+
+			<field 
+				name="iconanchorx"
+				type="number"
+				label="JAI_ICON_ANCHOR_X"
+				default="-50"
+				description="JAI_ICON_ANCHOR_X_DESC" />
+
+			<field 
+				name="iconanchory"
+				type="number"
+				label="JAI_ICON_ANCHOR_Y"
+				default="-50"
+				description="JAI_ICON_ANCHOR_Y_DESC" />
+			
+			
+		</fieldset>
+		<fieldset 
+			name="extrafields-last"
+			addfieldpath="/modules/mod_jaimagehotspot/assets/elements"
+			>
+			<field type="spacer" name="tooltipspacer" label="JAI_TOOLTIP_PARAMETERS" />
+			<field 
+				name="content_type"
+				type="list"
+				default="default"
+				label="JAI_CONTENT_TYPE"
+				description="JAI_CONTENT_TYPE_DESC" >
+				<option value="default">JAI_CONTENT_DEFAULT</option>
+				<option value="social">JAI_CONTENT_SOCIAL</option>
+				<option value="website">JAI_CONTENT_WEBSITE</option>
+				<option value="video">JAI_CONTENT_VIDEO</option>
+			</field>
+			<field
+				name="content_img"
+				type="media"
+				directory="/images/"
+				label="JAI_CONTENT_IMAGE_URL"
+				description="JAI_CONTENT_IMAGE_URL_DESC" />
+			<field
+				name="content_url"
+				type="text"
+				label="JAI_CONTENT_TYPE_URL"
+				description="JAI_CONTENT_TYPE_URL_DESC" />
+			<field
+				name="title"
+				type="text"
+				label="JAI_TITLES"
+				description="JAI_TITLES_DESC" />
+			<field
+				name="link"
+				type="text"
+				label="JAI_LINK"
+				description="JAI_LINK_DESC" />
+			<field 
+				name="cutnumber"
+				type="text"
+				default="50"
+				label="JAI_CUTNUMER"
+				description="JAI_CUTNUMER_DESC" />
+			<field 
+				name="vwidth"
+				type="text"
+				default="400"
+				label="JAI_VIDEO_WIDTH"
+				description="JAI_VIDEO_WIDTH_DESC" />
+			<field 
+				name="vheight"
+				type="text"
+				default="400"
+				label="JAI_VIDEO_HEIGHT"
+				description="JAI_VIDEO_HEIGHT_DESC" />		
+			<field 
+				name="classpoint"
+				type="text"
+				default=""
+				label="JAI_CLASSPOINT"
+				description="JAI_CLASSPOINT_DESC" />
+			<field 
+				name="bgcolor"
+				type="list"
+				default="light"
+				label="JAI_BGCOLOR"
+				description="JAI_BGCOLOR_DESC" >
+				<option value="light">JAI_BGCOLOR_LIGHT</option>
+				<option value="dark">JAI_BGCOLOR_DARK</option>
+			</field>
+			<field 
+				name="placement"
+				type="list"
+				default="auto"
+				label="JAI_POSITION"
+				description="JAI_POSITION_DESC" >
+				<option value="auto">JAI_POS_AUTO</option>
+				<option value="top">JAI_POS_TOP</option>
+				<option value="right">JAI_POS_RIGHT</option>
+				<option value="bottom">JAI_POS_BOTTOM</option>
+				<option value="left">JAI_POS_LEFT</option>
+				<option value="top-right">JAI_POS_TOP_RIGHT</option>
+				<option value="top-left">JAI_POS_TOP_LEFT</option>
+				<option value="bottom-right">JAI_POS_BOTTOM_RIGHT</option>
+				<option value="bottom-left">JAI_POS_BOTTOM_LEFT</option>
+				<option value="auto-top">JAI_POS_AUTO_TOP</option>
+				<option value="auto-right">JAI_POS_AUTO_RIGHT</option>
+				<option value="auto-bottom">JAI_POS_AUTO_BOTTOM</option>
+				<option value="auto-left">JAI_POS_AUTO_LEFT</option>
+				<option value="horizontal">JAI_POS_HORIZONTAL</option>
+				<option value="vertical">JAI_POS_VERTICAL</option>
+			</field>
+			<field 
+				name="popwidth"
+				type="text"
+				default="auto"
+				label="JAI_POP_WIDTH"
+				description="JAI_POP_WIDTH_DESC" />
+			<field 
+				name="popheight"
+				type="text"
+				default="auto"
+				label="JAI_POP_HEIGHT"
+				description="JAI_POP_HEIGHT_DESC" />
+			<field 
+				name="details"
+				type="textarea"
+				label="JAI_DETAILS"
+				filter="raw"
+				description="JAI_DETAILS_DESC" />
+		</fieldset>
+	</fields>
+</form>		

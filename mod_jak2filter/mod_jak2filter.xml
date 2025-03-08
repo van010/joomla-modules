@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>JAK2 Extra fields Filter and Search</name>
+	<author>JoomlArt.com</author>
+	<creationDate>Dec 1st, 2023</creationDate>
+	<copyright>Copyright 2004 - 2019 JoomlArt.com.</copyright>
+	<license>license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>1.4.0</version>
+	<description><![CDATA[
+		<div align="left"><h1>JA K2 Filter Module for Joomla 2.5.x and Joomla 3.x</h1>
+		<div style='font-weight: normal'>
+		<p><span style='color: #ff6600;'><strong>Features:</strong></span>
+		Configuration in this module is reflected in the JA K2 Filter Component. 
+		It is required to install JA K2 Search Component to use JA K2 Filter Module</p>
+		
+		<strong><span style='color: #ff0000;'>Usage Instruction:</span></strong><br />
+		<ul>
+		<li>Enable JA K2 Filter Module in Module Manager</li>
+		</ul>
+		<strong><span style='color: #ff0000;'>Upgrade Method:</span><br /></strong>
+		<ul>
+		  <li>You can install new version directly over this version. Uninstallation is not required. </li>
+		  </ul>
+	
+		<span style='color: #008000;'><strong>Links:</strong></span><br />
+		<ul>
+		<li><a target="_blank" href="http://www.joomlart.com/joomla/extensions/ja-k2-search">Wiki Userguide</a></li>
+		 <li><a target='_blank' href='http://www.joomlart.com/forums/downloads.php?do=cat&id=20372'>Updates &amp; Versions</a></li>
+		</ul>
+		<p>Copyright 2004 - 2019 <a href='http://www.joomlart.com/' title='Visit Joomlart.com!'>JoomlArt.com</a>.</p>
+		</div></div>
+		]]>	</description>
+	<files>
+		<filename module="mod_jak2filter">mod_jak2filter.php</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+		<folder>elements</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>		
+		<filename>mod_jak2filter.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_jak2filter.ini</language>
+		<language tag="en-GB">en-GB.mod_jak2filter.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_jak2filter/elements">
+			<fieldset name="basic">
+				<field name="group" type="jadepend" function="@group">
+					<option for="ja_stylesheet" value="horizontal-layout" hideRow="true">
+						ja_column
+					</option>
+					<option for="filter_by_author" value="1" hideRow="true">
+						filter_author_display,filter_by_author_fieldtype,excluded_author
+					</option>
+					<option for="required_defined" value="2" hideRow="true">
+						required_field
+					</option>
+					<option for="filter_by_tags" value="1" hideRow="true">
+						filter_by_tags_fieldtype
+					</option>
+                    <option for="pre_dtrange" value="range" hideRow="true">
+                    	pre_sdate, pre_edate
+                    </option>
+					<option for="display_counter" value="1" hideRow="true">
+						update_counter,disable_option_empty
+					</option>
+					<option for="use_standard_fields" value="1" hideRow="true">
+                        keyword_default_mode,filter_by_keyword,display_keyword_tip,filter_by_category,k2catsid,catMode,parentMode,filter_by_category_fieldtype,filter_by_author,filter_author_display,filter_by_author_fieldtype,excluded_author,
+                        filter_by_tags,filter_by_tags_fieldtype,filter_by_rating,keyword_options,search_by_date,subCats
+					</option>
+					<option for="filter_by_keyword" value="1" hideRow="true">
+						display_keyword_tip
+					</option>
+					<option for="ajax_filter" value="0" hideRow="true">
+						disable_option_empty
+					</option>
+					<option for="ajax_filter" value="1" hideRow="true">
+						share_url_of_results_page
+					</option>
+					<option for="share_url_of_results_page" value="1" hideRow="true">
+						update_browser_url
+					</option>
+				</field>
+				<field
+						name="form_mode"
+						type="radio"
+						default="normal"
+						label="FIELD_FORM_MODE"
+						description="FIELD_FORM_MODE_DESC">
+					<option value="normal">FORM_MODE_NORMAL</option>
+					<option value="dynamic">FORM_MODE_DYNAMIC</option>
+				</field>
+				
+				<!--
+<field
+						name="style_mode"
+						type="radio"
+						default="old"
+						label="FIELD_STYLE_MODE"
+						description="FIELD_STYLE_MODE_DESC">
+					<option value="new">STYLE_MODE_NEW</option>
+					<option value="old">STYLE_MODE_OLD</option>
+				</field>
+-->
+				
+				<field type="spacer" hr="true" class="field_group" />
+
+				<field name="ja_stylesheet" type="list" default="vertical-layout" label="JA_STYLE_SHEET" description="JA_STYLE_SHEET_DESCRIPTION">
+					<option value="vertical-layout">JA_VERTICAL</option>
+					<option value="horizontal-layout">JA_HORIZONTAL</option>
+				</field>
+				<field name="ja_column" label="FIELD_FILTER_BY_COLUMN" description="FIELD_FILTER_BY_COLUMN_DESC" type="integer" first="1" last="10" step="1" />
+				<field name="ajax_filter" type="radio" default="0" label="AJAX_FILTER" description="AJAX_FILTER_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="share_url_of_results_page" type="radio" default="0" label="JAK2_FILED_RESULTS_PAGE" description="JAK2_FILED_RESULTS_PAGE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="update_browser_url" type="radio" default="0" label="JAK2_FILED_UPDATE_BROWSER_URL" description="JAK2_FILED_UPDATE_BROWSER_URL_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="auto_filter" type="radio" default="0" label="AUTO_FILTER" description="AUTO_FILTER_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="display_counter" type="radio" default="0" label="DISPLAY_ITEM_COUNTER" description="DISPLAY_ITEM_COUNTER_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field name="update_counter" type="radio" default="0" label="UPDATE_ITEM_COUNTER" description="UPDATE_ITEM_COUNTER_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="disable_option_empty" type="list" default="0" label="DISABLE_OPTION_EMPTY" description="DISABLE_OPTION_EMPTY_DESC">
+					<option value="1">JDISABLED</option>
+					<option value="0">JENABLED</option>
+					<option value="2">JHIDE</option>
+				</field>
+				<field name="enable_reset_button" type="radio" default="0" label="ENABLE_RESET_BUTTON" description="ENABLE_RESET_BUTTON_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="display_ordering_box" type="radio" default="1" label="DISPLAY_ORDERING_BOX" description="DISPLAY_ORDERING_BOX_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="auto_complete" type="radio" default="0" label="AUTO_COMPLETE" description="AUTO_COMPLETE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="shoption" type="number" default="0" min="0" label="SH_OPTION" description="SH_OPTION_DESC" />
+
+                <field type="spacer" label="PAGE_RESULT_SETTINGS" description="PAGE_RESULT_SETTINGS_DESC" class="field_group" />
+                <field
+                        name="set_itemid"
+                        type="menuitem"
+                        default=""
+                        label="MOD_JAK2FILTER_SETITEMIDS"
+                        description="MOD_JAK2FILTER_SETITEMIDS_DESC"
+                        published="1">
+                    <option value="">JDEFAULT</option>
+                </field>
+                <field
+                        name="theme"
+                        type="template"
+                        default=""
+                        label="K2_SELECT_A_TEMPLATE"
+                        description="K2_SELECT_A_TEMPLATE_DESC" />
+                <field
+						name="catOrdering"
+						type="k2orderfield"
+						default="inherit_from_component"
+						label="ITEM_ORDERING_SELECT_BOX"
+						description="ITEM_ORDERING_SELECT_BOX_DESC">
+                    <option value="inherit">INHERIT_FROM_COMPONENT</option>
+                </field>
+
+                <field
+						name="show_order_field"
+						type="k2orderfield"
+						multiple="true"
+						size="10"
+						label="JAK2_ORDER_FIELD"
+						description="JAK2_ORDER_FIELD_DESC">
+                </field>
+                
+                <field name="search_featured"
+                        type="list"
+                        default="0"
+                        label="JAK2_SEARCH_FEATURED"
+                        description="JAK2_SEARCH_FEATURED_DESC">
+                        
+                        <option value="0">FEATURED_ALL</option>
+                        <option value="1">FEATURED_ONLY_FEATURED</option>
+                        <option value="2">FEATURED_ONLY_NON_FEATURED</option>        
+                </field>
+                
+                <field type="spacer" label="REQUIRED_FIELD" description="REQUIRED_FIELD_DESC" class="field_group" />
+                <field
+                        name="required_defined"
+                        type="list"
+                        default="0"
+                        label="JAK2_REQUIRED_DEFINED_LABEL"
+                        description="JAK2_REQUIRED_DEFINED_DESC">
+                    <option value="0">JAK2_DISABLED</option>
+                    <option value="1">JAK2_AT_LEAST_ONE</option>
+                    <option value="2">JAK2_SELECT_FIELDS</option>
+                </field>
+                <field name="required_field" type="requiredfield" label="JAK2_REQUIRED_FIELD_LABEL" description="JAK2_REQUIRED_FIELD_DESC" />
+
+				<field type="spacer" label="FILTER_BY_STANDARD_FIELDS" description="FILTER_BY_STANDARD_FIELDS_DESC" class="field_group" />
+				<field name="use_standard_fields" type="radio" default="1" label="USE_STANDARD_FIELDS" description="USE_STANDARD_FIELDS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+                <field
+                        name="filter_by_rating"
+                        type="radio"
+                        default="0"
+                        label="FIELD_FILTER_BY_RATING"
+                        description="FIELD_FILTER_BY_RATING_DESC">
+                    <option value="1">JENABLED</option>
+                    <option value="0">JDISABLED</option>
+                </field>
+				<field name="search_by_date" type="radio" default="0" label="FIELD_SEARCH_BY_DATE" description="FIELD_SEARCH_BY_DATE_DESC">
+					<option value="1">JENABLED</option>
+					<option value="0">JDISABLED</option>
+				</field>
+                <!--<field type="spacer" hr="true" name="standard_fields1" class="ja-spacer" />-->
+                <field name="filter_by_keyword" type="radio" default="1" label="FIELD_FILTER_BY_KEYWORD" description="FIELD_FILTER_BY_KEYWORD_DESC">
+                    <option value="1">JENABLED</option>
+                    <option value="0">JDISABLED</option>
+                </field>
+                <field name="display_keyword_tip" type="radio" default="1" label="FIELD_DISPLAY_KEYWORD_TIP" description="FIELD_DISPLAY_KEYWORD_TIP_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <!--<field name="keyword_options" type="radio" default="1" label="FIELD_KEYWORD_OPTION" description="FIELD_KEYWORD_OPTION_DESC">
+                    <option value="1">JENABLED</option>
+                    <option value="0">JDISABLED</option>
+                </field>
+                <field name="keyword_default_mode" type="list" default="exact" label="FIELD_KEYWORD_MODE" description="FIELD_KEYWORD_MODE_DESC">
+                    <option value="exact">MOD_JA_K2_FILTER_KEYWORD_EXACT</option>
+                    <option value="all">MOD_JA_K2_FILTER_KEYWORD_ALL</option>
+                    <option value="any">MOD_JA_K2_FILTER_KEYWORD_ANY</option>
+                </field>-->
+                <field type="spacer" hr="true" name="standard_fields2" class="ja-spacer" />
+				<field name="filter_by_category" type="radio" default="1" label="FIELD_FILTER_BY_CATEGORY" description="FIELD_FILTER_BY_CATEGORY_DESC">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
+				</field>
+				<field 
+					name="k2catsid" 
+					type="categoryk2" 
+					default="" 
+					level="3"
+                    multiple="multiple"
+                    size="10"
+                    class="inputbox"
+					label="SELECT_K2_CATEGORIES" 
+					description="SELECT_K2_CATEGORIES_DESC" />
+                <field
+                    name="catMode"
+                    type="radio"
+                    default="0"
+                    label="JAK2FILTER_FETCH_ALL_SUB_CATEGORIES"
+                    description="JAK2FILTER_FETCH_ALL_SUB_CATEGORIES_DESC">
+                        <option value="1">JYES</option>
+                        <option value="0">JNO</option>    
+                </field>
+				<field 
+					name="subCats" 
+					type="radio" 
+					default="1" 
+					label="JAK2FILTER_FETCH_ITEMS_FROM_CHILDREN_CATEGORIES" 
+					description="JAK2FILTER_FETCH_ITEMS_FROM_CHILDREN_CATEGORIES_DESC">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+				</field>
+                <field 
+					name="parentMode" 
+					type="radio" 
+					default="1" 
+					label="JAK2FILTER_SINGLE_CAT_MODE" 
+					description="JAK2FILTER_SINGLE_CAT_MODE_DESC">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+				</field>
+
+                <!--<field
+                        name="filter_by_category_fieldtype"
+                        type="list"
+                        default="select"
+                        label="SELECT_FIELD_TYPE"
+                        description="SELECT_FIELD_TYPE_DESC">
+                    <option value="select">FILTER_TYPE_DROPDOWN_SELECTION</option>
+                    <option value="multipleSelect">FILTER_TYPE_MULTISELECT_LIST</option>
+                    <option value="checkbox">FILTER_TYPE_CHECKBOX</option>
+                    <option value="radio">FILTER_TYPE_RADIO_BUTTONS</option>
+                    <option value="magicSelect">FILTER_TYPE_MAGIC_SELECTION</option>
+                </field>-->
+
+                <field type="spacer" hr="true" name="standard_fields3" class="ja-spacer" />
+				<field name="filter_by_author" type="radio" default="1" label="FIELD_FILTER_BY_AUTHOR" description="FIELD_FILTER_BY_AUTHOR_DESC">
+					<option value="1">JENABLED</option>
+					<option value="0">JDISABLED</option>
+				</field>
+
+                <field
+                        name="filter_author_display"
+                        type="list"
+                        default="author_display_name"
+                        label="FIELD_AUTHOR_DISPLAY"
+                        description="FIELD_AUTHOR_DISPLAY_DESCRIPTION">
+                    <option value="author_display_name">FIELD_AUTHOR_NAME</option>
+                    <option value="author_display_username">FIELD_AUTHOR_USERNAME</option>
+                </field>
+
+				<field 
+					name="filter_by_author_fieldtype"
+					type="list"
+					default="select"
+					label="SELECT_FIELD_TYPE"
+					description="SELECT_FIELD_TYPE_DESC">
+					<option value="select">FILTER_TYPE_DROPDOWN_SELECTION</option>
+                    <option value="multipleSelect">FILTER_TYPE_MULTISELECT_LIST</option>
+                    <option value="checkbox">FILTER_TYPE_CHECKBOX</option>
+                    <option value="radio">FILTER_TYPE_RADIO_BUTTONS</option>
+                    <option value="magicSelect">FILTER_TYPE_MAGIC_SELECTION</option>
+				</field>
+
+				<field 
+					name="excluded_author"
+					type="text"
+					default=""
+					label="JAK2_EXCLUDED_AUTHOR"
+					description="JAK2_EXCLUDED_AUTHOR_DESC" />
+
+                <field type="spacer" hr="true" name="standard_fields4" class="ja-spacer" />
+				<field 
+					name="filter_by_tags" 
+					type="radio" 
+					default="0" 
+					label="FIELD_FILTER_BY_TAGS" 
+					description="FIELD_FILTER_BY_TAGS_DESC">
+					<option value="1">JENABLED</option>
+					<option value="0">JDISABLED</option>
+				</field>
+
+                <field
+                        name="filter_by_tags_fieldtype"
+                        type="list"
+                        default="select"
+                        label="SELECT_FIELD_TYPE"
+                        description="SELECT_FIELD_TYPE_DESC">
+                    <option value="select">FILTER_TYPE_DROPDOWN_SELECTION</option>
+                    <option value="multipleSelect">FILTER_TYPE_MULTISELECT_LIST</option>
+                    <option value="checkbox">FILTER_TYPE_CHECKBOX</option>
+                    <option value="radio">FILTER_TYPE_RADIO_BUTTONS</option>
+                    <option value="magicSelect">FILTER_TYPE_MAGIC_SELECTION</option>
+                </field>
+				
+				<field name="jak2depend_numfilter" type="hiddenfield" default="" multiple="multiple" hidden="true" label="RANGESLIDER_MIN" description="RANGESLIDER_MIN_DESC" />
+				<field name="jak2depend_title" type="hiddenfield" default="" multiple="multiple" hidden="true" label="RANGESLIDER_MAX" description="RANGESLIDER_MAX_DESC" />
+				<field name="xgroup" type="xgroup" multiple="multiple" />
+				<field name="filter_by_extrafield" type="k2extrafield" default="" multiple="multiple" label="FIELD_FILTER_BY_EXTRAFIELDS" description="FIELD_FILTER_BY_EXTRAFIELDS_DESC" />
+				<field name="xgroup_order" type="hiddenfield" default="" multiple="multiple" hidden="true" label="FIELD_XGROUP_ORDER" description="FIELD_XGROUP_ORDER_DESC" />
+				<field name="filter_by_fieldtype" type="hiddenfield" default="" multiple="multiple" hidden="true" label="FIELD_FILTER_BY_FIELDTYPE" description="FIELD_FILTER_BY_FIELDTYPE_DESC" />
+				<field name="filter_by_fieldrange" type="hiddenfield" default="" multiple="multiple" hidden="true" label="FIELD_FILTER_BY_FIELDRANGE" description="FIELD_FILTER_BY_FIELDRANGE_DESC" />
+				
+				<field name="rangeslider_min" type="hiddenfield" default="" multiple="multiple" hidden="true" label="RANGESLIDER_MIN" description="RANGESLIDER_MIN_DESC" />
+				<field name="rangeslider_max" type="hiddenfield" default="" multiple="multiple" hidden="true" label="RANGESLIDER_MAX" description="RANGESLIDER_MAX_DESC" />
+				<field name="rangeslider_start" type="hiddenfield" default="" multiple="multiple" hidden="true" label="RANGESLIDER_START" description="RANGESLIDER_START_DESC" />
+				<field name="rangeslider_stop" type="hiddenfield" default="" multiple="multiple" hidden="true" label="RANGESLIDER_STOP" description="RANGESLIDER_STOP_DESC" />
+				<field name="rangeslider_step" type="hiddenfield" default="" multiple="multiple" hidden="true" label="RANGESLIDER_STEP" description="RANGESLIDER_STEP_DESC" />
+
+                <field name="range_slider_format_prefix" type="hiddenfield" default="" multiple="multiple" hidden="true" label="RANGE_SLIDER_FORMAT_PREFIX" description="RANGE_SLIDER_FORMAT_PREFIX_DESC" />
+                <field name="range_slider_format_suffix" type="hiddenfield" default="" multiple="multiple" hidden="true" label="RANGE_SLIDER_FORMAT_SUFFIX" description="RANGE_SLIDER_FORMAT_SUFFIX_DESC" />
+                <field name="range_slider_format" type="hiddenfield" default="" multiple="multiple" hidden="true" label="RANGE_SLIDER_FORMAT" description="RANGE_SLIDER_FORMAT_DESC" />
+                <field name="range_slider_format_decimals" type="hiddenfield" default="" multiple="multiple" hidden="true" label="RANGE_SLIDER_FORMAT_DECIMALS" description="RANGE_SLIDER_FORMAT_DECIMALS_DESC" />
+                <field name="range_slider_format_decimal_point" type="hiddenfield" default="" multiple="multiple" hidden="true" label="RANGE_SLIDER_FORMAT_DECIMAL_POINT" description="RANGE_SLIDER_FORMAT_DECIMAL_POINT_DESC" />
+                <field name="range_slider_format_thousands_sep" type="hiddenfield" default="" multiple="multiple" hidden="true" label="RANGE_SLIDER_FORMAT_THOUSANDS_SEP" description="RANGE_SLIDER_FORMAT_THOUSANDS_SEP_DESC" />
+				
+			</fieldset>
+            <fieldset name="prefilters">
+				<field
+						name="pre_k2filter"
+						type="radio"
+						default="0"
+						label="JAK2_PRE_K2FILTER"
+						description="JAK2_PRE_K2FILTER_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+						name="pre_order_field"
+						type="k2orderfield"
+						multiple="true"
+						size="10"
+						label="JAK2_PRE_ORDER_FIELD"
+						description="JAK2_PRE_ORDER_FIELD_DESC">
+				</field>
+
+				<field
+						name="pre_srating"
+						type="list"
+						default="1"
+						label="JAK2_PRE_SRATING_FIELD"
+						description="JAK2_PRE_SRATING_FIELD_DESC">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</field>
+
+				<field
+						name="pre_erating"
+						type="list"
+						default="5"
+						label="JAK2_PRE_ERATING_FIELD"
+						description="JAK2_PRE_ERATING_FIELD_DESC">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</field>
+
+				<field
+						name="pre_dtrange"
+						type="list"
+						default="1"
+						label="JAK2_PRE_DATE_FIELD"
+						description="JAK2_PRE_DATE_FIELD_DESC">
+					<option value="0">SELECT_DATE_RANGE</option>
+					<option value="today">TODAY</option>
+					<option value="-1d">YESTERDAY</option>
+					<option value="-7d">LAST_7_DAYS</option>
+					<option value="-1m">LAST_30_DAYS</option>
+					<option value="tw">THIS_WEEK</option>
+					<option value="lw">LAST_WEEK</option>
+					<option value="tm">THIS_MONTH</option>
+					<option value="lm">LAST_MONTH</option>
+					<option value="range">CUSTOM_RANGE</option>
+				</field>
+				
+				<field 
+					name="pre_sdate" 
+					type="calendar" 
+					default="" 
+					label="JAK2_PRE_START_DATE_FIELD" 
+					description="JAK2_PRE_START_DATE_FIELD_DESC" 
+					format="%Y-%m-%d" />
+				<field 
+					name="pre_edate" 
+					type="calendar" 
+					default="" 
+					label="JAK2_PRE_END_DATE_FIELD" 
+					description="JAK2_PRE_END_DATE_FIELD_DESC" 
+					format="%Y-%m-%d" />
+				
+				<field 
+					name="pre_searchword" 
+					type="text" 
+					default="" 
+					label="JAK2_PRE_SEARCH_WORD_FIELD" 
+					description="JAK2_PRE_SEARCH_WORD_FIELD_DESC" 
+					size="10" />
+				
+				<field 
+					name="pre_k2catsid" 
+					type="categoryk2" 
+					default="" 
+					level="3"
+					size="10"
+					class="inputbox"
+					label="SELECT_K2_CATEGORIES" 
+					description="SELECT_K2_CATEGORIES_DESC" />
+					
+				<field name="pre_author" type="preauthorfilter"
+					default="0"
+					label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+					description="JGLOBAL_FIELD_CREATED_BY_DESC"
+					/>
+				
+				<field name="pre_tags" type="pretagfilter"
+					default="0"
+					label="JAK2_PRE_PRE_TAG_FIELD"
+					description="JAK2_PRE_PRE_TAG_FIELD_DESC"
+					/>
+				
+				<field name="prexgroup" type="xgroup" multiple="multiple"/>
+				<field 
+					name="pre_filter_by_extrafield" 
+					type="prek2extrafield"
+					label="FIELD_FILTER_BY_EXTRAFIELDS" 
+					description="FIELD_FILTER_BY_EXTRAFIELDS_DESC" 
+					/>
+				
+			</fieldset>
+			<fieldset name="advanced">
+				<!--<field name="indexing_interval" type="text"
+					default="900"
+					label="INDEXING_INTERVAL_LABEL"
+					description="INDEXING_INTERVAL_DESC" />-->
+				<field name="layout" type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+					
+				<field name="cache" type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+				>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field name="cache_time" type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="list"
+					default="safeuri"
+					label="Cache Mode"
+					description="Cache Mode">
+					<option
+						value="safeuri">By URI</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+       <updateservers>
+        <server type="extension" priority="1" name="JA K2 Filter">http://update.joomlart.com/service/tracking/j16/mod_jak2filter.xml</server>
+    </updateservers>
+</extension>

@@ -1,0 +1,23 @@
+.layout-10 .sub-items .jacl-item:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .layout-10 .sub-items .jacl-item__title {
+    font-size: 16px;
+  }
+}
+.layout-10 .jacl-row.normal-gutters.other-items > div {
+  margin-top: 0;
+}
+.layout-10 .highlight-item .item-style-1,
+.layout-10 .highlight-item .eitem-style-1 {
+  height: 100%;
+}
+.layout-10 .highlight-item .item-style-1 .jacl-item__media,
+.layout-10 .highlight-item .eitem-style-1 .jacl-item__media {
+  height: 100%;
+}
+.layout-10 .col-child .item-style-2,
+.layout-10 .col-child .eitem-style-2 {
+  height: auto;
+}

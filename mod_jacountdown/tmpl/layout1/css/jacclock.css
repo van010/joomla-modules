@@ -1,0 +1,118 @@
+.ja-countdown.layout1 {
+	margin:0 auto;
+	background-image:url(../img/maingbg.png);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.ja-countdown.layout1 h1 {
+    color:#FFF;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size:30px;
+    text-align: center;
+    margin: 0 0 20px 0;
+    font-weight: normal;
+}
+.ja-countdown.layout1 h4 {
+    color:#b6b6b6;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size:18px;
+    text-align: center;
+    margin-top:30px;
+    font-weight: normal;
+}
+
+.ja-countdown.layout1 .clock:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.ja-countdown.layout1 .clock {
+    margin:0 auto;
+    text-align: center;
+}
+
+.ja-countdown.layout1 .clock_days,
+.ja-countdown.layout1 .clock_hours,
+.ja-countdown.layout1 .clock_minutes,
+.ja-countdown.layout1 .clock_seconds {
+    display: inline-block;
+    margin: 15px;
+}
+
+.ja-countdown.layout1 .bgLayer { 
+    background-image:url(../img/bg.png); 
+    background-repeat:no-repeat;
+    position:relative; 
+}
+
+.ja-countdown.layout1 .topLayer { 
+    position:absolute; 
+    background-image:url(../img/top.png); 
+    width:188px;
+    height:188px;
+    background-repeat:no-repeat;
+}
+
+.ja-countdown.layout1 .text { position:absolute; top:45px; left:42px; width:100px;  height:100px;}
+
+.ja-countdown.layout1 .val {
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size:47px;
+    font-weight:bold;
+    color:#FFF;
+    text-align:center;
+    line-height:50px;
+    margin-top:15px;
+    width:100px;
+}
+
+.ja-countdown.layout1 .type_days {
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    color:#ff6565;
+    width:100px;
+    text-align:center;
+    font-size:13px;
+    line-height:20px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.ja-countdown.layout1 .type_hours {
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    color:#378cff;
+    width:100px;
+    text-align:center;
+    font-size:13px;
+    line-height:20px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.ja-countdown.layout1 .type_minutes {
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    color:#9cdb7d;
+    width:100px;
+    text-align:center;
+    font-size:13px;
+    line-height:20px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.ja-countdown.layout1 .type_seconds {
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    color:#ffdc50;
+    width:100px;
+    text-align:center;
+    font-size:13px;
+    line-height:20px;
+    font-weight:bold;
+    text-transform:uppercase;
+}

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>mod_ja_weather</name>
+	<author>JoomlArt.com</author>
+	<creationDate>Jan 9th, 2024</creationDate>
+	<copyright>Copyright (C), J.O.O.M Solutions Co., Ltd. All Rights Reserved.</copyright>
+	<license>license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>1.1.1</version>
+
+	<description>
+
+    	<![CDATA[
+		<div align="left">		
+			<div>
+				<div style='font-weight: normal'>
+                    <h2>JA Weather Forecast module</h2>
+					<p>JA Weather is a Joomla weather extension to create a weather forecast and present all the latest local/ international weather information on your Joomla website.</p>
+				</div>
+			</div>
+			<br />
+			<p>Supported weather API:</p>
+			<div style='font-weight: normal'>
+				<ul> 
+                    			<li style="padding:10px 0px 10px 20px;"><strong>Openweathermap apiKey</strong>: <a href='https://openweathermap.org/api' target='_blank'>https://openweathermap.org/api</a></li>                   
+                    			<li style="padding:10px 0px 10px 20px;"><strong>Weatherbit apiKey</strong>: <a href='https://www.weatherbit.io/pricing' target='_blank'>https://www.weatherbit.io/pricing</a></li>
+				</ul>
+			</div>
+			<p><strong>Get Latitude & Longitude</strong>: <a href='https://www.latlong.net/' target='_blank'>https://www.latlong.net/</a></p
+			<br />
+			
+		</div>
+		]]>
+
+    </description>
+
+	<files>
+		<filename module="mod_ja_weather">mod_ja_weather.php</filename>
+		<folder>asset</folder>
+		<folder>tmpl</folder>
+		<folder>fields</folder>
+		<folder>set-icons</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_ja_weather.xml</filename>
+        <filename module="mod_ja_weather">mod_ja_weather.php</filename>
+    </files>
+    <scriptfile>mod_ja_weather.install.php</scriptfile>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_ja_weather.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_ja_weather.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params"
+				addfieldpath="/modules/mod_ja_weather/asset/fields">
+			<fieldset name="basic">
+				<field name="platform" type="list" default="openweathermap"
+                       label="MOD_JAWEATHER_API_PLATFORM">
+					<option value="openweathermap">MOD_JAWEATHER_API_PLATFORM_OPENWEATHER</option>
+					<option value="weatherbit">MOD_JAWEATHER_API_PLATFORM_WEATHERBIT</option>
+				</field>
+                <field name="apiKey" type="text" required="true"
+                       hint="exg: xxxx-xxxx-xxxx-xxx" label="MOD_JAWEATHER_APIKEY"/>
+
+				<field name="getdataby" type="list"
+                       label="MOD_JAWEATHER_GET_DATA_BY">
+					<option value="location_latLon" showon="platform:openweathermap[OR]platform:weatherbit">MOD_JAWEATHER_GET_DATA_BY_LATLON</option>
+					<option value="location_name">MOD_JAWEATHER_GET_DATA_BY_LOCATION_NAME</option>
+					<option value="location_id" showon="platform:openweathermap[OR]platform:weatherbit">MOD_JAWEATHER_GET_DATA_BY_LOCATION_ID</option>
+				</field>
+				<!-- get data by location name -->
+				<field name="locationName"
+                       type="textarea" label="LOCATION"
+                       description="LOCATION_DESC" showon="getdataby:location_name"/>
+
+				<field name="locationId"
+                       type="textarea" label="LOCATION_ID"
+                       description="LOCATION_ID_DESC" showon="getdataby:location_id"/>
+
+				<field name="locationLatLon"
+                       type="textarea" label="LOCATION_LAT_LON"
+                       description="LOCATION_LAT_LON_DESC" showon="getdataby:location_latLon"/>
+
+				<field name="language" type="list" default="en" label="MOD_JAWEATHER_LANGUAGE" description="MOD_JAWEATHER_LANGUAGE_DESC">
+					<!-- languages in openweathermap -->
+					<option value='af' showon='platform:openweathermap'>Afrikaans</option>
+					<option value='al' showon='platform:openweathermap'>Albanian</option>
+					<option value='ar' showon='platform:openweathermap'>Arabic</option>
+					<option value='az' showon='platform:openweathermap'>Azerbaijani</option>
+					<option value='bg' showon='platform:openweathermap'>Bulgarian</option>
+					<option value='ca' showon='platform:openweathermap'>Catalan</option>
+					<option value='cz' showon='platform:openweathermap'>Czech</option>
+					<option value='da' showon='platform:openweathermap'>Danish</option>
+					<option value='de' showon='platform:openweathermap'>German</option>
+					<option value='el' showon='platform:openweathermap'>Greek</option>
+					<option value='en' showon='platform:openweathermap'>English</option>
+					<option value='eu' showon='platform:openweathermap'>Basque</option>
+					<option value='fa' showon='platform:openweathermap'>Persian (Farsi)</option>
+					<option value='fi' showon='platform:openweathermap'>Finnish</option>
+					<option value='fr' showon='platform:openweathermap'>French</option>
+					<option value='gl' showon='platform:openweathermap'>Galician</option>
+					<option value='he' showon='platform:openweathermap'>Hebrew</option>
+					<option value='hi' showon='platform:openweathermap'>Hindi</option>
+					<option value='hr' showon='platform:openweathermap'>Croatian</option>
+					<option value='hu' showon='platform:openweathermap'>Hungarian</option>
+					<option value='id' showon='platform:openweathermap'>Indonesian</option>
+					<option value='it' showon='platform:openweathermap'>Italian</option>
+					<option value='ja' showon='platform:openweathermap'>Japanese</option>
+					<option value='kr' showon='platform:openweathermap'>Korean</option>
+					<option value='la' showon='platform:openweathermap'>Latvian</option>
+					<option value='lt' showon='platform:openweathermap'>Lithuanian</option>
+					<option value='mk' showon='platform:openweathermap'>Macedonian</option>
+					<option value='no' showon='platform:openweathermap'>Norwegian</option>
+					<option value='nl' showon='platform:openweathermap'>Dutch</option>
+					<option value='pl' showon='platform:openweathermap'>Polish</option>
+					<option value='pt' showon='platform:openweathermap'>Portuguese</option>
+					<option value='pt_br' showon='platform:openweathermap'>Português Brasil</option>
+					<option value='ro' showon='platform:openweathermap'>Romanian</option>
+					<option value='ru' showon='platform:openweathermap'>Russian</option>
+					<option value='sv' showon='platform:openweathermap'>Swedish</option>
+					<option value='sk' showon='platform:openweathermap'>Slovak</option>
+					<option value='sl' showon='platform:openweathermap'>Slovenian</option>
+					<option value='es' showon='platform:openweathermap'>Spanish</option>
+					<option value='sr' showon='platform:openweathermap'>Serbian</option>
+					<option value='th' showon='platform:openweathermap'>Thai</option>
+					<option value='tr' showon='platform:openweathermap'>Turkish</option>
+					<option value='ua' showon='platform:openweathermap'>Ukrainian</option>
+					<option value='vi' showon='platform:openweathermap'>Vietnamese</option>
+					<option value='zh_cn' showon='platform:openweathermap'>Chinese Simplified</option>
+					<option value='zh_tw' showon='platform:openweathermap'>Chinese Traditional</option>
+					<option value='zu' showon='platform:openweathermap'>Zulu</option>
+					<!-- languages in weatherbit -->
+					<option value='ar' showon='platform:weatherbit'>Arabic</option>
+					<option value='az' showon='platform:weatherbit'>Azerbaijani</option>
+					<option value='be' showon='platform:weatherbit'>Belarusian</option>
+					<option value='bg' showon='platform:weatherbit'>Bulgarian</option>
+					<option value='bs' showon='platform:weatherbit'>Bosnian</option>
+					<option value='ca' showon='platform:weatherbit'>Catalan</option>
+					<option value='cz' showon='platform:weatherbit'>Czech</option>
+					<option value='da' showon='platform:weatherbit'>Danish</option>
+					<option value='en' showon='platform:weatherbit'>English</option>
+					<option value='de' showon='platform:weatherbit'>German</option>
+					<option value='fi' showon='platform:weatherbit'>Finnish</option>
+					<option value='fr' showon='platform:weatherbit'>French</option>
+					<option value='el' showon='platform:weatherbit'>Greek</option>
+					<option value='es' showon='platform:weatherbit'>Spanish</option>
+					<option value='et' showon='platform:weatherbit'>Estonian</option>
+					<option value='ja' showon='platform:weatherbit'>Japanese</option>
+					<option value='hr' showon='platform:weatherbit'>Croation</option>
+					<option value='hu' showon='platform:weatherbit'>Hungarian</option>
+					<option value='id' showon='platform:weatherbit'>Indonesian</option>
+					<option value='it' showon='platform:weatherbit'>Italian</option>
+					<option value='is' showon='platform:weatherbit'>Icelandic</option>
+					<option value='iw' showon='platform:weatherbit'>Hebrew</option>
+					<option value='kw' showon='platform:weatherbit'>Cornish</option>
+					<option value='lt' showon='platform:weatherbit'>Lithuanian</option>
+					<option value='nb' showon='platform:weatherbit'>Norwegian Bokmål</option>
+					<option value='nl' showon='platform:weatherbit'>Dutch</option>
+					<option value='pl' showon='platform:weatherbit'>Polish</option>
+					<option value='pt' showon='platform:weatherbit'>Portuguese</option>
+					<option value='ro' showon='platform:weatherbit'>Romanian</option>
+					<option value='ru' showon='platform:weatherbit'>Russian</option>
+					<option value='sk' showon='platform:weatherbit'>Slovak</option>
+					<option value='sl' showon='platform:weatherbit'>Slovenian</option>
+					<option value='sr' showon='platform:weatherbit'>Serbian</option>
+					<option value='sv' showon='platform:weatherbit'>Swedish</option>
+					<option value='tr' showon='platform:weatherbit'>Turkish</option>
+					<option value='uk' showon='platform:weatherbit'>Ukrainian</option>
+					<option value='zh' showon='platform:weatherbit'>Chinese (Simplified)</option>
+					<option value='zh-tw' showon='platform:weatherbit'>Chinese (Traditional)</option>
+				</field>
+                <field
+                        name="temperature_unit"
+                        type="list"
+                        label="MOD_WEATHER_TEMPERATURE_UNIT_LABEL">
+                    <option value="metric" showon="platform:openweathermap">MOD_WEATHER_CELSIUS_C</option>
+                    <option value="imperial" showon="platform:openweathermap">MOD_WEATHER_FAHRENHEIT_F</option>
+                    <option value="standard" showon="platform:openweathermap">MOD_WEATHER_KELVIN_K</option>
+                    <option value="M" showon="platform:weatherbit">MOD_WEATHER_CELSIUS_C</option>
+                    <option value="I" showon="platform:weatherbit">MOD_WEATHER_FAHRENHEIT_F</option>
+                    <option value="S" showon="platform:weatherbit">MOD_WEATHER_KELVIN_K</option>
+                </field>
+				<field name="forecast" type="list" label="FORECAST" default="6" description="FORECAST_DESC">
+                    <option value="1">1_DAY</option>
+                    <option value="2">2_DAYS</option>
+                    <option value="3">3_DAYS</option>
+					<option value="4">4_DAYS</option>
+					<option value="5">5_DAYS</option>
+					<option value="6">6_DAYS</option>
+					<option value="7">WEEK</option>
+                    <option value="0">W_HIDE_FORECAST</option>
+				</field>
+                <field
+                        name="layout"
+                        class="form-select"
+                        type="modulelayout"
+                        label="JFIELD_ALT_LAYOUT_LABEL"
+                        description="LAYOUT_DESC" />
+                <field
+                        name="imgpath"
+                        type="jamedia"
+                        preview="show"
+                        label="WEATHER_IMG_PATH"
+                        description="WEATHER_IMG_PATH_DESC"
+                />
+                <field
+                        name="icon_set"
+                        type="iconset"
+                        default="animated-1"
+                        label="Icon Sets"
+                        addfieldpath="/modules/mod_ja_weather/fields/"
+                    />
+                <field
+                        name="label_field"
+                        type="list"
+                        label="FIELD_LABEL"
+                        default="text"
+                        description="FIELD_LABEL_DESC">
+                    <option value="0">FIELD_LABEL_OPTION_TEXT</option>
+                    <option value="1">FIELD_LABEL_OPTION_ICON</option>
+                </field>
+                <field
+                        name="section_display"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                        label="W_LIST_PARAMS"
+                        description="W_LIST_PARAMS_DESC">
+                    <option value="1">Show</option>
+                    <option value="0">Hide</option>
+                </field>
+				<field
+						name="clock_format"
+						type="list"
+						label="MOD_WEATHER_CLOCK_FORMAT"
+						default="D H:i a"
+						description="MOD_WEATHER_CLOCK_FORMAT_DESC">
+					<!-- 12h: h, 24h: H -->
+					<option value="h:i a">CLOCK_FORMAT_12H_LOWERCASE</option>
+					<option value="D h:i a">CLOCK_FORMAT_12H_DATE_LOWERCASE</option>
+					<option value="H:i">CLOCK_FORMAT_24H</option>
+					<option value="D H:i">CLOCK_FORMAT_24H_DATE</option>
+				</field>
+                <!--l: monday, D: Sat| F: march, m: Mar, j: 29, Y: 2001, y: 01-->
+                <field
+                    name="forecast_date_format"
+                    type="hidden"
+                    default="D, j m"
+                    label="W_FORECAST_DATE_FORMAT"
+                    description="W_FORECAST_DATE_FORMAT_DESC"
+                />
+				<field name="separator" type="hidden" default="|" label="SEPARATOR" description="SEPARATOR_DESC" />
+                <field
+                    name="cache_time"
+                    required="true"
+                    type="text"
+                    default="3600"
+                    label="JAWEATHER_CACHE_LABEL"
+                    description="JAWEATHER_CACHE_LABEL_DESC" />
+			</fieldset>
+
+			<fieldset
+				name="advanced">
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="owncache"
+					type="list"
+					default="1"
+					label="MOD_JA_WEATHER_COM_MODULES_FIELD_CACHING_LABEL"
+					description="MOD_JA_WEATHER_COM_MODULES_FIELD_CACHING_DESC"
+				>
+					<option value="1">MOD_JA_WEATHER_JGLOBAL_USE_GLOBAL</option>
+					<option value="0">MOD_JA_WEATHER_COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time_"
+					type="text"
+					default="6"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+
+	<updateservers>
+        <server type="extension">http://update.joomlart.com/service/tracking/j16/mod_ja_weather.xml</server>
+    </updateservers>
+    
+</extension>

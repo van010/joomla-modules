@@ -1,0 +1,152 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA K2 Filter Module for J25 & J3.4
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2016 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+
+.control-group {
+  margin: 0 !important;
+  padding: 10px 0;
+}
+
+.control-group .control-label {
+  max-width: 180px;
+}
+
+.control-group .control-label label {
+  margin: 0;
+}
+
+.form-horizontal .control-group input[type="checkbox"] {
+  margin: 3px 5px 0;
+  vertical-align: middle;
+}
+
+.field_group label {
+  border: 0;
+  font-weight: bold;
+}
+
+.control-label .spacer {
+  display: block;
+  margin: 0;
+  min-width: 300px;
+}
+
+.control-label .spacer label {
+  margin: 0;
+  padding: 0 !important;
+}
+
+/*.controls input[type="radio"],
+.controls input[type="checkbox"],
+.controls label {
+  float: none !important;
+  display: inline-block;
+  margin: 0 5px 0 0 !important;
+  vertical-align: middle;
+}
+
+.controls label {
+  margin-right: 10px !important;
+}
+
+.control-group fieldset.radio {
+  padding-left: 0;
+}*/
+
+/* Extra fields */
+.control-group.control-xfgroup .controls {
+  margin-left: 0;
+}
+
+.control-group.control-xfgroup fieldset {
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.control-group.control-xfgroup fieldset legend {
+  border: 0;
+  display: inline-block;
+  margin: 0;
+  padding: 0 10px;
+  width: auto;
+}
+
+h4.jagroup {
+  border-bottom: 1px solid #ddd;
+  margin-top: 0;
+  padding-bottom: 10px;
+}
+h4.jagroup > span {
+    background: url("../images/arrow-list.gif") right center no-repeat;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+ul.extrafields {
+  display: block;
+  float: left;
+  margin-left: 0px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+ul.extrafields li {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+
+ul.extrafields li.even {
+  background: #f6f6f6;
+}
+
+ul.extrafields li:first-child {
+  padding-right: 0;
+}
+
+ul.extrafields li:first-child div.ordering {
+  float: right;
+  margin-top: -50px !important;
+}
+
+ul.extrafields li:first-child div.ordering input[type="text"] {
+  width: 30px;
+}
+
+ul.extrafields li br {
+  display: none;
+}
+
+.params-container {
+  margin: 20px 0 20px 20px;
+  padding: 0;
+}
+
+.params-container > div {
+  padding: 10px 0;
+}
+
+.params-container div span {
+  width: 60px;
+  padding: 0;
+}
+
+.form-horizontal .control-group ul.extrafields input[type="checkbox"] {
+  margin-left: 0;
+}
+
+fieldset.radio label {
+    float: left;
+    margin: 0 40px 0 0;
+    width: auto !important;
+}
+fieldset.btn-group-yesno label {
+	margin-right: 0px !important;
+}

@@ -1,0 +1,130 @@
+#ja_ga_stats {
+	height: auto;
+	padding: 40px 0;
+	text-align: center;
+}
+#ja_active_users,
+#ja_page_views,
+#ja_bounce_rates {
+	border: 2px solid #ddd;
+	border-radius: 5px;
+	padding: 20px;
+	min-height: 180px;
+}
+
+#ja_active_users {
+	border: 2px solid #096;
+}
+
+.ja-ga-title,
+.ja-ga-number,
+.ja-ga-time {
+	display: block;
+	text-align: center;
+}
+
+.ja-ga-title {
+	font-size: 24px;
+}
+
+.ja-ga-number,
+.ja-ga-number {
+	font-size: 48px;
+	font-weight: 700;
+}
+
+.ja-ga-time {
+	color: #999;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+.ja_ga_foot {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.ja_ga_foot a {
+	background-color: #eee;
+	border-radius: 3px;
+	color: #666;
+	display: inline-block;
+	font-size: 13px;
+	font-weight: 500;
+	padding: 10px 20px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.ja_ga_foot a:hover,.ja_ga_foot a:focus, .ja_ga_foot a:active {
+	background-color: #096;
+	color: #fff;
+	text-decoration: none;
+}
+
+/*ga-authorize*/
+.ga-authorize {
+	background: #fff;
+	margin: 0 auto;
+	padding: 40px 0;
+	text-align: center;
+}
+
+.ga-authorize .btn {
+	padding: 10px 20px;
+	text-align: center;
+}
+
+/* SMALL LAYOUT */
+#ja_ga_stats.small-layout {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.small-layout .row {
+	margin-left: 0;
+}
+
+.small-layout #ja_active_users,
+.small-layout #ja_page_views,
+.small-layout #ja_bounce_rates {
+	border-radius: 0;
+	border: 1px solid #ddd;
+	border-top: 0;
+	margin: 0;
+	min-height: 1px;
+	padding: 10px 10px 10px 80px;
+	position: relative;
+	width: 100% !important;
+}
+
+.small-layout #ja_active_users {
+	background-color: #f9f9f9;
+	border-top: 1px solid #ddd;
+}
+
+.small-layout #ja_bounce_rates {
+	margin-bottom: 20px;
+}
+
+.small-layout .ja-ga-title {
+	font-size: 18px;
+	font-weight: 500;
+	text-align: left;
+}
+
+.small-layout span.ja-ga-number {
+	font-size: 24px !important;
+	font-weight: 500;
+	position: absolute;
+	left: 20px;
+	top: 15px;
+}
+
+.small-layout .ja-ga-time {
+	text-align: left;
+}
+
+.small-layout .ja_ga_foot {
+	margin-top: 0;
+}

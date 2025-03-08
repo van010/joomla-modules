@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<layouts>
+	<layout>
+		<name>layout 08</name>
+		<description>demo description</description>
+		<items>8</items>
+	</layout>
+</layouts>

@@ -1,0 +1,153 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Slideshow Module for J25 & J31
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+ */
+/* COMMON STYLE
+--------------------------------------------------------- */
+.ja-slidewrap_ironis {
+	background: url(body_black.gif) repeat left top;
+	position: relative;
+}
+
+.ja-slidewrap_ironis .ja-slide-main-wrap {
+	overflow: visible;
+}
+
+#ja-slideshow .ja-slide-thumbs-wrap {
+	background: #000;
+}
+
+#ja-slideshow .ja-slidewrap_ironis .ja-slide-thumbs-wrap {
+	left: auto;
+	right: 460px !important;
+	top: 0;
+}
+
+.ja-slidewrap_ironis .ja-slide-thumbs, 
+.ja-slidewrap_ironis .ja-slide-thumbs-mask, 
+.ja-slide-thumbs-handles {
+	left: auto;
+	position: relative;
+	right: 460px;
+	width: 100%;
+}
+
+.ja-slidewrap_ironis .ja-vertical_left .ja-slide-thumb, 
+.ja-slidewrap_ironis .ja-vertical_left .ja-slide-thumbs-handles span {
+	background: #000;
+	filter: alpha(opacity=20);
+	-moz-opacity: 0.2;
+	opacity: 0.2;
+}
+
+.ja-slidewrap_ironis .ja-vertical_left .active {
+	background: none !important;
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	opacity: 1;
+}
+
+.ja-slidewrap_ironis .ja-slide-thumb img {
+	background: none !important;
+	border: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.ja-slidewrap_ironis .ja-slide-thumb-inner {
+	background: none;
+	border: none;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.ja-slide-thumbs-wrap .active .ja-slide-thumb-inner {
+	background: none;
+}
+
+.ja-slidewrap_ironis .ja-slide-thumb-inner h3 {
+	display: none;
+}
+
+.ja-slide-main-wrap.ja-slide-right .maskDesc {
+	left: -440px !important;
+	right: auto;
+	z-index: 10;
+}
+
+.ja-slidewrap_ironis .ja-slide-desc {
+	color: #777;
+	padding: 30px 0 0 0;
+	width: 240px;
+}
+
+.ja-slidewrap_ironis.ja-articles .ja-slide-desc a, 
+.ja-slidewrap_ironis .ja-slide-desc h3 {
+	color: #fff;
+	display: block;
+	font-weight: normal;
+	line-height: normal;
+	margin: 0;
+	padding: 0 0 5px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+	text-transform: uppercase;
+}
+
+.ja-slidewrap_ironis.ja-articles .ja-slide-desc a.readon, .maskDesc a.readon {
+	background: url("arrow-normal.png") no-repeat scroll left center;
+	border: none;
+	color: #EC534D;
+	font-family: Arial,Helvertica,sans-serif;
+	font-size: 100%;
+	margin: 40px 0 0 0 !important;
+	padding: 0 0 0 20px;
+	text-transform: none;
+}
+
+.ja-slidewrap_ironis.ja-articles .ja-slide-desc a.readon span, 
+.ja-slidewrap_ironis .maskDesc a.readon span {
+	border: none;
+}
+
+.ja-slidewrap_ironis.ja-articles .ja-slide-desc a.readon:hover, 
+.ja-slidewrap_ironis .maskDesc a.readon:hover {
+	background-image: url("arrow-active.png");
+	color: #fff;
+}
+
+.ja-slidewrap_ironis.ja-articles .ja-slide-desc a.readon:hover span, 
+.ja-slidewrap_ironis .maskDesc a.readon:hover span {
+	border: none;
+}
+
+.ja-slidewrap_ironis .maskDesc a.readon {
+	position: absolute;
+}
+
+.ja-slidewrap_ironis .ja-slide-main {
+	right: 0;
+}
+
+.ja-slidewrap_ironis.ja-articles .ja-slide-main {
+	right: auto;
+}
+
+.ja-slidewrap_ironis .ja-slide-main-wrap .maskDesc {
+	left: 20px;
+	right: auto !important;
+}
+
+.ja-slide-thumbs-mask {
+	display: none !important;
+}
+
+.ja-slidewrap_ironis .ja-slide-thumbs-handles {
+	left: 0 !important;
+	position: absolute;
+}

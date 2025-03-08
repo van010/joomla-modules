@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+	<fields name="jalayout-settings" addfieldpath="/modules/mod_jacontentlisting/admin/fields">
+		<fieldset name="layout">
+			<field name="layout" type="jamodal" default="layout-01" path="layout" label="MOD_JACONTENTLISTING_LAYOUT_LABEL" description="MOD_JACONTENTLISTING_LAYOUT_DESC"/>
+
+			<field name="item_content_gutters" type="list" label="MOD_JACONTENTLISTING_ITEM_CONTENT_GUTTERS_LABEL" description="MOD_JACONTENTLISTING_ITEM_CONTENT_GUTTERS_DESC" default="normal-gutters" validate="options">
+				<option value="no-gutters">MOD_JACONTENTLISTING_ITEM_CONTENT_NO_GUTTERS</option>
+				<option value="small-gutters">MOD_JACONTENTLISTING_ITEM_CONTENT_SMALL_GUTTERS</option>
+				<option value="normal-gutters">MOD_JACONTENTLISTING_ITEM_CONTENT_NORMAL_GUTTERS</option>
+				<option value="large-gutters">MOD_JACONTENTLISTING_ITEM_CONTENT_LARGE_GUTTERS</option>
+				<option value="extra-large-gutters">MOD_JACONTENTLISTING_ITEM_CONTENT_EXTRA_LARGE_GUTTERS</option>
+			</field>
+			<field name="show_heading" type="radio" label="MOD_JACONTENTLISTING_HEADING_LABEL" description="MOD_JACONTENTLISTING_HEADING_DESC" default="0" filter="integer" class="btn-group btn-group-yesno">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+			<field name="heading_style" type="jamodal" default="style-1" path="heading"  label="MOD_JACONTENTLISTING_HEADING_STYLE_LABEL" description="MOD_JACONTENTLISTING_HEADING_STYLE_DESC" showon="show_heading:1"/>
+			<field name="heading_desc" type="textarea" default="" label="MOD_JACONTENTLISTING_HEADING_DESC_LABEL" description="MOD_JACONTENTLISTING_HEADING_DESC_DESC"  showon="show_heading:1"/>
+			<field name="show_cat_highlight" type="radio" label="MOD_JACONTENTLISTING_SHOW_CAT_HIGHLIGHT_LABEL" description="MOD_JACONTENTLISTING_SHOW_CAT_HIGHLIGHT_DESC" default="0" filter="integer" class="btn-group btn-group-yesno" >
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+
+			<field name="show_cat_parent" type="list" label="MOD_JACONTENTLISTING_SHOW_CAT_PARENT_LABEL" description="MOD_JACONTENTLISTING_SHOW_CAT_PARENT_DESC" default="normal-gutters" validate="options" showon="show_cat_highlight:1">
+				<option value="">MOD_JACONTENTLISTING_ITEM_CONTENT_NONE</option>
+			</field>
+
+			<field name="hide_duplicate_article" type="radio"
+				   label="MOD_JACONTENTLISTIN_HIDE_DUPLICATE_ARTICLE"
+				   description="MOD_JACONTENTLISTIN_HIDE_DUPLICATE_ARTICLE_DESC"
+				   default="0" filter="integer" class="btn-group btn-group-yesno">
+				<option value="0">JSHOW</option>
+				<option value="1">JHIDE</option>
+			</field>
+					
+			<field name="group1" hidden="true" type="japanel" function="depend">
+				<option for="show_heading" value="1" hideRow="true">heading_style,heading_desc</option>
+				<option for="show_cat_highlight" value="1" hideRow="true">show_cat_parent</option>
+			</field>
+		</fieldset>
+	</fields>
+</form>

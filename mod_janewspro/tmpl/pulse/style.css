@@ -1,0 +1,67 @@
+/**
+ * $JA#COPYRIGHT$
+ */
+
+.ja-zinwrap.pulse { background: #fff; }
+
+.pulse .ja-zin {}
+
+.pulse .ja-zin .items-row { margin: 0; padding: 0; background: none; }
+
+.pulse .ja-zin .ja-box .ja-box-inner { margin: 0; padding: 8px 12px 5px; }
+
+.pulse .ja-zin .ja-box-first .ja-box-inner {}
+
+.pulse .ja-zin .col-last .ja-box-inner { border-right: 0; }
+
+
+/* HEADING
+--------------------------------------------- */
+/* Section --- */
+.pulse .ja-zinsec { padding: 12px 0 0; position: relative; }
+
+.pulse .items-row:hover .ja-zinsec {}
+
+.pulse .items-row:hover .ja-zinsec a {}
+
+.pulse .ja-zinsec h2 { margin: 0 !important; padding: 0 12px !important; font-size: 150%; }
+
+.pulse .ja-zinsec h2 a {}
+
+/* Category --- */
+.pulse .ja-zincat h3 { margin: 0 0 5px !important; padding: 0 !important; font-size: 85%; }
+
+.pulse .ja-zincat h3 a {}
+
+/* PULSE ROW
+------------------------------------------------*/
+.pulse .ja-zin .ja-zinpulse { display: block; width: 100%; }
+
+.pulse .ja-zin .ja-zinpulse-cell { display: block; float: left; }
+
+.pulse .ja-zin .ja-zinpulse-cell-inner { display: block; }
+
+/* Pulse bar ---*/
+.pulse .ja-zinpulse-bar span {
+	background: url("bar.png") repeat-x 0 0 #999;
+	height: 12px;
+	width: 0;
+	display: block;
+}
+
+/* Pulse News ---*/
+.pulse .ja-zinpulse-news img {}
+.pulse .ja-zinpulse-news h4.ja-zintitle {
+	margin: 0 0 5px !important;
+	padding: 0 !important;
+	font-weight: bold;
+	font-size: 110%;
+}
+
+/* Pulse Cat ---*/
+.pulse .ja-zinpulse-cat span {}
+
+/* Pulse Meta ---*/
+.pulse .ja-zinpulse-meta span {}
+.pulse .ja-zinpulse-meta span.createdate {}
+.pulse .ja-zinpulse-meta span.createdby {}

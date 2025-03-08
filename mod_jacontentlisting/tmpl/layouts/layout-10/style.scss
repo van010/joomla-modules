@@ -1,0 +1,46 @@
+.layout-10 {
+  .sub-items {
+  	// Mobile view
+  	@media (max-width: 767px) {
+  		//margin-top: calc(var(--grid-gutter-width) / 2);
+  	}
+
+    .jacl-item:last-child {
+      margin-bottom: 0;
+    }
+
+    // Title
+    .jacl-item__title {
+    	// Tablet view
+	    @media (min-width: 768px) and (max-width: 991px) {
+	    	font-size: 16px;
+	    }
+    }
+
+    // Item Style 2
+    .item-style-2.jacl-item {
+      //height: auto;
+    }
+  }
+
+  .jacl-row.normal-gutters.other-items > div {
+    margin-top: 0;
+  }
+
+  // Fix equal height for highlight item style 1
+  .highlight-item {
+    .item-style-1,
+    .eitem-style-1 {
+      height: 100%;
+
+      .jacl-item__media {
+        height: 100%;
+      }
+    }
+  }
+
+  .col-child .item-style-2,
+  .col-child .eitem-style-2 {
+    height: auto;
+  }
+}
